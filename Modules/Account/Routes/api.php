@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 
 /*
   |--------------------------------------------------------------------------
@@ -194,6 +196,8 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::post('discounts/store', 'DiscountController@store');
         
       
+        // services routes
+        // get Student Services Payments
 
         
         //////////////////////// sync Apis /////////////////////////
@@ -202,6 +206,10 @@ Route::group(['middleware' => 'api_auth'], function () {
 
         
         
+
+    });
+    Route::prefix('affair')->group(function() {
+      Route::get('report31' , 'ServiceController@getStudentServicesPayments');
 
     });
 });

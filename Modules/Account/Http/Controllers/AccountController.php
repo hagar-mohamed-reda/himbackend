@@ -20,7 +20,7 @@ use Modules\Academic\Entities\StudentGpa;
 
 
 use App\User;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Modules\Account\Entities\ServiceTemplate;
 
 class AccountController extends Controller
@@ -421,4 +421,5 @@ class AccountController extends Controller
             return responseJson(0, $e->getMessage());
         }
     }
+
 }

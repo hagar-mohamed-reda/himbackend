@@ -198,6 +198,7 @@ Route::group(['middleware' => 'api_auth'], function () {
       
         // services routes
         // get Student Services Payments
+        Route::get('report31' , 'ServiceController@getStudentServicesPayments');
 
         
         //////////////////////// sync Apis /////////////////////////
@@ -208,10 +209,7 @@ Route::group(['middleware' => 'api_auth'], function () {
         
 
     });
-    Route::prefix('affair')->group(function() {
-      Route::get('report31' , 'ServiceController@getStudentServicesPayments');
 
-    });
 });
 
 

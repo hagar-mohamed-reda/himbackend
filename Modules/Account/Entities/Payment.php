@@ -78,6 +78,7 @@ class Payment extends Model
     }
 
     public function model() {
+        
         if ($this->model_type == 'academic_year_expense') {
             return $this->belongsTo('Modules\Account\Entities\AcademicYearExpenseDetail', 'model_id');
         }

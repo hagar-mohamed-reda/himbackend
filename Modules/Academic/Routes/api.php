@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,13 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware' => 'api_auth'], function () {
-    Route::prefix('academic')->group(function() {
+    Route::prefix('academic')->group(function () {
         // courses routes
         Route::get('courses', 'CourseController@get');
         Route::post('courses/store', 'CourseController@store');
         Route::post('courses/update/{resource}', 'CourseController@update');
         Route::post('courses/delete/{resource}', 'CourseController@destroy');
- 
+
 
         // courses category routes
         Route::get('course_categories', 'CourseCategoryController@get');
@@ -40,7 +41,7 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::post('doctors/store', 'DoctorController@store');
         Route::post('doctors/update/{resource}', 'DoctorController@update');
         Route::post('doctors/delete/{resource}', 'DoctorController@destroy');
-        
+
 
         // settings routes
         Route::get('settings', 'SettingController@get');
@@ -54,17 +55,17 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::get('open_courses', 'OpenCourseController@get');
         Route::get('all_open_courses', 'OpenCourseController@getAll');
         Route::post('open_courses/update', 'OpenCourseController@update');
-         
+
         // student register routes
         Route::get('available_courses', 'StudentRegisterController@getCourses');
         Route::post('register_courses/update', 'StudentRegisterController@registerCourses');
-        
+
         //
         Route::get('get_student_academic', 'AcademicController@getStudentInfo');
-        
+
         Route::get('result/get', 'StudentResultController@get');
         Route::post('result/update', 'StudentResultController@update');
-        
+
         // reports
         Route::get('report/get-result', 'ReportController@getResult');
         Route::get('report/get-student-result', 'ReportController@getStudentResult');
@@ -75,7 +76,7 @@ Route::group(['middleware' => 'api_auth'], function () {
         // result transfer
         Route::get('result-transfer/get', 'ResultTranferController@get');
         Route::post('result-transfer/start', 'ResultTranferController@start');
-        
+
         // student Groups
         Route::get('student-groups', 'StudentGroupController@index');
         Route::post('student-groups/store', 'StudentGroupController@store');
@@ -92,21 +93,19 @@ Route::group(['middleware' => 'api_auth'], function () {
 
         // course schedule update
         Route::post('course-update-exam-schedule', 'CourseController@updateExamSchedule');
-        
-        
-        
-        
-        
+
+
+        // get top 10 student gpa
+        Route::get('/report25', 'AcademicController@getTopGpaStudents');
+
+
+
         ///////////////////////////////// Sync Apis ///////////////////////////////////////
         Route::get('sync/courses', 'CourseController@syncCourses');
         Route::get('sync/student-register', 'StudentRegisterController@syncStudentRegister');
         Route::get('sync/student-result', 'StudentResultController@syncStudentResult');
         Route::get('sync/student-CGPA', 'StudentResultController@syncStudentCGPA');
         Route::get('sync/doctors', 'DoctorController@getSyncDoctor');
-
-        
-        
-
     });
-});
 
+});

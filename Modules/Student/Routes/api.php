@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware' => 'api_auth'], function () {
-    Route::prefix('')->group(function() {
+    Route::prefix('')->group(function () {
 
         // servicecs routes
         Route::get('students', 'StudentController@index');
@@ -24,17 +24,17 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::post('students/delete/{resourcc}', 'StudentController@destroy');
 
         Route::post('students/enroll/{id}', 'StudentController@saveToStudents');
-        
-           //theater
+
+        //theater
         Route::post('theaters/store', 'StudentController@storeTheater');
         Route::post('theaters/edit', 'StudentController@editTheater');
         Route::post('theaters/delete', 'StudentController@deleteTheater');
-      
+
         //commission
         Route::post('commissions/store', 'StudentController@storeCommission');
         Route::post('commissions/edit', 'StudentController@editCommission');
         Route::post('commissions/delete', 'StudentController@deleteCommission');
-        
+
         //students distributions
         Route::post('student_distributions/store', 'StudentController@storeStudentDistributions');
         Route::post('student_distributions_on_private/store', 'StudentController@storeStudentDistributionsOnPrivate');
@@ -49,10 +49,10 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::post('students/get_students_setnumbers', 'StudentController@getStudentsSetnumbers');
         Route::post('students/store_student_set_number', 'StudentController@storeStudentSetNumber');
         Route::post('students/set_numbers_null', 'StudentController@setNumbersNull');
-        
+
         // case constraints 
         Route::post('students/case_constraints/store', 'StudentController@storeCaseConstraints');
-        
+
         // student excuses routes
         Route::get('student/student_excuses', 'StudentExcusesController@index');
         Route::post('student/student_excuses/store', 'StudentExcusesController@store');
@@ -60,7 +60,7 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::post('student/student_excuses/delete/{student_excuse}', 'StudentExcusesController@destroy');
 
 
-        
+
 
 
         Route::get('affair/report1', 'ReportController@report1');
@@ -84,7 +84,9 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::get('affair/report22', 'ReportController@report22');
         Route::get('affair/report23', 'ReportController@report23');
         Route::get('affair/report24', 'ReportController@report24');
-        Route::get('affair/report25', 'ReportController@report25');
+
+        // this route was moved to the academic module
+        // Route::get('affair/report25', 'ReportController@report25');
         Route::get('affair/report26', 'ReportController@report26');
         Route::get('affair/report27', 'ReportController@report27');
 
@@ -93,18 +95,10 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::get('affair/get-result-statistics', 'ReportController@getResultStatistics');
         Route::get('affair/get-courses-statistics', 'ReportController@getCoursesStatistics');
         Route::get('affair/get-result-absence', 'ReportController@getResultAbsence');
-        
-        
-        
+
+
+
         ///////////////////////////////////  Sync Apis  //////////////////////////////////
         Route::get('sync/students', 'StudentController@syncStudents');
-        
-        
-        
-        
-        
-        
-
-
     });
 });

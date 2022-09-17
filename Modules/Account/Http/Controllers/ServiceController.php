@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Account\Entities\Payment;
 use Modules\Account\Entities\Service;
 
 class ServiceController extends Controller
 {
 
-    public function __construct() {
+    public function __construct()
+    {
         // permission
     }
 
@@ -19,7 +21,8 @@ class ServiceController extends Controller
      * return all data in json format
      * @return json
      */
-    public function index() {
+    public function index()
+    {
         //->where('is_academic_year_expense', '!=', '1')
         $resources = Service::with(['level', 'division', 'store'])->latest()->get();
         return $resources;
@@ -30,7 +33,8 @@ class ServiceController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $resource = null;
         try {
 
@@ -67,7 +71,8 @@ class ServiceController extends Controller
      * @param int $id
      * @return Response
      */
-    public function update(Request $request, Service $service) {
+    public function update(Request $request, Service $service)
+    {
         try {
             $service->update($request->all());
             watch(__('edit service ') . $service->name, "fa fa-trophy");
@@ -83,7 +88,8 @@ class ServiceController extends Controller
      * @param int $id
      * @return Response
      */
-    public function destroy(Service $service) {
+    public function destroy(Service $service)
+    {
         try {
             watch(__('remove service ') . $service->name, "fa fa-trophy");
             $service->delete();
@@ -91,5 +97,43 @@ class ServiceController extends Controller
             return responseJson(0, $th->getMessage());
         }
         return responseJson(1, __('done'));
+    }
+    public function getStudentServicesPayments(Request $request)
+    {
+
+        $validator = validator($request->all(), [
+            'year_id' => 'required',
+            'level_id' => 'required',
+            'service_id' => ''
+        ], [
+            "year_id.required" => __('fill all required data'),
+            "level_id.required" => __('fill all required data'),
+        ]);
+
+        if ($validator->fails()) {
+            return responseJson(0, $validator->errors()->first());
+        }
+        $payments = Payment::
+            // join('students' , 'students.id' , 'account_payments.student_id')
+            whereHas('student', function ($query) use ($request) {
+                $query->where('level_id', $request->level_id);
+            })
+            ->where([
+                ['model_type', 'service']
+            ])
+            ->get();
+        $payments = array($payments);
+
+        $payments_data =  array_filter($payments, function ($p) use ($request) {
+            if (!isset($p[0])) return false;
+            $payment = $p[0];
+            if (isset($payment->model_object)) {
+                return
+                    $payment->academic_year_id == $request->year_id &&
+                    ($request->service_id ? $payment->model_object->id == $request->service_id : true);
+            }
+        });
+        // return $payments_data;
+        return view('account::student_services_payments.index', compact('payments_data'));
     }
 }

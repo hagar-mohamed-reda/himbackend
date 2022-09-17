@@ -11,13 +11,15 @@
 |
 */
 
-Route::prefix('academic')->group(function() {
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('academic')->group(function () {
     Route::get('/', 'AcademicController@index');
 });
 
 Route::group(['middleware' => 'api_auth'], function () {
-    Route::prefix('academic')->group(function() {
-        
+    Route::prefix('academic')->group(function () {
+
         Route::get('/register-course-print/{student}', 'AcademicController@getRegisterCoursePrintPreview');
         Route::get('/register-course-user-print/{student}', 'AcademicController@getRegisterCourseUserPrintPreview');
         Route::get('/register-course-user-print2/{student}', 'AcademicController@getRegisterCourseUserPrintPreview2');
@@ -26,7 +28,7 @@ Route::group(['middleware' => 'api_auth'], function () {
 });
 
 
-Route::get("/test_transfer", function(){
+Route::get("/test_transfer", function () {
     $student = Modules\Academic\Entities\StudentResultTransfer::find(14);
     $student->checkIfCanTransferToAnotherLevel();
     echo  $student->getActualRegisterCourses()->count();
@@ -35,6 +37,6 @@ Route::get("/test_transfer", function(){
     echo "<br>";
     echo  $student->getStudentBalance()->getCurrentBalanceTotal();
     echo "<br>";
-    
+
     echo $student->failedTransferReason;
 });

@@ -572,7 +572,7 @@ class ReportController extends Controller {
     
     public function getResultStatistics(Request $request)
     {
-        
+      
         $academic_year_id =request()->year_id;
         $term_id = request()->term_id;
 
@@ -590,6 +590,7 @@ class ReportController extends Controller {
         $courses = Course::where('level_id',request()->level_id)
                             ->where('term',request()->term_id)->where('division_id',request()->division_id)
                             ->get();
+        // return $courses;
         return view('report.courses_statistics',compact('courses','academic_year_id','term_id'));
     }
     

@@ -34,9 +34,9 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($courses as $course)
+            @foreach($courses as $index => $course)
 
-            <div style="display:none"> {{ $registerStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->count() }}  </div>
+            {{-- <div style="display:none"> {{ $registerStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->count() }}  </div>
             <div style="display:none"> {{ $presentStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','!=','AB')->count() }}  </div>
             <div style="display:none"> {{ $absenceStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','=','AB')->count() }}  </div>
             <div style="display:none"> {{ $successStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa', '>', 1)->count() }}  </div>
@@ -46,12 +46,11 @@
             <div style="display:none"> {{ $percentage = $successStudents / $presentStudents * 100 }}  </div>
             @else
             <div style="display:none"> {{ $percentage = 0 }} </div>
-            @endif
-
+            @endif --}}
             <tr>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;">{{ $loop->iteration  }}</td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;">{{ $index }}</td>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $course->name}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $registerStudents}}</td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $course->course->count()}}</td>
             </tr>
             
             @endforeach

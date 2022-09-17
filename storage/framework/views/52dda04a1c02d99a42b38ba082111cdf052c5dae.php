@@ -51,10 +51,7 @@
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($resource->student->name); ?></td>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($resource->student->code); ?></td>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($resource->reason); ?></td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><a href="<?php echo e(url('upload/',$resource->attachment)); ?>">Attachment</a></td>
-
-             
-
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><a href="<?php echo e(url('uploads/excuses/',$resource->attachment)); ?>">Attachment</a></td>
             </tr>
           
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

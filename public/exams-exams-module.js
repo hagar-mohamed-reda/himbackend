@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"add_seating_numbers\" class=\"container\">\n  <div class=\"row\">\n    <div id=\"btn\" class=\"col-sm-12\">\n        <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" style='margin-top: 23px !important;margin-right: 2px;'>وضع أرقام الجلوس</button>\n    </div>\n</div>\n<div class=\"col-lg-3 col-md-3\">\n    <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">ضع البيانات</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n            <span aria-hidden=\"true\">&times;</span>\n          </button>\n                </div>\n                <div class=\"modal-body\">\n                    <form>\n                        <div class=\"form-group\">\n                            <label for=\"recipient-name\" class=\"col-form-label\">المستوي:</label>\n                            <select class=\"form-control\" name=\"level_id\" [(ngModel)]=\"level_id\" required>\n                <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{ item.name }}</option>\n              </select>\n                        </div>\n                        <div class=\"form-group\">\n                            <label>{{ \"division\" | trans }}</label>\n                            <select class=\"form-control\" name=\"division_id\" [(ngModel)]=\"division_id\">\n              <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\n            </select>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"message-text\" class=\"col-form-label\">رقم البداية:</label>\n                            <input class=\"form-control\" id=\"message-text\" type=\"number\" name='start_number' [(ngModel)]=\"start_number\" required>\n                        </div>\n                    </form>\n                </div>\n                <div class=\"modal-footer\">\n                    <button id='closeNumber' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\n                    <button id='beforeLoading' (click)='sendNumber()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\n                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\n            <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\n            Loading...\n          </button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"col-lg-3 col-md-3\">\n    <span class=\"w3-xlarge w3-text-green\" id=\"count\">\n\n  </span>\n</div>\n\n<div class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\n\n\n</div>\n</div>\n"
+module.exports = "<div permission=\"add_seating_numbers\" class=\"container\">\r\n  <div class=\"row\">\r\n    <div id=\"btn\" class=\"col-sm-12\">\r\n        <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" style='margin-top: 23px !important;margin-right: 2px;'>وضع أرقام الجلوس</button>\r\n    </div>\r\n</div>\r\n<div class=\"col-lg-3 col-md-3\">\r\n    <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n        <div class=\"modal-dialog\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">ضع البيانات</h5>\r\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n          </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <form>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"recipient-name\" class=\"col-form-label\">المستوي:</label>\r\n                            <select class=\"form-control\" name=\"level_id\" [(ngModel)]=\"level_id\" required>\r\n                <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n              </select>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label>{{ \"division\" | trans }}</label>\r\n                            <select class=\"form-control\" name=\"division_id\" [(ngModel)]=\"division_id\">\r\n              <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n            </select>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"message-text\" class=\"col-form-label\">رقم البداية:</label>\r\n                            <input class=\"form-control\" id=\"message-text\" type=\"number\" name='start_number' [(ngModel)]=\"start_number\" required>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n                <div class=\"modal-footer\">\r\n                    <button id='closeNumber' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\r\n                    <button id='beforeLoading' (click)='sendNumber()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\r\n                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\r\n            <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\r\n            Loading...\r\n          </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"col-lg-3 col-md-3\">\r\n    <span class=\"w3-xlarge w3-text-green\" id=\"count\">\r\n\r\n  </span>\r\n</div>\r\n\r\n<div class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\r\n\r\n\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<div permission=\"add_seating_numbers\" class=\"container\">\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n#btn {\n  display: flex;\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9hZGQtc2VhdGluZy1udW1iZXJzL2FkZC1zZWF0aW5nLW51bWJlcnMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvYWRkLXNlYXRpbmctbnVtYmVycy9hZGQtc2VhdGluZy1udW1iZXJzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxlQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EscUNBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQ0NKOztBREVBO0VBQ0ksa0JBQUE7RUFDQSxlQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EscUNBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQ0NKOztBREVBO0VBQ0ksYUFBQTtBQ0NKOztBRENBO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FDRUoiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL2FkZC1zZWF0aW5nLW51bWJlcnMvYWRkLXNlYXRpbmctbnVtYmVycy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNhbGVydE51bWJlciB7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDEwJTtcbiAgICBsZWZ0OiAwcHg7XG4gICAgcmlnaHQ6IDBweDtcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICAgIG1hcmdpbi1yaWdodDogMzAlO1xuICAgIG1hcmdpbi1sZWZ0OiAzMCU7XG4gICAgZGlzcGxheTogbm9uZTtcbn1cblxuI2FsZXJ0TnVtYmVyU3VjY2VzcyB7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDEwJTtcbiAgICBsZWZ0OiAwcHg7XG4gICAgcmlnaHQ6IDBweDtcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICAgIG1hcmdpbi1yaWdodDogMzAlO1xuICAgIG1hcmdpbi1sZWZ0OiAzMCU7XG4gICAgZGlzcGxheTogbm9uZTtcbn1cblxuI2J1dHRvbkxvYWRpbmcge1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG4jYnRue1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59IiwiI2FsZXJ0TnVtYmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnV0dG9uTG9hZGluZyB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidG4ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn0iXX0= */"
+module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n#btn {\n  display: flex;\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9hZGQtc2VhdGluZy1udW1iZXJzL0c6XFxTcGhpbnhcXEhJTVxcaGltZnJvbnQyL3NyY1xcYXBwXFxleGFtc1xcY29tcG9uZW50c1xcYWRkLXNlYXRpbmctbnVtYmVyc1xcYWRkLXNlYXRpbmctbnVtYmVycy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9hZGQtc2VhdGluZy1udW1iZXJzL2FkZC1zZWF0aW5nLW51bWJlcnMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxxQ0FBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0FDQ0o7O0FERUE7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxxQ0FBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0FDQ0o7O0FERUE7RUFDSSxhQUFBO0FDQ0o7O0FEQ0E7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7QUNFSiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvYWRkLXNlYXRpbmctbnVtYmVycy9hZGQtc2VhdGluZy1udW1iZXJzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2FsZXJ0TnVtYmVyIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDogMTAlO1xyXG4gICAgbGVmdDogMHB4O1xyXG4gICAgcmlnaHQ6IDBweDtcclxuICAgIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAzMCU7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDogMTAlO1xyXG4gICAgbGVmdDogMHB4O1xyXG4gICAgcmlnaHQ6IDBweDtcclxuICAgIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAzMCU7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG4jYnV0dG9uTG9hZGluZyB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcbiNidG57XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn0iLCIjYWxlcnROdW1iZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMCU7XG4gIGxlZnQ6IDBweDtcbiAgcmlnaHQ6IDBweDtcbiAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMCU7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMCU7XG4gIGxlZnQ6IDBweDtcbiAgcmlnaHQ6IDBweDtcbiAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMCU7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2J0biB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -33,7 +33,7 @@ module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  t
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddSeatingNumbers", function() { return AddSeatingNumbers; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/account/services/level.service */ "./src/app/account/services/level.service.ts");
 /* harmony import */ var src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/adminision/services/application-setting.service */ "./src/app/adminision/services/application-setting.service.ts");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
@@ -44,8 +44,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let AddSeatingNumbers = class AddSeatingNumbers {
-    constructor(globalService, applicationSettingService) {
+var AddSeatingNumbers = /** @class */ (function () {
+    function AddSeatingNumbers(globalService, applicationSettingService) {
         this.globalService = globalService;
         this.applicationSettingService = applicationSettingService;
         this.filter = {};
@@ -56,19 +56,21 @@ let AddSeatingNumbers = class AddSeatingNumbers {
         this.academicYears = [];
         this.doc = document;
     }
-    calculateCount() {
+    AddSeatingNumbers.prototype.calculateCount = function () {
         this.$('#count').text(this.$('#reportContent tbody tr').length);
-    }
-    load() {
+    };
+    AddSeatingNumbers.prototype.load = function () {
         //if (!Helper.validator(this.filter, ['level_id', 'division_id', 'academic_year_id'])) {
         //  return Message.error(Helper.trans('please choose all filters'));
         //}
-        this.globalService.loadHtml("affair/report3", this.filter).subscribe((res) => {
+        var _this = this;
+        this.globalService.loadHtml("affair/report3", this.filter).subscribe(function (res) {
             $('#reportContent').html(res);
-            this.calculateCount();
+            _this.calculateCount();
         });
-    }
-    sendNumber() {
+    };
+    AddSeatingNumbers.prototype.sendNumber = function () {
+        var _this = this;
         $('#beforeLoading').hide();
         $('#buttonLoading').show();
         var objectSend = { level_id: this.level_id, start_number: this.start_number, division_id: this.division_id };
@@ -77,47 +79,48 @@ let AddSeatingNumbers = class AddSeatingNumbers {
             $('#alertNumber').slideDown(300);
             $('#beforeLoading').show();
             $('#buttonLoading').hide();
-            setTimeout(() => {
+            setTimeout(function () {
                 $('#alertNumber').slideUp(1000);
             }, 1000);
         }
         else {
-            this.applicationSettingService.makeNumber(objectSend).subscribe((res) => {
+            this.applicationSettingService.makeNumber(objectSend).subscribe(function (res) {
                 if (res == 1) {
                     $('#alertNumberSuccess').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumberSuccess').slideUp(1000);
                         $('#closeNumber').trigger('click');
-                        this.level_id = '';
-                        this.start_number = '';
-                        this.division_id = '';
+                        _this.level_id = '';
+                        _this.start_number = '';
+                        _this.division_id = '';
                     }, 1000);
                 }
                 else {
                     $('#alertNumber').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumber').slideUp(1000);
                     }, 1000);
                 }
             });
         }
-    }
-    ngOnInit() {
+    };
+    AddSeatingNumbers.prototype.ngOnInit = function () {
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_4__["Cache"].get(src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_2__["LevelService"].LEVEL_PREFIX);
-    }
-};
-AddSeatingNumbers = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-add-seating-numbers',
-        template: __webpack_require__(/*! ./add-seating-numbers.component.html */ "./src/app/exams/components/add-seating-numbers/add-seating-numbers.component.html"),
-        styles: [__webpack_require__(/*! ./add-seating-numbers.component.scss */ "./src/app/exams/components/add-seating-numbers/add-seating-numbers.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_5__["GlobalService"], src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationSettingService"]])
-], AddSeatingNumbers);
+    };
+    AddSeatingNumbers = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-seating-numbers',
+            template: __webpack_require__(/*! ./add-seating-numbers.component.html */ "./src/app/exams/components/add-seating-numbers/add-seating-numbers.component.html"),
+            styles: [__webpack_require__(/*! ./add-seating-numbers.component.scss */ "./src/app/exams/components/add-seating-numbers/add-seating-numbers.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_5__["GlobalService"], src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationSettingService"]])
+    ], AddSeatingNumbers);
+    return AddSeatingNumbers;
+}());
 
 
 
@@ -130,7 +133,7 @@ AddSeatingNumbers = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"commissions\" class=\"container\">\n    <div class=\"w3-block w3-row\">\n        <div class=\"w3-white material-shadow safe-box col-lg-12 col-md-12 col-sm-12\">\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n                اللجان\n            </div>\n            <div class=\"border-bottom-dashed\"></div>\n            <br>\n\n            <div class=\"row\">\n\n                <div class=\"col-lg-12\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\n                        <div permission=\"commission_add\" class=\"add-commission\">\n                            <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal1\" data-whatever=\"@getbootstrap\" style='margin-top: 23px !important;margin-right: 2px;'>اضافة\n                            لجنه</button>\n                        </div>\n                        <div class=\"custom-panel-body table-responsive w3-padding w3-center\" style=\"height: 400px;\">\n                            <table class=\" table-bordered\">\n                                <thead>\n                                    <th>#</th>\n                                    <th>أسم اللجنة</th>\n                                    <th>المستوي</th>\n                                    <th>التخصص</th>\n                                    <th>المدرج</th>\n                                    <th>الحد الأقصي للطلبة</th>\n                                    <th>نوع اللجنة</th>\n                                    <th>العمليات</th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let commission of prevCommissions index as i\">\n                                        <td>{{ i + 1 }}</td>\n                                        <td>\n                                            {{ commission.name }}\n                                        </td>\n                                        <td>\n                                            {{ commission.level.name }}\n                                        </td>\n                                        <td>\n                                            {{ commission.division.name }}\n                                        </td>\n                                        <td>\n                                            {{ commission.theater.name }}\n                                        </td>\n                                        <td>\n                                            {{ commission.max_num }}\n                                        </td>\n                                        <td>\n                                            {{ commission.commission_type.name }}\n                                        </td>\n                                        <td>\n                                            <button permission=\"commission_edit\" style=\"margin-left: 5px;\" class=\"btn btn-success\" [disabled]=\"isSubmitted\" (click)=\"setCurrent(commission)\" data-toggle=\"modal\" data-target=\"#exampleModal2\">\n                                            <i *ngIf=\"!isSubmitted\" data-whatever=\"@getbootstrap\" class=\"fa fa-pencil\"></i>\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\n                                        </button>\n                                            <button permission=\"commission_remove\" class=\"btn btn-danger\" [disabled]=\"isSubmitted\" (click)=\"destroyCommission(commission.id)\">\n                                            <i *ngIf=\"!isSubmitted\" class=\"fa fa-trash\"></i>\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\n                                        </button>\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n\n                        </div>\n                    </div>\n\n\n                </div>\n\n\n\n            </div>\n\n\n        </div>\n    </div>\n</div>\n<div class=\"\">\n\n    <div class=\"\">\n\n        <div class=\"custom-panel-body table-responsive w3-padding\">\n\n            <div class=\"row\">\n\n                <div class=\"col-lg-3 col-md-3\">\n\n                    <div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel1\" aria-hidden=\"true\">\n                        <div class=\"modal-dialog\">\n                            <div class=\"modal-content\">\n                                <div class=\"modal-header\">\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel1\">اضافة لجنه</h5>\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                                        <span aria-hidden=\"true\">&times;</span>\n                                    </button>\n                                </div>\n                                <div class=\"modal-body\">\n                                    <form>\n                                        <!-- <div class=\"form-group\">\n                                            <label for=\"message-text\" class=\"col-form-label\">أسم اللجنه:</label>\n                                            <input class=\"form-control\" id=\"message-text\" type=\"text\" name='commission'\n                                                [(ngModel)]=\"commission\" required>\n                                        </div> -->\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>{{ \"level\" | trans }}</label>\n                                                <select class=\"form-control\" name=\"filter.level_id\" [(ngModel)]=\"filter.level_id\">\n                                                  <option  value=\"\">المستوي</option>\n                                          <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                        </select>\n                                            </div>\n                                        </div>\n\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>{{ \"division\" | trans }}</label>\n                                                <select class=\"form-control\" name=\"filter.division_id\" [(ngModel)]=\"filter.division_id\">\n                                                  <option  value=\"\">{{ \"division\" | trans }}</option>\n                                          <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                                        </select>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>المدرج</label>\n                                                <select class=\"form-control\" name='filter.theater_id' [(ngModel)]=\"filter.theater_id\">\n                                                  <option  value=\"\">المدرج</option>\n                                        <option *ngFor=\"let item of prevTheaters\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                                      </select>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label for=\"message-text\" class=\"col-form-label\">عدد اللجان :</label>\n                                                <input class=\"form-control\" type=\"number\" name='filter.commission_number' [(ngModel)]=\"filter.commission_number\" required>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>نوع اللجنة</label>\n                                                <select class=\"form-control\" name='filter.commission_type_id' [(ngModel)]=\"filter.commission_type_id\">\n                                                <option  value=\"\">نوع اللجنة</option>\n                                      <option *ngFor=\"let item of commision_types\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                                    </select>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label for=\"message-text\" class=\"col-form-label\">الحد الأقصي في اللجنة :</label>\n                                                <input class=\"form-control\" type=\"number\" name='filter.max_num' [(ngModel)]=\"filter.max_num\" required>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label for=\"message-text\" class=\"col-form-label\">رقم البداية :</label>\n                                                <input class=\"form-control\" type=\"number\" name='filter.start_num' [(ngModel)]=\"filter.start_num\" required>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                                <div class=\"modal-footer\" style=\"border-top-color: unset !important;border-top: 0px !important;\">\n                                    <button id='closeNumber1' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\n                                    <button id='beforeLoading' (click)='createCommission()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\n                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\n                                            aria-hidden=\"true\"></span>\n                                        Loading...\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col-lg-3 col-md-3\">\n                    <div class=\"modal fade\" id=\"exampleModal2\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel2\" aria-hidden=\"true\">\n                        <div class=\"modal-dialog\">\n                            <div class=\"modal-content\">\n                                <div class=\"modal-header\">\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel2\">تعديل لجنه</h5>\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                                        <span aria-hidden=\"true\">&times;</span>\n                                    </button>\n                                </div>\n                                <div class=\"modal-body\">\n                                    <form>\n\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label for=\"message-text\" class=\"col-form-label\">أسم اللجنه:</label>\n                                                <input class=\"form-control\" type=\"text\" name='filterUpdate.name' [(ngModel)]=\"filterUpdate.name\" required>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>{{ \"level\" | trans }}</label>\n                                                <select class=\"form-control\" name=\"filterUpdate.level_id\" [(ngModel)]=\"filterUpdate.level_id\">\n                                              <option  value=\"\">المستوي</option>\n                                      <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                    </select>\n                                            </div>\n                                        </div>\n\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>{{ \"division\" | trans }}</label>\n                                                <select class=\"form-control\" name=\"filterUpdate.division_id\" [(ngModel)]=\"filterUpdate.division_id\">\n                                              <option  value=\"\">{{ \"division\" | trans }}</option>\n                                      <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                                    </select>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>المدرج</label>\n                                                <select class=\"form-control\" name='filterUpdate.theater_id' [(ngModel)]=\"filterUpdate.theater_id\">\n                                              <option  value=\"\">المدرج</option>\n                                    <option *ngFor=\"let item of prevTheaters\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                                  </select>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label for=\"message-text\" class=\"col-form-label\">الحد الأقصي في اللجنة :</label>\n                                                <input class=\"form-control\" type=\"number\" name='filterUpdate.max_num' [(ngModel)]=\"filterUpdate.max_num\" required>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-lg-12 col-md-12\">\n                                            <div class=\"form-group\">\n                                                <label>نوع اللجنة</label>\n                                                <select class=\"form-control\" name='filterUpdate.commission_type_id' [(ngModel)]=\"filterUpdate.commission_type_id\">\n                                                <option  value=\"\">نوع اللجنة</option>\n                                                <option *ngFor=\"let item of commision_types\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                                              </select>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                                <div class=\"modal-footer\">\n                                    <button id='closeNumber2' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\n                                    <button id='beforeLoading0' (click)='updateCommission(currentCommissionName, currentCommissionId)' type=\"button\" class=\"btn btn-primary\">تعديل</button>\n                                    <button id='buttonLoading0' class=\"btn btn-primary\" type=\"button\" disabled>\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\n                                            aria-hidden=\"true\"></span>\n                                        Loading...\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div permission=\"commissions\" class=\"container\">\r\n    <div class=\"w3-block w3-row\">\r\n        <div class=\"w3-white material-shadow safe-box col-lg-12 col-md-12 col-sm-12\">\r\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n                اللجان\r\n            </div>\r\n            <div class=\"border-bottom-dashed\"></div>\r\n            <br>\r\n\r\n            <div class=\"row\">\r\n\r\n                <div class=\"col-lg-12\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\r\n                        <div permission=\"commission_add\" class=\"add-commission\">\r\n                            <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal1\" data-whatever=\"@getbootstrap\" style='margin-top: 23px !important;margin-right: 2px;'>اضافة\r\n                            لجنه</button>\r\n                        </div>\r\n                        <div class=\"custom-panel-body table-responsive w3-padding w3-center\" style=\"height: 400px;\">\r\n                            <table class=\" table-bordered\">\r\n                                <thead>\r\n                                    <th>#</th>\r\n                                    <th>أسم اللجنة</th>\r\n                                    <th>المستوي</th>\r\n                                    <th>التخصص</th>\r\n                                    <th>المدرج</th>\r\n                                    <th>الحد الأقصي للطلبة</th>\r\n                                    <th>نوع اللجنة</th>\r\n                                    <th>العمليات</th>\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let commission of prevCommissions index as i\">\r\n                                        <td>{{ i + 1 }}</td>\r\n                                        <td>\r\n                                            {{ commission.name }}\r\n                                        </td>\r\n                                        <td>\r\n                                            {{ commission.level.name }}\r\n                                        </td>\r\n                                        <td>\r\n                                            {{ commission.division.name }}\r\n                                        </td>\r\n                                        <td>\r\n                                            {{ commission.theater.name }}\r\n                                        </td>\r\n                                        <td>\r\n                                            {{ commission.max_num }}\r\n                                        </td>\r\n                                        <td>\r\n                                            {{ commission.commission_type.name }}\r\n                                        </td>\r\n                                        <td>\r\n                                            <button permission=\"commission_edit\" style=\"margin-left: 5px;\" class=\"btn btn-success\" [disabled]=\"isSubmitted\" (click)=\"setCurrent(commission)\" data-toggle=\"modal\" data-target=\"#exampleModal2\">\r\n                                            <i *ngIf=\"!isSubmitted\" data-whatever=\"@getbootstrap\" class=\"fa fa-pencil\"></i>\r\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\r\n                                        </button>\r\n                                            <button permission=\"commission_remove\" class=\"btn btn-danger\" [disabled]=\"isSubmitted\" (click)=\"destroyCommission(commission.id)\">\r\n                                            <i *ngIf=\"!isSubmitted\" class=\"fa fa-trash\"></i>\r\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\r\n                                        </button>\r\n                                        </td>\r\n                                    </tr>\r\n                                </tbody>\r\n                            </table>\r\n\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"\">\r\n\r\n    <div class=\"\">\r\n\r\n        <div class=\"custom-panel-body table-responsive w3-padding\">\r\n\r\n            <div class=\"row\">\r\n\r\n                <div class=\"col-lg-3 col-md-3\">\r\n\r\n                    <div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel1\" aria-hidden=\"true\">\r\n                        <div class=\"modal-dialog\">\r\n                            <div class=\"modal-content\">\r\n                                <div class=\"modal-header\">\r\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel1\">اضافة لجنه</h5>\r\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                                        <span aria-hidden=\"true\">&times;</span>\r\n                                    </button>\r\n                                </div>\r\n                                <div class=\"modal-body\">\r\n                                    <form>\r\n                                        <!-- <div class=\"form-group\">\r\n                                            <label for=\"message-text\" class=\"col-form-label\">أسم اللجنه:</label>\r\n                                            <input class=\"form-control\" id=\"message-text\" type=\"text\" name='commission'\r\n                                                [(ngModel)]=\"commission\" required>\r\n                                        </div> -->\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>{{ \"level\" | trans }}</label>\r\n                                                <select class=\"form-control\" name=\"filter.level_id\" [(ngModel)]=\"filter.level_id\">\r\n                                                  <option  value=\"\">المستوي</option>\r\n                                          <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                        </select>\r\n                                            </div>\r\n                                        </div>\r\n\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>{{ \"division\" | trans }}</label>\r\n                                                <select class=\"form-control\" name=\"filter.division_id\" [(ngModel)]=\"filter.division_id\">\r\n                                                  <option  value=\"\">{{ \"division\" | trans }}</option>\r\n                                          <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                        </select>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>المدرج</label>\r\n                                                <select class=\"form-control\" name='filter.theater_id' [(ngModel)]=\"filter.theater_id\">\r\n                                                  <option  value=\"\">المدرج</option>\r\n                                        <option *ngFor=\"let item of prevTheaters\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                      </select>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"message-text\" class=\"col-form-label\">عدد اللجان :</label>\r\n                                                <input class=\"form-control\" type=\"number\" name='filter.commission_number' [(ngModel)]=\"filter.commission_number\" required>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>نوع اللجنة</label>\r\n                                                <select class=\"form-control\" name='filter.commission_type_id' [(ngModel)]=\"filter.commission_type_id\">\r\n                                                <option  value=\"\">نوع اللجنة</option>\r\n                                      <option *ngFor=\"let item of commision_types\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                    </select>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"message-text\" class=\"col-form-label\">الحد الأقصي في اللجنة :</label>\r\n                                                <input class=\"form-control\" type=\"number\" name='filter.max_num' [(ngModel)]=\"filter.max_num\" required>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"message-text\" class=\"col-form-label\">رقم البداية :</label>\r\n                                                <input class=\"form-control\" type=\"number\" name='filter.start_num' [(ngModel)]=\"filter.start_num\" required>\r\n                                            </div>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                                <div class=\"modal-footer\" style=\"border-top-color: unset !important;border-top: 0px !important;\">\r\n                                    <button id='closeNumber1' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\r\n                                    <button id='beforeLoading' (click)='createCommission()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\r\n                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\r\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\r\n                                            aria-hidden=\"true\"></span>\r\n                                        Loading...\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-md-3\">\r\n                    <div class=\"modal fade\" id=\"exampleModal2\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel2\" aria-hidden=\"true\">\r\n                        <div class=\"modal-dialog\">\r\n                            <div class=\"modal-content\">\r\n                                <div class=\"modal-header\">\r\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel2\">تعديل لجنه</h5>\r\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                                        <span aria-hidden=\"true\">&times;</span>\r\n                                    </button>\r\n                                </div>\r\n                                <div class=\"modal-body\">\r\n                                    <form>\r\n\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"message-text\" class=\"col-form-label\">أسم اللجنه:</label>\r\n                                                <input class=\"form-control\" type=\"text\" name='filterUpdate.name' [(ngModel)]=\"filterUpdate.name\" required>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>{{ \"level\" | trans }}</label>\r\n                                                <select class=\"form-control\" name=\"filterUpdate.level_id\" [(ngModel)]=\"filterUpdate.level_id\">\r\n                                              <option  value=\"\">المستوي</option>\r\n                                      <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                    </select>\r\n                                            </div>\r\n                                        </div>\r\n\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>{{ \"division\" | trans }}</label>\r\n                                                <select class=\"form-control\" name=\"filterUpdate.division_id\" [(ngModel)]=\"filterUpdate.division_id\">\r\n                                              <option  value=\"\">{{ \"division\" | trans }}</option>\r\n                                      <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                    </select>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>المدرج</label>\r\n                                                <select class=\"form-control\" name='filterUpdate.theater_id' [(ngModel)]=\"filterUpdate.theater_id\">\r\n                                              <option  value=\"\">المدرج</option>\r\n                                    <option *ngFor=\"let item of prevTheaters\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                  </select>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"message-text\" class=\"col-form-label\">الحد الأقصي في اللجنة :</label>\r\n                                                <input class=\"form-control\" type=\"number\" name='filterUpdate.max_num' [(ngModel)]=\"filterUpdate.max_num\" required>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12 col-md-12\">\r\n                                            <div class=\"form-group\">\r\n                                                <label>نوع اللجنة</label>\r\n                                                <select class=\"form-control\" name='filterUpdate.commission_type_id' [(ngModel)]=\"filterUpdate.commission_type_id\">\r\n                                                <option  value=\"\">نوع اللجنة</option>\r\n                                                <option *ngFor=\"let item of commision_types\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                              </select>\r\n                                            </div>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                                <div class=\"modal-footer\">\r\n                                    <button id='closeNumber2' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\r\n                                    <button id='beforeLoading0' (click)='updateCommission(currentCommissionName, currentCommissionId)' type=\"button\" class=\"btn btn-primary\">تعديل</button>\r\n                                    <button id='buttonLoading0' class=\"btn btn-primary\" type=\"button\" disabled>\r\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\r\n                                            aria-hidden=\"true\"></span>\r\n                                        Loading...\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -141,7 +144,7 @@ module.exports = "<div permission=\"commissions\" class=\"container\">\n    <div
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n#buttonLoading0 {\n  display: none;\n}\n\n.modal {\n  overflow: auto !important;\n}\n\n/*\n    custom button style\n  */\n\nselect,\ninput[type=file] {\n  padding: 0px !important;\n}\n\n.filter-top {\n  height: 200px !important;\n  overflow: auto;\n}\n\n.filter-side {\n  height: 400px !important;\n  overflow: auto;\n}\n\n.w3-ul li {\n  padding: 2px !important;\n  font-size: 12px !important;\n}\n\n.number_input {\n  width: 45px;\n}\n\n.input-setting {\n  border-radius: 5em;\n  border: 1px solid lightgray;\n  padding-right: 10px;\n}\n\n.table-right tr,\n.table-right td,\n.table-right th {\n  text-align: right;\n}\n\n#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#btn {\n  display: flex;\n  justify-content: center;\n}\n\n.add-commission {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n}\n\ntd,\nth,\ntr {\n  vertical-align: middle;\n  text-align: center;\n  border: 1px solid black !important;\n  padding: 2px;\n}\n\nth {\n  background-color: grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9jb21taXNzaW9ucy9jb21taXNzaW9ucy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9jb21taXNzaW9ucy9jb21taXNzaW9ucy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGFBQUE7QUNDSjs7QURFQTtFQUNJLGFBQUE7QUNDSjs7QURFQTtFQUNJLHlCQUFBO0FDQ0o7O0FER0E7O0dBQUE7O0FBSUE7O0VBRUksdUJBQUE7QUNESjs7QURJQTtFQUNJLHdCQUFBO0VBQ0EsY0FBQTtBQ0RKOztBRElBO0VBQ0ksd0JBQUE7RUFDQSxjQUFBO0FDREo7O0FESUE7RUFDSSx1QkFBQTtFQUNBLDBCQUFBO0FDREo7O0FESUE7RUFDSSxXQUFBO0FDREo7O0FESUE7RUFDSSxrQkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUJBQUE7QUNESjs7QURJQTs7O0VBR0ksaUJBQUE7QUNESjs7QURJQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNESjs7QURJQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNESjs7QURJQTtFQUNJLGFBQUE7RUFDQSx1QkFBQTtBQ0RKOztBRElBO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7QUNESjs7QURJQTs7O0VBR0ksc0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtDQUFBO0VBQ0EsWUFBQTtBQ0RKOztBRElBO0VBQ0ksc0JBQUE7QUNESiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvY29tbWlzc2lvbnMvY29tbWlzc2lvbnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYWxlcnROdW1iZXIge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAxMCU7XG4gICAgbGVmdDogMHB4O1xuICAgIHJpZ2h0OiAwcHg7XG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAxMCU7XG4gICAgbGVmdDogMHB4O1xuICAgIHJpZ2h0OiAwcHg7XG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nIHtcbiAgICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnV0dG9uTG9hZGluZzAge1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5tb2RhbCB7XG4gICAgb3ZlcmZsb3c6IGF1dG8haW1wb3J0YW50O1xufVxuXG5cbi8qXG4gICAgY3VzdG9tIGJ1dHRvbiBzdHlsZVxuICAqL1xuXG5zZWxlY3QsXG5pbnB1dFt0eXBlPWZpbGVdIHtcbiAgICBwYWRkaW5nOiAwcHghaW1wb3J0YW50O1xufVxuXG4uZmlsdGVyLXRvcCB7XG4gICAgaGVpZ2h0OiAyMDBweCFpbXBvcnRhbnQ7XG4gICAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi5maWx0ZXItc2lkZSB7XG4gICAgaGVpZ2h0OiA0MDBweCFpbXBvcnRhbnQ7XG4gICAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi53My11bCBsaSB7XG4gICAgcGFkZGluZzogMnB4IWltcG9ydGFudDtcbiAgICBmb250LXNpemU6IDEycHghaW1wb3J0YW50O1xufVxuXG4ubnVtYmVyX2lucHV0IHtcbiAgICB3aWR0aDogNDVweFxufVxuXG4uaW5wdXQtc2V0dGluZyB7XG4gICAgYm9yZGVyLXJhZGl1czogNWVtO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIGxpZ2h0Z3JheTtcbiAgICBwYWRkaW5nLXJpZ2h0OiAxMHB4XG59XG5cbi50YWJsZS1yaWdodCB0cixcbi50YWJsZS1yaWdodCB0ZCxcbi50YWJsZS1yaWdodCB0aCB7XG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XG59XG5cbiNhbGVydE51bWJlciB7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDEwJTtcbiAgICBsZWZ0OiAwcHg7XG4gICAgcmlnaHQ6IDBweDtcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICAgIG1hcmdpbi1yaWdodDogMzAlO1xuICAgIG1hcmdpbi1sZWZ0OiAzMCU7XG4gICAgZGlzcGxheTogbm9uZTtcbn1cblxuI2FsZXJ0TnVtYmVyU3VjY2VzcyB7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDEwJTtcbiAgICBsZWZ0OiAwcHg7XG4gICAgcmlnaHQ6IDBweDtcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICAgIG1hcmdpbi1yaWdodDogMzAlO1xuICAgIG1hcmdpbi1sZWZ0OiAzMCU7XG4gICAgZGlzcGxheTogbm9uZTtcbn1cblxuI2J0biB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn1cblxuLmFkZC1jb21taXNzaW9uIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxudGQsXG50aCxcbnRyIHtcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjayAhaW1wb3J0YW50O1xuICAgIHBhZGRpbmc6IDJweDtcbn1cblxudGgge1xuICAgIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XG59IiwiI2FsZXJ0TnVtYmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnV0dG9uTG9hZGluZyB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nMCB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5tb2RhbCB7XG4gIG92ZXJmbG93OiBhdXRvICFpbXBvcnRhbnQ7XG59XG5cbi8qXG4gICAgY3VzdG9tIGJ1dHRvbiBzdHlsZVxuICAqL1xuc2VsZWN0LFxuaW5wdXRbdHlwZT1maWxlXSB7XG4gIHBhZGRpbmc6IDBweCAhaW1wb3J0YW50O1xufVxuXG4uZmlsdGVyLXRvcCB7XG4gIGhlaWdodDogMjAwcHggIWltcG9ydGFudDtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi5maWx0ZXItc2lkZSB7XG4gIGhlaWdodDogNDAwcHggIWltcG9ydGFudDtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi53My11bCBsaSB7XG4gIHBhZGRpbmc6IDJweCAhaW1wb3J0YW50O1xuICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcbn1cblxuLm51bWJlcl9pbnB1dCB7XG4gIHdpZHRoOiA0NXB4O1xufVxuXG4uaW5wdXQtc2V0dGluZyB7XG4gIGJvcmRlci1yYWRpdXM6IDVlbTtcbiAgYm9yZGVyOiAxcHggc29saWQgbGlnaHRncmF5O1xuICBwYWRkaW5nLXJpZ2h0OiAxMHB4O1xufVxuXG4udGFibGUtcmlnaHQgdHIsXG4udGFibGUtcmlnaHQgdGQsXG4udGFibGUtcmlnaHQgdGgge1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cblxuI2FsZXJ0TnVtYmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnRuIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG5cbi5hZGQtY29tbWlzc2lvbiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbnRkLFxudGgsXG50ciB7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2sgIWltcG9ydGFudDtcbiAgcGFkZGluZzogMnB4O1xufVxuXG50aCB7XG4gIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XG59Il19 */"
+module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n#buttonLoading0 {\n  display: none;\n}\n\n.modal {\n  overflow: auto !important;\n}\n\n/*\n    custom button style\n  */\n\nselect,\ninput[type=file] {\n  padding: 0px !important;\n}\n\n.filter-top {\n  height: 200px !important;\n  overflow: auto;\n}\n\n.filter-side {\n  height: 400px !important;\n  overflow: auto;\n}\n\n.w3-ul li {\n  padding: 2px !important;\n  font-size: 12px !important;\n}\n\n.number_input {\n  width: 45px;\n}\n\n.input-setting {\n  border-radius: 5em;\n  border: 1px solid lightgray;\n  padding-right: 10px;\n}\n\n.table-right tr,\n.table-right td,\n.table-right th {\n  text-align: right;\n}\n\n#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#btn {\n  display: flex;\n  justify-content: center;\n}\n\n.add-commission {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n}\n\ntd,\nth,\ntr {\n  vertical-align: middle;\n  text-align: center;\n  border: 1px solid black !important;\n  padding: 2px;\n}\n\nth {\n  background-color: grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9jb21taXNzaW9ucy9HOlxcU3BoaW54XFxISU1cXGhpbWZyb250Mi9zcmNcXGFwcFxcZXhhbXNcXGNvbXBvbmVudHNcXGNvbW1pc3Npb25zXFxjb21taXNzaW9ucy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9jb21taXNzaW9ucy9jb21taXNzaW9ucy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGFBQUE7QUNDSjs7QURFQTtFQUNJLGFBQUE7QUNDSjs7QURFQTtFQUNJLHlCQUFBO0FDQ0o7O0FER0E7O0dBQUE7O0FBSUE7O0VBRUksdUJBQUE7QUNESjs7QURJQTtFQUNJLHdCQUFBO0VBQ0EsY0FBQTtBQ0RKOztBRElBO0VBQ0ksd0JBQUE7RUFDQSxjQUFBO0FDREo7O0FESUE7RUFDSSx1QkFBQTtFQUNBLDBCQUFBO0FDREo7O0FESUE7RUFDSSxXQUFBO0FDREo7O0FESUE7RUFDSSxrQkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUJBQUE7QUNESjs7QURJQTs7O0VBR0ksaUJBQUE7QUNESjs7QURJQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNESjs7QURJQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNESjs7QURJQTtFQUNJLGFBQUE7RUFDQSx1QkFBQTtBQ0RKOztBRElBO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7QUNESjs7QURJQTs7O0VBR0ksc0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtDQUFBO0VBQ0EsWUFBQTtBQ0RKOztBRElBO0VBQ0ksc0JBQUE7QUNESiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvY29tbWlzc2lvbnMvY29tbWlzc2lvbnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYWxlcnROdW1iZXIge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAxMCU7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgICByaWdodDogMHB4O1xyXG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1yaWdodDogMzAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAxMCU7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgICByaWdodDogMHB4O1xyXG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1yaWdodDogMzAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNidXR0b25Mb2FkaW5nIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNidXR0b25Mb2FkaW5nMCB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG4ubW9kYWwge1xyXG4gICAgb3ZlcmZsb3c6IGF1dG8haW1wb3J0YW50O1xyXG59XHJcblxyXG5cclxuLypcclxuICAgIGN1c3RvbSBidXR0b24gc3R5bGVcclxuICAqL1xyXG5cclxuc2VsZWN0LFxyXG5pbnB1dFt0eXBlPWZpbGVdIHtcclxuICAgIHBhZGRpbmc6IDBweCFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5maWx0ZXItdG9wIHtcclxuICAgIGhlaWdodDogMjAwcHghaW1wb3J0YW50O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbn1cclxuXHJcbi5maWx0ZXItc2lkZSB7XHJcbiAgICBoZWlnaHQ6IDQwMHB4IWltcG9ydGFudDtcclxuICAgIG92ZXJmbG93OiBhdXRvO1xyXG59XHJcblxyXG4udzMtdWwgbGkge1xyXG4gICAgcGFkZGluZzogMnB4IWltcG9ydGFudDtcclxuICAgIGZvbnQtc2l6ZTogMTJweCFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5udW1iZXJfaW5wdXQge1xyXG4gICAgd2lkdGg6IDQ1cHhcclxufVxyXG5cclxuLmlucHV0LXNldHRpbmcge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNWVtO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgbGlnaHRncmF5O1xyXG4gICAgcGFkZGluZy1yaWdodDogMTBweFxyXG59XHJcblxyXG4udGFibGUtcmlnaHQgdHIsXHJcbi50YWJsZS1yaWdodCB0ZCxcclxuLnRhYmxlLXJpZ2h0IHRoIHtcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG59XHJcblxyXG4jYWxlcnROdW1iZXIge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAxMCU7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgICByaWdodDogMHB4O1xyXG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1yaWdodDogMzAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAxMCU7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgICByaWdodDogMHB4O1xyXG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1yaWdodDogMzAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNidG4ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcblxyXG4uYWRkLWNvbW1pc3Npb24ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG50ZCxcclxudGgsXHJcbnRyIHtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjayAhaW1wb3J0YW50O1xyXG4gICAgcGFkZGluZzogMnB4O1xyXG59XHJcblxyXG50aCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5O1xyXG59IiwiI2FsZXJ0TnVtYmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnV0dG9uTG9hZGluZyB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nMCB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5tb2RhbCB7XG4gIG92ZXJmbG93OiBhdXRvICFpbXBvcnRhbnQ7XG59XG5cbi8qXG4gICAgY3VzdG9tIGJ1dHRvbiBzdHlsZVxuICAqL1xuc2VsZWN0LFxuaW5wdXRbdHlwZT1maWxlXSB7XG4gIHBhZGRpbmc6IDBweCAhaW1wb3J0YW50O1xufVxuXG4uZmlsdGVyLXRvcCB7XG4gIGhlaWdodDogMjAwcHggIWltcG9ydGFudDtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi5maWx0ZXItc2lkZSB7XG4gIGhlaWdodDogNDAwcHggIWltcG9ydGFudDtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi53My11bCBsaSB7XG4gIHBhZGRpbmc6IDJweCAhaW1wb3J0YW50O1xuICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcbn1cblxuLm51bWJlcl9pbnB1dCB7XG4gIHdpZHRoOiA0NXB4O1xufVxuXG4uaW5wdXQtc2V0dGluZyB7XG4gIGJvcmRlci1yYWRpdXM6IDVlbTtcbiAgYm9yZGVyOiAxcHggc29saWQgbGlnaHRncmF5O1xuICBwYWRkaW5nLXJpZ2h0OiAxMHB4O1xufVxuXG4udGFibGUtcmlnaHQgdHIsXG4udGFibGUtcmlnaHQgdGQsXG4udGFibGUtcmlnaHQgdGgge1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cblxuI2FsZXJ0TnVtYmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnRuIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG5cbi5hZGQtY29tbWlzc2lvbiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbnRkLFxudGgsXG50ciB7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2sgIWltcG9ydGFudDtcbiAgcGFkZGluZzogMnB4O1xufVxuXG50aCB7XG4gIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XG59Il19 */"
 
 /***/ }),
 
@@ -156,7 +159,7 @@ module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  t
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommissionsComponent", function() { return CommissionsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
 /* harmony import */ var src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/helper */ "./src/app/shared/helper.ts");
 /* harmony import */ var src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/message */ "./src/app/shared/message.ts");
@@ -173,8 +176,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let CommissionsComponent = class CommissionsComponent {
-    constructor(globalService, applicationSettingService) {
+var CommissionsComponent = /** @class */ (function () {
+    function CommissionsComponent(globalService, applicationSettingService) {
+        var _this_1 = this;
         this.globalService = globalService;
         this.applicationSettingService = applicationSettingService;
         this.filter = {};
@@ -187,26 +191,27 @@ let CommissionsComponent = class CommissionsComponent {
         this.doc = document;
         this.applicationSettingService.queueRequests();
         var self = this;
-        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, () => {
+        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, function () {
         });
-        this.applicationSettingService.commision_types().subscribe((res) => {
-            this.commision_types = res;
+        this.applicationSettingService.commision_types().subscribe(function (res) {
+            _this_1.commision_types = res;
         });
     }
-    createCommission() {
+    CommissionsComponent.prototype.createCommission = function () {
+        var _this_1 = this;
         if (!src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].validator(this.filter, ['level_id', 'division_id', 'theater_id', 'max_num', 'commission_number', 'start_num', 'commission_type_id'])) {
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('please choose all filters'));
         }
         else {
             $('#beforeLoading').hide();
             $('#buttonLoading').show();
-            this.applicationSettingService.commissionsStore(this.filter).subscribe((res) => {
+            this.applicationSettingService.commissionsStore(this.filter).subscribe(function (res) {
                 if (res == 1) {
                     $('#alertNumberSuccess').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    this.applicationSettingService.commissions().subscribe((res) => {
-                        this.prevCommissions = res;
+                    _this_1.applicationSettingService.commissions().subscribe(function (res) {
+                        _this_1.prevCommissions = res;
                     });
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -217,21 +222,22 @@ let CommissionsComponent = class CommissionsComponent {
                 }
             });
         }
-    }
-    updateCommission() {
+    };
+    CommissionsComponent.prototype.updateCommission = function () {
+        var _this_1 = this;
         if (!src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].validator(this.filterUpdate, ['level_id', 'division_id', 'theater_id', 'max_num', 'name', 'commission_type_id'])) {
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('please choose all filters'));
         }
         else {
             $('#beforeLoading0').hide();
             $('#buttonLoading0').show();
-            this.applicationSettingService.commissionEdit(this.filterUpdate).subscribe((res) => {
+            this.applicationSettingService.commissionEdit(this.filterUpdate).subscribe(function (res) {
                 if (res == 1) {
                     $('#alertNumberSuccess').slideDown(300);
                     $('#beforeLoading0').show();
                     $('#buttonLoading0').hide();
-                    this.applicationSettingService.commissions().subscribe((res) => {
-                        this.prevCommissions = res;
+                    _this_1.applicationSettingService.commissions().subscribe(function (res) {
+                        _this_1.prevCommissions = res;
                     });
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -242,14 +248,15 @@ let CommissionsComponent = class CommissionsComponent {
                 }
             });
         }
-    }
-    destroyCommission(id) {
+    };
+    CommissionsComponent.prototype.destroyCommission = function (id) {
+        var _this_1 = this;
         var _this = this;
-        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), () => {
-            this.applicationSettingService.commissionDestroy(id).subscribe((res) => {
+        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), function () {
+            _this_1.applicationSettingService.commissionDestroy(id).subscribe(function (res) {
                 if (res == 1) {
-                    this.applicationSettingService.commissions().subscribe((res) => {
-                        this.prevCommissions = res;
+                    _this_1.applicationSettingService.commissions().subscribe(function (res) {
+                        _this_1.prevCommissions = res;
                     });
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -258,35 +265,37 @@ let CommissionsComponent = class CommissionsComponent {
                 }
             });
         });
-    }
-    setCurrent(data) {
+    };
+    CommissionsComponent.prototype.setCurrent = function (data) {
         this.filterUpdate = data;
-    }
-    printContent() {
+    };
+    CommissionsComponent.prototype.printContent = function () {
         this.doc.printJs();
-    }
-    ngOnInit() {
+    };
+    CommissionsComponent.prototype.ngOnInit = function () {
+        var _this_1 = this;
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(_account_services_level_service__WEBPACK_IMPORTED_MODULE_8__["LevelService"].LEVEL_PREFIX);
         // this.globalService.loadHtml("affair/report4", this.filter).subscribe((res) => {
         //   $('#reportContent').html(res);
         // });
-        this.applicationSettingService.commissions().subscribe((res) => {
-            this.prevCommissions = res;
+        this.applicationSettingService.commissions().subscribe(function (res) {
+            _this_1.prevCommissions = res;
         });
-        this.applicationSettingService.theaters().subscribe((res) => {
-            this.prevTheaters = res;
+        this.applicationSettingService.theaters().subscribe(function (res) {
+            _this_1.prevTheaters = res;
         });
-    }
-};
-CommissionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-commissions',
-        template: __webpack_require__(/*! ./commissions.component.html */ "./src/app/exams/components/commissions/commissions.component.html"),
-        styles: [__webpack_require__(/*! ./commissions.component.scss */ "./src/app/exams/components/commissions/commissions.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
-        _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
-], CommissionsComponent);
+    };
+    CommissionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-commissions',
+            template: __webpack_require__(/*! ./commissions.component.html */ "./src/app/exams/components/commissions/commissions.component.html"),
+            styles: [__webpack_require__(/*! ./commissions.component.scss */ "./src/app/exams/components/commissions/commissions.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
+            _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
+    ], CommissionsComponent);
+    return CommissionsComponent;
+}());
 
 
 
@@ -299,7 +308,7 @@ CommissionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"manage_rooms_map\" class=\"container\">\n    <div class=\"w3-block w3-row\">\n        <div class=\"w3-white material-shadow safe-box w3-block\">\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n                توزيع الطلاب على اللجان\n            </div>\n            <div class=\"border-bottom-dashed\"></div>\n            <br>\n\n            <div class=\"\">\n\n                <div class=\"\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\n\n                        <div class=\"custom-panel-body table-responsive w3-padding\">\n\n                            <div class=\"row\">\n\n                                <div class=\"col-lg-12 col-md-12\" style='text-align: center;'>\n\n                                    <div class=\"col-lg-3\">\n                                        <label for=\"recipient-name\" class=\"col-form-label\">السنة الدراسية:</label>\n                                        <select class=\"form-control\" id=\"year_id\" name=\"year_id\" [(ngModel)]=\"year_id\" required>\n                                        <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                        </select>\n                                    </div>\n\n                                    <button (click)='submitData()' type=\"button\" class=\"btn btn-primary\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" style='text-align: center !important; margin-top: 28px !important;  margin-right:   -500px !important;'>توزيع علي اللجان</button>\n                                    <button (click)='submitDataNo()' type=\"button\" class=\"btn btn-danger\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" style='text-align: center !important; margin-top: 28px !important; margin-right: 10px !important;'>توزيع علي اللجان الخاصة</button>\n                                    \n                                    <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n                                        <div class=\"modal-dialog\">\n                                            <div class=\"modal-content\">\n                                                <div class=\"modal-header\">\n                                                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">ضع البيانات</h5>\n                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                                      <span aria-hidden=\"true\">&times;</span>\n                                    </button>\n                                                </div>\n                                                <div class=\"modal-body\">\n                                                    <form>\n                                                        <div class=\"form-group\">\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">المدرج:</label>\n                                                            <select class=\"form-control\" name=\"theater_id\" [(ngModel)]=\"theater_id\" required>\n                                                    <option *ngFor=\"let item of theatersGet\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                                  </select>\n                                                        </div>\n                                                        <div class=\"form-group\">\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">اللجنة:</label>\n                                                            <select class=\"form-control\" name=\"commission_id\" [(ngModel)]=\"commission_id\" required>\n                                                  <option *ngFor=\"let item of commissionsGet\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                                </select>\n                                                        </div>\n                                                        <div class=\"form-group\">\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">ارقام الجلوس :</label>\n                                                            <select class=\"form-control\" name=\"student_distribution_id\" [(ngModel)]=\"student_distribution_id\" required>\n                                              <option *ngFor=\"let item of student_distributions_number\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                            </select>\n                                                        </div>\n                                                        <!-- <div class=\"form-group\">\n                                                        <label for=\"recipient-name\" class=\"col-form-label\">المستوي:</label>\n                                                        <select class=\"form-control\" name=\"level_id\" [(ngModel)]=\"level_id\" required>\n                                                <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                              </select>\n                                                    </div>\n                                                    <div class=\"form-group\">\n                                                        <label>{{ \"division\" | trans }}</label>\n                                                        <select class=\"form-control\" [(ngModel)]=\"filter.division_id\">\n                                                        <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                                                      </select>\n                                                    </div> -->\n                                                        <div class=\"form-group\">\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">السنة الدراسية:</label>\n                                                            <select class=\"form-control\" name=\"year_id\" [(ngModel)]=\"year_id\" required>\n                                                            <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                                            </select>\n                                                        </div>\n\n                                                        <div class=\"form-group\">\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">الفصل الدراسى:</label>\n                                                            <select class=\"form-control\" name=\"term_id\" [(ngModel)]=\"term_id\" required>\n                                            <option *ngFor=\"let item of terms\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                          </select>\n                                                        </div>\n                                                        <div class=\"form-group\">\n                                                            <label for=\"message-text\" class=\"col-form-label\">عدد الطلبة :</label>\n                                                            <input class=\"form-control\" id=\"message-text\" type=\"number\" name='start_number' [(ngModel)]=\"start_number\" required>\n                                                        </div>\n\n                                                    </form>\n                                                </div>\n                                                <div class=\"modal-footer\">\n                                                    <button id='closeNumber' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\n                                                    <button id='beforeLoading' (click)='sendNumber()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\n                                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\n                                                <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\n                                                Loading...\n                                              </button>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n\n\n                                </div>\n                                <div class=\"col-lg-3 col-md-3\">\n                                    <span class=\"w3-xlarge w3-text-green\" id=\"count\">\n\n                            </span>\n                                </div>\n\n\n                            </div>\n\n                        </div>\n                    </div>\n                </div>\n                <div class=\"\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\" id=\"printable\">\n\n                        <div class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\n\n\n                        </div>\n                    </div>\n                </div>\n\n\n\n            </div>\n\n\n        </div>\n    </div>\n</div>\n<div id=\"alertNumber\" class=\"alert alert-danger\" role=\"alert\">\n    من فضلك ضع البيانات بالكامل صحيحة\n</div>\n<div id=\"alertNumberSuccess\" class=\"alert alert-success\" role=\"alert\">\n    تم توزيع الطلاب على اللجان بنجاح\n</div>\n"
+module.exports = "<div permission=\"manage_rooms_map\" class=\"container\">\r\n    <div class=\"w3-block w3-row\">\r\n        <div class=\"w3-white material-shadow safe-box w3-block\">\r\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n                توزيع الطلاب على اللجان\r\n            </div>\r\n            <div class=\"border-bottom-dashed\"></div>\r\n            <br>\r\n\r\n            <div class=\"\">\r\n\r\n                <div class=\"\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\r\n\r\n                        <div class=\"custom-panel-body table-responsive w3-padding\">\r\n\r\n                            <div class=\"row\">\r\n\r\n                                <div class=\"col-lg-12 col-md-12\" style='text-align: center;'>\r\n\r\n                                    <div class=\"col-lg-3\">\r\n                                        <label for=\"recipient-name\" class=\"col-form-label\">السنة الدراسية:</label>\r\n                                        <select class=\"form-control\" id=\"year_id\" name=\"year_id\" [(ngModel)]=\"year_id\" required>\r\n                                        <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                        </select>\r\n                                    </div>\r\n\r\n                                    <button (click)='submitData()' type=\"button\" class=\"btn btn-primary\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" style='text-align: center !important; margin-top: 28px !important;  margin-right:   -500px !important;'>توزيع علي اللجان</button>\r\n                                    <button (click)='submitDataNo()' type=\"button\" class=\"btn btn-danger\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" style='text-align: center !important; margin-top: 28px !important; margin-right: 10px !important;'>توزيع علي اللجان الخاصة</button>\r\n                                    \r\n                                    <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n                                        <div class=\"modal-dialog\">\r\n                                            <div class=\"modal-content\">\r\n                                                <div class=\"modal-header\">\r\n                                                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">ضع البيانات</h5>\r\n                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                                      <span aria-hidden=\"true\">&times;</span>\r\n                                    </button>\r\n                                                </div>\r\n                                                <div class=\"modal-body\">\r\n                                                    <form>\r\n                                                        <div class=\"form-group\">\r\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">المدرج:</label>\r\n                                                            <select class=\"form-control\" name=\"theater_id\" [(ngModel)]=\"theater_id\" required>\r\n                                                    <option *ngFor=\"let item of theatersGet\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                                  </select>\r\n                                                        </div>\r\n                                                        <div class=\"form-group\">\r\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">اللجنة:</label>\r\n                                                            <select class=\"form-control\" name=\"commission_id\" [(ngModel)]=\"commission_id\" required>\r\n                                                  <option *ngFor=\"let item of commissionsGet\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                                </select>\r\n                                                        </div>\r\n                                                        <div class=\"form-group\">\r\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">ارقام الجلوس :</label>\r\n                                                            <select class=\"form-control\" name=\"student_distribution_id\" [(ngModel)]=\"student_distribution_id\" required>\r\n                                              <option *ngFor=\"let item of student_distributions_number\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                            </select>\r\n                                                        </div>\r\n                                                        <!-- <div class=\"form-group\">\r\n                                                        <label for=\"recipient-name\" class=\"col-form-label\">المستوي:</label>\r\n                                                        <select class=\"form-control\" name=\"level_id\" [(ngModel)]=\"level_id\" required>\r\n                                                <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                              </select>\r\n                                                    </div>\r\n                                                    <div class=\"form-group\">\r\n                                                        <label>{{ \"division\" | trans }}</label>\r\n                                                        <select class=\"form-control\" [(ngModel)]=\"filter.division_id\">\r\n                                                        <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                                      </select>\r\n                                                    </div> -->\r\n                                                        <div class=\"form-group\">\r\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">السنة الدراسية:</label>\r\n                                                            <select class=\"form-control\" name=\"year_id\" [(ngModel)]=\"year_id\" required>\r\n                                                            <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                                            </select>\r\n                                                        </div>\r\n\r\n                                                        <div class=\"form-group\">\r\n                                                            <label for=\"recipient-name\" class=\"col-form-label\">الفصل الدراسى:</label>\r\n                                                            <select class=\"form-control\" name=\"term_id\" [(ngModel)]=\"term_id\" required>\r\n                                            <option *ngFor=\"let item of terms\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                          </select>\r\n                                                        </div>\r\n                                                        <div class=\"form-group\">\r\n                                                            <label for=\"message-text\" class=\"col-form-label\">عدد الطلبة :</label>\r\n                                                            <input class=\"form-control\" id=\"message-text\" type=\"number\" name='start_number' [(ngModel)]=\"start_number\" required>\r\n                                                        </div>\r\n\r\n                                                    </form>\r\n                                                </div>\r\n                                                <div class=\"modal-footer\">\r\n                                                    <button id='closeNumber' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\r\n                                                    <button id='beforeLoading' (click)='sendNumber()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\r\n                                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\r\n                                                <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\r\n                                                Loading...\r\n                                              </button>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n\r\n\r\n                                </div>\r\n                                <div class=\"col-lg-3 col-md-3\">\r\n                                    <span class=\"w3-xlarge w3-text-green\" id=\"count\">\r\n\r\n                            </span>\r\n                                </div>\r\n\r\n\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\" id=\"printable\">\r\n\r\n                        <div class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\r\n\r\n\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n<div id=\"alertNumber\" class=\"alert alert-danger\" role=\"alert\">\r\n    من فضلك ضع البيانات بالكامل صحيحة\r\n</div>\r\n<div id=\"alertNumberSuccess\" class=\"alert alert-success\" role=\"alert\">\r\n    تم توزيع الطلاب على اللجان بنجاح\r\n</div>\r\n"
 
 /***/ }),
 
@@ -310,7 +319,7 @@ module.exports = "<div permission=\"manage_rooms_map\" class=\"container\">\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utcm9vbXMtbWFwL21hbmFnZS1yb29tcy1tYXAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvbWFuYWdlLXJvb21zLW1hcC9tYW5hZ2Utcm9vbXMtbWFwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxlQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EscUNBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQ0NKOztBREVBO0VBQ0ksa0JBQUE7RUFDQSxlQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EscUNBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQ0NKOztBREVBO0VBQ0ksYUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utcm9vbXMtbWFwL21hbmFnZS1yb29tcy1tYXAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYWxlcnROdW1iZXIge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAxMCU7XG4gICAgbGVmdDogMHB4O1xuICAgIHJpZ2h0OiAwcHg7XG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAxMCU7XG4gICAgbGVmdDogMHB4O1xuICAgIHJpZ2h0OiAwcHg7XG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nIHtcbiAgICBkaXNwbGF5OiBub25lO1xufVxuIiwiI2FsZXJ0TnVtYmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnV0dG9uTG9hZGluZyB7XG4gIGRpc3BsYXk6IG5vbmU7XG59Il19 */"
+module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utcm9vbXMtbWFwL0c6XFxTcGhpbnhcXEhJTVxcaGltZnJvbnQyL3NyY1xcYXBwXFxleGFtc1xcY29tcG9uZW50c1xcbWFuYWdlLXJvb21zLW1hcFxcbWFuYWdlLXJvb21zLW1hcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utcm9vbXMtbWFwL21hbmFnZS1yb29tcy1tYXAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxxQ0FBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0FDQ0o7O0FERUE7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxxQ0FBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0FDQ0o7O0FERUE7RUFDSSxhQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL21hbmFnZS1yb29tcy1tYXAvbWFuYWdlLXJvb21zLW1hcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNhbGVydE51bWJlciB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDEwJTtcclxuICAgIGxlZnQ6IDBweDtcclxuICAgIHJpZ2h0OiAwcHg7XHJcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAzMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuI2FsZXJ0TnVtYmVyU3VjY2VzcyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDEwJTtcclxuICAgIGxlZnQ6IDBweDtcclxuICAgIHJpZ2h0OiAwcHg7XHJcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAzMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuI2J1dHRvbkxvYWRpbmcge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG4iLCIjYWxlcnROdW1iZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMCU7XG4gIGxlZnQ6IDBweDtcbiAgcmlnaHQ6IDBweDtcbiAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMCU7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMCU7XG4gIGxlZnQ6IDBweDtcbiAgcmlnaHQ6IDBweDtcbiAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMCU7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nIHtcbiAgZGlzcGxheTogbm9uZTtcbn0iXX0= */"
 
 /***/ }),
 
@@ -325,7 +334,7 @@ module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  t
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManageRoomsMapComponent", function() { return ManageRoomsMapComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
 /* harmony import */ var src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/helper */ "./src/app/shared/helper.ts");
 /* harmony import */ var src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/message */ "./src/app/shared/message.ts");
@@ -344,8 +353,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let ManageRoomsMapComponent = class ManageRoomsMapComponent {
-    constructor(globalService, applicationSettingService) {
+var ManageRoomsMapComponent = /** @class */ (function () {
+    function ManageRoomsMapComponent(globalService, applicationSettingService) {
+        var _this = this;
         this.globalService = globalService;
         this.applicationSettingService = applicationSettingService;
         this.filter = {};
@@ -358,25 +368,27 @@ let ManageRoomsMapComponent = class ManageRoomsMapComponent {
         this.doc = document;
         this.applicationSettingService.queueRequests();
         var self = this;
-        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, () => {
+        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, function () {
         });
-        this.applicationSettingService.student_distributions_number().subscribe((res) => {
-            this.student_distributions_number = res;
+        this.applicationSettingService.student_distributions_number().subscribe(function (res) {
+            _this.student_distributions_number = res;
         });
     }
-    calculateCount() {
+    ManageRoomsMapComponent.prototype.calculateCount = function () {
         this.$('#count').text(this.$('#reportContent tbody tr').length);
-    }
-    load() {
+    };
+    ManageRoomsMapComponent.prototype.load = function () {
         //if (!Helper.validator(this.filter, ['level_id', 'division_id', 'academic_year_id'])) {
         //  return Message.error(Helper.trans('please choose all filters'));
         //}
-        this.globalService.loadHtml("affair/report3", this.filter).subscribe((res) => {
+        var _this = this;
+        this.globalService.loadHtml("affair/report3", this.filter).subscribe(function (res) {
             $('#reportContent').html(res);
-            this.calculateCount();
+            _this.calculateCount();
         });
-    }
-    sendNumber() {
+    };
+    ManageRoomsMapComponent.prototype.sendNumber = function () {
+        var _this = this;
         $('#beforeLoading').hide();
         $('#buttonLoading').show();
         var objectSend = { level_id: this.level_id, set_number: this.start_number, theater_id: this.theater_id, term_id: this.term_id, commission_id: this.commission_id, year_id: this.year_id, student_distribution_id: this.student_distribution_id };
@@ -385,50 +397,51 @@ let ManageRoomsMapComponent = class ManageRoomsMapComponent {
             $('#alertNumber').slideDown(300);
             $('#beforeLoading').show();
             $('#buttonLoading').hide();
-            setTimeout(() => {
+            setTimeout(function () {
                 $('#alertNumber').slideUp(1000);
             }, 1000);
         }
         else {
-            this.applicationSettingService.student_distributions(objectSend).subscribe((res) => {
+            this.applicationSettingService.student_distributions(objectSend).subscribe(function (res) {
                 if (res == 1) {
                     $('#alertNumberSuccess').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumberSuccess').slideUp(1000);
                         $('#closeNumber').trigger('click');
-                        this.level_id = '';
-                        this.start_number = '';
-                        this.student_distribution_id = '';
-                        this.year_id = '';
-                        this.commission_id = '';
-                        this.term_id = '';
-                        this.theater_id = '';
+                        _this.level_id = '';
+                        _this.start_number = '';
+                        _this.student_distribution_id = '';
+                        _this.year_id = '';
+                        _this.commission_id = '';
+                        _this.term_id = '';
+                        _this.theater_id = '';
                     }, 1000);
                 }
                 else {
                     $('#alertNumber').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumber').slideUp(1000);
                     }, 1000);
                 }
             });
         }
-    }
-    printContent() {
+    };
+    ManageRoomsMapComponent.prototype.printContent = function () {
         this.doc.printJs();
-    }
-    submitData() {
+    };
+    ManageRoomsMapComponent.prototype.submitData = function () {
+        var _this = this;
         // if (!Helper.validator(this.filter, [ 'year_id' ])) {
         //   return Message.error(Helper.trans('اختر السنه اولا'));
         // }
         // else
         //{
-        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), () => {
-            this.applicationSettingService.student_distributions(1).subscribe((res) => {
+        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), function () {
+            _this.applicationSettingService.student_distributions(1).subscribe(function (res) {
                 if (res == 1) {
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -438,10 +451,11 @@ let ManageRoomsMapComponent = class ManageRoomsMapComponent {
             });
         });
         // }
-    }
-    submitDataNo() {
-        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), () => {
-            this.applicationSettingService.student_distributionsNo(1).subscribe((res) => {
+    };
+    ManageRoomsMapComponent.prototype.submitDataNo = function () {
+        var _this = this;
+        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), function () {
+            _this.applicationSettingService.student_distributionsNo(1).subscribe(function (res) {
                 if (res == 1) {
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -450,27 +464,29 @@ let ManageRoomsMapComponent = class ManageRoomsMapComponent {
                 }
             });
         });
-    }
-    ngOnInit() {
+    };
+    ManageRoomsMapComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(_account_services_level_service__WEBPACK_IMPORTED_MODULE_8__["LevelService"].LEVEL_PREFIX);
         this.terms = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(_account_services_term_service__WEBPACK_IMPORTED_MODULE_9__["TermService"].TERPM_PREFIX);
-        this.applicationSettingService.theaters().subscribe((res) => {
-            this.theatersGet = res;
+        this.applicationSettingService.theaters().subscribe(function (res) {
+            _this.theatersGet = res;
         });
-        this.applicationSettingService.commissions().subscribe((res) => {
-            this.commissionsGet = res;
+        this.applicationSettingService.commissions().subscribe(function (res) {
+            _this.commissionsGet = res;
         });
-    }
-};
-ManageRoomsMapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-manage-rooms-map',
-        template: __webpack_require__(/*! ./manage-rooms-map.component.html */ "./src/app/exams/components/manage-rooms-map/manage-rooms-map.component.html"),
-        styles: [__webpack_require__(/*! ./manage-rooms-map.component.scss */ "./src/app/exams/components/manage-rooms-map/manage-rooms-map.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
-        _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
-], ManageRoomsMapComponent);
+    };
+    ManageRoomsMapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-manage-rooms-map',
+            template: __webpack_require__(/*! ./manage-rooms-map.component.html */ "./src/app/exams/components/manage-rooms-map/manage-rooms-map.component.html"),
+            styles: [__webpack_require__(/*! ./manage-rooms-map.component.scss */ "./src/app/exams/components/manage-rooms-map/manage-rooms-map.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
+            _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
+    ], ManageRoomsMapComponent);
+    return ManageRoomsMapComponent;
+}());
 
 
 
@@ -483,7 +499,7 @@ ManageRoomsMapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"w3-block\">\n\n  <div class=\"row\">\n\n    <div class=\"col-lg-3 w3-white material-shadow safe-box\">\n      <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n        {{ \"manage seating rooms report\" | trans }}\n      </div>\n      <div class=\"border-bottom-dashed\"></div>\n      <br>\n      <div class=\"custom-panel w3-display-container w3-round \">\n\n        <div class=\"custom-panel-body table-responsive w3-padding w3-center\">\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\n            <b>{{ \"create_new_seating_numbers\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-address-card-o\"></i>\n            </a>\n          </a>\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\n            <b>{{ \"enrolled_with_no_seating_number\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-address-card-o\"></i>\n            </a>\n          </a>\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\n            <b>{{ \"signed_with_no_seating_number\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-address-card-o\"></i>\n            </a>\n          </a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-lg-9 student-affair-container  \" style=\"overflow: auto;\">\n      <div class=\"table-responsive w3-padding\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n\n\n\n  </div>\n\n\n</div>"
+module.exports = "<div class=\"w3-block\">\r\n\r\n  <div class=\"row\">\r\n\r\n    <div class=\"col-lg-3 w3-white material-shadow safe-box\">\r\n      <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n        {{ \"manage seating rooms report\" | trans }}\r\n      </div>\r\n      <div class=\"border-bottom-dashed\"></div>\r\n      <br>\r\n      <div class=\"custom-panel w3-display-container w3-round \">\r\n\r\n        <div class=\"custom-panel-body table-responsive w3-padding w3-center\">\r\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\r\n            <b>{{ \"create_new_seating_numbers\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-address-card-o\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\r\n            <b>{{ \"enrolled_with_no_seating_number\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-address-card-o\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\r\n            <b>{{ \"signed_with_no_seating_number\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-address-card-o\"></i>\r\n            </a>\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"col-lg-9 student-affair-container  \" style=\"overflow: auto;\">\r\n      <div class=\"table-responsive w3-padding\">\r\n        <router-outlet></router-outlet>\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -494,7 +510,7 @@ module.exports = "<div class=\"w3-block\">\n\n  <div class=\"row\">\n\n    <div 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".safe-box {\n  padding: 10px;\n}\n\n.border-bottom-dashed {\n  border-bottom: 2px dashed gray !important;\n}\n\n.border-dashed {\n  border: 2px dashed lightgray !important;\n}\n\n.btn-margin-bottom {\n  margin-bottom: 6px !important;\n}\n\n.custom-panel {\n  border: 2px dashed lightgray !important;\n  margin-bottom: 15px !important;\n}\n\n.custom-panel-title {\n  position: absolute !important;\n  right: 10px !important;\n  top: -13px !important;\n  width: auto !important;\n  background-color: white !important;\n  padding-left: 10px !important;\n  padding-right: 10px !important;\n}\n\n.custom-panel-body {\n  padding: 10px !important;\n}\n\n.small-shadow {\n  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3) !important;\n}\n\n.search-input {\n  min-width: 70% !important;\n}\n\n.border-gray {\n  border: 1px solid gray !important;\n}\n\n.custom-input {\n  min-width: 120px;\n  width: 100%;\n}\n\n.modal {\n  overflow: auto !important;\n}\n\n/*\n  custom button style\n*/\n\n.student-list-col {\n  width: 100%;\n  box-shadow: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utc2VhdGluZy1yb29tcy1yZXBvcnQvbWFuYWdlLXNlYXRpbmctcm9vbXMtcmVwb3J0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL21hbmFnZS1zZWF0aW5nLXJvb21zLXJlcG9ydC9tYW5hZ2Utc2VhdGluZy1yb29tcy1yZXBvcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0FDQ0o7O0FERUU7RUFDRSx5Q0FBQTtBQ0NKOztBREVFO0VBQ0UsdUNBQUE7QUNDSjs7QURFRTtFQUNFLDZCQUFBO0FDQ0o7O0FERUU7RUFDRSx1Q0FBQTtFQUNBLDhCQUFBO0FDQ0o7O0FER0U7RUFDRSw2QkFBQTtFQUNBLHNCQUFBO0VBQ0EscUJBQUE7RUFDQSxzQkFBQTtFQUNBLGtDQUFBO0VBQ0EsNkJBQUE7RUFDQSw4QkFBQTtBQ0FKOztBREdFO0VBQ0Usd0JBQUE7QUNBSjs7QURHRTtFQUNFLHVEQUFBO0FDQUo7O0FER0U7RUFDRSx5QkFBQTtBQ0FKOztBREdFO0VBQ0UsaUNBQUE7QUNBSjs7QURHRTtFQUNFLGdCQUFBO0VBQ0EsV0FBQTtBQ0FKOztBREdFO0VBQ0UseUJBQUE7QUNBSjs7QURFRTs7Q0FBQTs7QUFLQTtFQUNFLFdBQUE7RUFDQSwyQkFBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utc2VhdGluZy1yb29tcy1yZXBvcnQvbWFuYWdlLXNlYXRpbmctcm9vbXMtcmVwb3J0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNhZmUtYm94IHtcbiAgICBwYWRkaW5nOiAxMHB4XG4gIH1cbiAgXG4gIC5ib3JkZXItYm90dG9tLWRhc2hlZCB7XG4gICAgYm9yZGVyLWJvdHRvbTogMnB4IGRhc2hlZCBncmF5IWltcG9ydGFudDtcbiAgfVxuICBcbiAgLmJvcmRlci1kYXNoZWQge1xuICAgIGJvcmRlcjogMnB4IGRhc2hlZCBsaWdodGdyYXkhaW1wb3J0YW50O1xuICB9XG4gIFxuICAuYnRuLW1hcmdpbi1ib3R0b20ge1xuICAgIG1hcmdpbi1ib3R0b206IDZweCFpbXBvcnRhbnQ7XG4gIH1cbiAgXG4gIC5jdXN0b20tcGFuZWwge1xuICAgIGJvcmRlcjogMnB4IGRhc2hlZCBsaWdodGdyYXkhaW1wb3J0YW50O1xuICAgIG1hcmdpbi1ib3R0b206IDE1cHghaW1wb3J0YW50O1xuICB9XG4gIFxuICBcbiAgLmN1c3RvbS1wYW5lbC10aXRsZSB7XG4gICAgcG9zaXRpb246IGFic29sdXRlIWltcG9ydGFudDtcbiAgICByaWdodDogMTBweCFpbXBvcnRhbnQ7XG4gICAgdG9wOiAtMTNweCFpbXBvcnRhbnQ7XG4gICAgd2lkdGg6IGF1dG8haW1wb3J0YW50O1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlIWltcG9ydGFudDtcbiAgICBwYWRkaW5nLWxlZnQ6IDEwcHghaW1wb3J0YW50O1xuICAgIHBhZGRpbmctcmlnaHQ6IDEwcHghaW1wb3J0YW50O1xuICB9XG4gIFxuICAuY3VzdG9tLXBhbmVsLWJvZHkge1xuICAgIHBhZGRpbmc6IDEwcHghaW1wb3J0YW50O1xuICB9XG4gIFxuICAuc21hbGwtc2hhZG93IHtcbiAgICBib3gtc2hhZG93OiAwIDFweCAxcHggMHB4IHJnYmEoMCwwLDAsMC4zKSFpbXBvcnRhbnQ7XG4gIH1cbiAgXG4gIC5zZWFyY2gtaW5wdXQge1xuICAgIG1pbi13aWR0aDogNzAlIWltcG9ydGFudDtcbiAgfVxuICBcbiAgLmJvcmRlci1ncmF5IHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCBncmF5IWltcG9ydGFudDtcbiAgfVxuICBcbiAgLmN1c3RvbS1pbnB1dCB7XG4gICAgbWluLXdpZHRoOiAxMjBweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICBcbiAgLm1vZGFsIHtcbiAgICBvdmVyZmxvdzogYXV0byFpbXBvcnRhbnQ7XG4gIH1cbiAgLypcbiAgICBjdXN0b20gYnV0dG9uIHN0eWxlXG4gICovXG4gIFxuICBcbiAgLnN0dWRlbnQtbGlzdC1jb2wge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGJveC1zaGFkb3c6IG5vbmUhaW1wb3J0YW50O1xuICB9XG4gICIsIi5zYWZlLWJveCB7XG4gIHBhZGRpbmc6IDEwcHg7XG59XG5cbi5ib3JkZXItYm90dG9tLWRhc2hlZCB7XG4gIGJvcmRlci1ib3R0b206IDJweCBkYXNoZWQgZ3JheSAhaW1wb3J0YW50O1xufVxuXG4uYm9yZGVyLWRhc2hlZCB7XG4gIGJvcmRlcjogMnB4IGRhc2hlZCBsaWdodGdyYXkgIWltcG9ydGFudDtcbn1cblxuLmJ0bi1tYXJnaW4tYm90dG9tIHtcbiAgbWFyZ2luLWJvdHRvbTogNnB4ICFpbXBvcnRhbnQ7XG59XG5cbi5jdXN0b20tcGFuZWwge1xuICBib3JkZXI6IDJweCBkYXNoZWQgbGlnaHRncmF5ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1ib3R0b206IDE1cHggIWltcG9ydGFudDtcbn1cblxuLmN1c3RvbS1wYW5lbC10aXRsZSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZSAhaW1wb3J0YW50O1xuICByaWdodDogMTBweCAhaW1wb3J0YW50O1xuICB0b3A6IC0xM3B4ICFpbXBvcnRhbnQ7XG4gIHdpZHRoOiBhdXRvICFpbXBvcnRhbnQ7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmctbGVmdDogMTBweCAhaW1wb3J0YW50O1xuICBwYWRkaW5nLXJpZ2h0OiAxMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5jdXN0b20tcGFuZWwtYm9keSB7XG4gIHBhZGRpbmc6IDEwcHggIWltcG9ydGFudDtcbn1cblxuLnNtYWxsLXNoYWRvdyB7XG4gIGJveC1zaGFkb3c6IDAgMXB4IDFweCAwcHggcmdiYSgwLCAwLCAwLCAwLjMpICFpbXBvcnRhbnQ7XG59XG5cbi5zZWFyY2gtaW5wdXQge1xuICBtaW4td2lkdGg6IDcwJSAhaW1wb3J0YW50O1xufVxuXG4uYm9yZGVyLWdyYXkge1xuICBib3JkZXI6IDFweCBzb2xpZCBncmF5ICFpbXBvcnRhbnQ7XG59XG5cbi5jdXN0b20taW5wdXQge1xuICBtaW4td2lkdGg6IDEyMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLm1vZGFsIHtcbiAgb3ZlcmZsb3c6IGF1dG8gIWltcG9ydGFudDtcbn1cblxuLypcbiAgY3VzdG9tIGJ1dHRvbiBzdHlsZVxuKi9cbi5zdHVkZW50LWxpc3QtY29sIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGJveC1zaGFkb3c6IG5vbmUgIWltcG9ydGFudDtcbn0iXX0= */"
+module.exports = ".safe-box {\n  padding: 10px;\n}\n\n.border-bottom-dashed {\n  border-bottom: 2px dashed gray !important;\n}\n\n.border-dashed {\n  border: 2px dashed lightgray !important;\n}\n\n.btn-margin-bottom {\n  margin-bottom: 6px !important;\n}\n\n.custom-panel {\n  border: 2px dashed lightgray !important;\n  margin-bottom: 15px !important;\n}\n\n.custom-panel-title {\n  position: absolute !important;\n  right: 10px !important;\n  top: -13px !important;\n  width: auto !important;\n  background-color: white !important;\n  padding-left: 10px !important;\n  padding-right: 10px !important;\n}\n\n.custom-panel-body {\n  padding: 10px !important;\n}\n\n.small-shadow {\n  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3) !important;\n}\n\n.search-input {\n  min-width: 70% !important;\n}\n\n.border-gray {\n  border: 1px solid gray !important;\n}\n\n.custom-input {\n  min-width: 120px;\n  width: 100%;\n}\n\n.modal {\n  overflow: auto !important;\n}\n\n/*\n  custom button style\n*/\n\n.student-list-col {\n  width: 100%;\n  box-shadow: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utc2VhdGluZy1yb29tcy1yZXBvcnQvRzpcXFNwaGlueFxcSElNXFxoaW1mcm9udDIvc3JjXFxhcHBcXGV4YW1zXFxjb21wb25lbnRzXFxtYW5hZ2Utc2VhdGluZy1yb29tcy1yZXBvcnRcXG1hbmFnZS1zZWF0aW5nLXJvb21zLXJlcG9ydC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9tYW5hZ2Utc2VhdGluZy1yb29tcy1yZXBvcnQvbWFuYWdlLXNlYXRpbmctcm9vbXMtcmVwb3J0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVFO0VBQ0UseUNBQUE7QUNDSjs7QURFRTtFQUNFLHVDQUFBO0FDQ0o7O0FERUU7RUFDRSw2QkFBQTtBQ0NKOztBREVFO0VBQ0UsdUNBQUE7RUFDQSw4QkFBQTtBQ0NKOztBREdFO0VBQ0UsNkJBQUE7RUFDQSxzQkFBQTtFQUNBLHFCQUFBO0VBQ0Esc0JBQUE7RUFDQSxrQ0FBQTtFQUNBLDZCQUFBO0VBQ0EsOEJBQUE7QUNBSjs7QURHRTtFQUNFLHdCQUFBO0FDQUo7O0FER0U7RUFDRSx1REFBQTtBQ0FKOztBREdFO0VBQ0UseUJBQUE7QUNBSjs7QURHRTtFQUNFLGlDQUFBO0FDQUo7O0FER0U7RUFDRSxnQkFBQTtFQUNBLFdBQUE7QUNBSjs7QURHRTtFQUNFLHlCQUFBO0FDQUo7O0FERUU7O0NBQUE7O0FBS0E7RUFDRSxXQUFBO0VBQ0EsMkJBQUE7QUNESiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvbWFuYWdlLXNlYXRpbmctcm9vbXMtcmVwb3J0L21hbmFnZS1zZWF0aW5nLXJvb21zLXJlcG9ydC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zYWZlLWJveCB7XHJcbiAgICBwYWRkaW5nOiAxMHB4XHJcbiAgfVxyXG4gIFxyXG4gIC5ib3JkZXItYm90dG9tLWRhc2hlZCB7XHJcbiAgICBib3JkZXItYm90dG9tOiAycHggZGFzaGVkIGdyYXkhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAuYm9yZGVyLWRhc2hlZCB7XHJcbiAgICBib3JkZXI6IDJweCBkYXNoZWQgbGlnaHRncmF5IWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLmJ0bi1tYXJnaW4tYm90dG9tIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDZweCFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5jdXN0b20tcGFuZWwge1xyXG4gICAgYm9yZGVyOiAycHggZGFzaGVkIGxpZ2h0Z3JheSFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxNXB4IWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgXHJcbiAgLmN1c3RvbS1wYW5lbC10aXRsZSB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGUhaW1wb3J0YW50O1xyXG4gICAgcmlnaHQ6IDEwcHghaW1wb3J0YW50O1xyXG4gICAgdG9wOiAtMTNweCFpbXBvcnRhbnQ7XHJcbiAgICB3aWR0aDogYXV0byFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZSFpbXBvcnRhbnQ7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwcHghaW1wb3J0YW50O1xyXG4gICAgcGFkZGluZy1yaWdodDogMTBweCFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5jdXN0b20tcGFuZWwtYm9keSB7XHJcbiAgICBwYWRkaW5nOiAxMHB4IWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLnNtYWxsLXNoYWRvdyB7XHJcbiAgICBib3gtc2hhZG93OiAwIDFweCAxcHggMHB4IHJnYmEoMCwwLDAsMC4zKSFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5zZWFyY2gtaW5wdXQge1xyXG4gICAgbWluLXdpZHRoOiA3MCUhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAuYm9yZGVyLWdyYXkge1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgZ3JheSFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5jdXN0b20taW5wdXQge1xyXG4gICAgbWluLXdpZHRoOiAxMjBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICAubW9kYWwge1xyXG4gICAgb3ZlcmZsb3c6IGF1dG8haW1wb3J0YW50O1xyXG4gIH1cclxuICAvKlxyXG4gICAgY3VzdG9tIGJ1dHRvbiBzdHlsZVxyXG4gICovXHJcbiAgXHJcbiAgXHJcbiAgLnN0dWRlbnQtbGlzdC1jb2wge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3gtc2hhZG93OiBub25lIWltcG9ydGFudDtcclxuICB9XHJcbiAgIiwiLnNhZmUtYm94IHtcbiAgcGFkZGluZzogMTBweDtcbn1cblxuLmJvcmRlci1ib3R0b20tZGFzaGVkIHtcbiAgYm9yZGVyLWJvdHRvbTogMnB4IGRhc2hlZCBncmF5ICFpbXBvcnRhbnQ7XG59XG5cbi5ib3JkZXItZGFzaGVkIHtcbiAgYm9yZGVyOiAycHggZGFzaGVkIGxpZ2h0Z3JheSAhaW1wb3J0YW50O1xufVxuXG4uYnRuLW1hcmdpbi1ib3R0b20ge1xuICBtYXJnaW4tYm90dG9tOiA2cHggIWltcG9ydGFudDtcbn1cblxuLmN1c3RvbS1wYW5lbCB7XG4gIGJvcmRlcjogMnB4IGRhc2hlZCBsaWdodGdyYXkgIWltcG9ydGFudDtcbiAgbWFyZ2luLWJvdHRvbTogMTVweCAhaW1wb3J0YW50O1xufVxuXG4uY3VzdG9tLXBhbmVsLXRpdGxlIHtcbiAgcG9zaXRpb246IGFic29sdXRlICFpbXBvcnRhbnQ7XG4gIHJpZ2h0OiAxMHB4ICFpbXBvcnRhbnQ7XG4gIHRvcDogLTEzcHggIWltcG9ydGFudDtcbiAgd2lkdGg6IGF1dG8gIWltcG9ydGFudDtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGUgIWltcG9ydGFudDtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4ICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmctcmlnaHQ6IDEwcHggIWltcG9ydGFudDtcbn1cblxuLmN1c3RvbS1wYW5lbC1ib2R5IHtcbiAgcGFkZGluZzogMTBweCAhaW1wb3J0YW50O1xufVxuXG4uc21hbGwtc2hhZG93IHtcbiAgYm94LXNoYWRvdzogMCAxcHggMXB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMykgIWltcG9ydGFudDtcbn1cblxuLnNlYXJjaC1pbnB1dCB7XG4gIG1pbi13aWR0aDogNzAlICFpbXBvcnRhbnQ7XG59XG5cbi5ib3JkZXItZ3JheSB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGdyYXkgIWltcG9ydGFudDtcbn1cblxuLmN1c3RvbS1pbnB1dCB7XG4gIG1pbi13aWR0aDogMTIwcHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubW9kYWwge1xuICBvdmVyZmxvdzogYXV0byAhaW1wb3J0YW50O1xufVxuXG4vKlxuICBjdXN0b20gYnV0dG9uIHN0eWxlXG4qL1xuLnN0dWRlbnQtbGlzdC1jb2wge1xuICB3aWR0aDogMTAwJTtcbiAgYm94LXNoYWRvdzogbm9uZSAhaW1wb3J0YW50O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -509,22 +525,24 @@ module.exports = ".safe-box {\n  padding: 10px;\n}\n\n.border-bottom-dashed {\n 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManageSeatingRoomsReportComponent", function() { return ManageSeatingRoomsReportComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-let ManageSeatingRoomsReportComponent = class ManageSeatingRoomsReportComponent {
-    constructor() { }
-    ngOnInit() {
+var ManageSeatingRoomsReportComponent = /** @class */ (function () {
+    function ManageSeatingRoomsReportComponent() {
     }
-};
-ManageSeatingRoomsReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-manage-seating-rooms-report',
-        template: __webpack_require__(/*! ./manage-seating-rooms-report.component.html */ "./src/app/exams/components/manage-seating-rooms-report/manage-seating-rooms-report.component.html"),
-        styles: [__webpack_require__(/*! ./manage-seating-rooms-report.component.scss */ "./src/app/exams/components/manage-seating-rooms-report/manage-seating-rooms-report.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-], ManageSeatingRoomsReportComponent);
+    ManageSeatingRoomsReportComponent.prototype.ngOnInit = function () {
+    };
+    ManageSeatingRoomsReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-manage-seating-rooms-report',
+            template: __webpack_require__(/*! ./manage-seating-rooms-report.component.html */ "./src/app/exams/components/manage-seating-rooms-report/manage-seating-rooms-report.component.html"),
+            styles: [__webpack_require__(/*! ./manage-seating-rooms-report.component.scss */ "./src/app/exams/components/manage-seating-rooms-report/manage-seating-rooms-report.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ManageSeatingRoomsReportComponent);
+    return ManageSeatingRoomsReportComponent;
+}());
 
 
 
@@ -537,7 +555,7 @@ ManageSeatingRoomsReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decora
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"print_seating_numbers\" class=\"container\">\n  <div class=\"w3-block w3-row\">\n    <div class=\"w3-white material-shadow safe-box w3-block\">\n        <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n            طباعة كشوف أرقام الجلوس\n        </div>\n        <!-- <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n            طباعة كشوف أرقام الجلوس\n        </div> -->\n        <div class=\"border-bottom-dashed\"></div>\n        <br>\n\n        <div class=\"\">\n\n            <div class=\"\">\n                <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\n\n                    <div class=\"custom-panel-body table-responsive w3-padding\">\n\n                        <div class=\"row\">\n                            <div class=\"col-lg-2 col-md-3\">\n                                <div class=\"form-group\">\n                                    <label>{{ \"level\" | trans }}</label>\n                                    <select id=\"level_id\" class=\"form-control\" name=\"level_id\" [(ngModel)]=\"filter.level_id\">\n                          <option value=\"\">المستوي</option>\n                  <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                </select>\n                                </div>\n                            </div>\n                            <div class=\"col-lg-2 col-md-3\">\n                                <div class=\"form-group\">\n                                    <label for=\"\">{{ \"division\" | trans }}</label>\n                                    <select class=\"form-control input-sm course_id\" [(ngModel)]=\"filter.division_id\">\n                              <option value=\"\">الشعبة</option>\n                            <option *ngFor=\"let item of divisions\" value=\"{{ item.id }}\">{{item.name}}</option>\n                        </select>\n                                </div>\n                            </div>\n                            <div class=\"col-lg-2 col-md-3\">\n                                <div class=\"form-group\">\n                                    <label for=\"\">{{ \"academic year\" | trans }}</label>\n                                    <select name=\"filter.year_id\" class=\"form-control\" [(ngModel)]=\"filter.year_id\">\n                                    <option value=\"\">الكل</option>\n                                    <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\" value=\"{{ item.id }}\">{{item.name}}</option>\n                                    </select>\n                                </div>\n                            </div>\n                            <div class=\"col-lg-2 col-md-4\">\n                                <div class=\"form-group\">\n                                    <label for=\"\">{{ \"term\" | trans }}</label>\n                                    <select id=\"term_id\" name=\"filter.term_id\" class=\"form-control\" [(ngModel)]=\"filter.term_id\">\n                                    <option value=\"\">الكل</option>\n                                    <option *ngFor=\"let item of terms\" value=\"{{ item.id }}\">{{item.name}}</option>\n                                    </select>\n                                </div>\n                            </div>\n                            <div class=\"col-lg-2 col-md-3\">\n                                <div class=\"form-group\">                                   \n                                    <label>اللجنة</label>\n                                    <select class=\"form-control\" [(ngModel)]=\"filter.commission_id\">\n                                    <option *ngFor=\"let item of commissionsGet\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                                    </select>\n                                </div>\n                            </div>\n\n                            <div class=\"col-lg-3 col-md-3\">\n                                <button style='margin-left: 34px;margin-top: 25px;' class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button>\n                                <button style=\"margin-top: 25px;margin-left: 20px !important \" class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button>\n                            </div>\n\n\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n            <div class=\"\">\n                <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\" id=\"printable\">\n\n                    <div class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\n\n\n                    </div>\n                </div>\n            </div>\n\n\n\n        </div>\n\n\n    </div>\n</div>\n</div>\n"
+module.exports = "<div permission=\"print_seating_numbers\" class=\"container\">\r\n  <div class=\"w3-block w3-row\">\r\n    <div class=\"w3-white material-shadow safe-box w3-block\">\r\n        <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n            طباعة كشوف أرقام الجلوس\r\n        </div>\r\n        <!-- <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n            طباعة كشوف أرقام الجلوس\r\n        </div> -->\r\n        <div class=\"border-bottom-dashed\"></div>\r\n        <br>\r\n\r\n        <div class=\"\">\r\n\r\n            <div class=\"\">\r\n                <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\r\n\r\n                    <div class=\"custom-panel-body table-responsive w3-padding\">\r\n\r\n                        <div class=\"row\">\r\n                            <div class=\"col-lg-2 col-md-3\">\r\n                                <div class=\"form-group\">\r\n                                    <label>{{ \"level\" | trans }}</label>\r\n                                    <select id=\"level_id\" class=\"form-control\" name=\"level_id\" [(ngModel)]=\"filter.level_id\">\r\n                          <option value=\"\">المستوي</option>\r\n                  <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                </select>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"col-lg-2 col-md-3\">\r\n                                <div class=\"form-group\">\r\n                                    <label for=\"\">{{ \"division\" | trans }}</label>\r\n                                    <select class=\"form-control input-sm course_id\" [(ngModel)]=\"filter.division_id\">\r\n                              <option value=\"\">الشعبة</option>\r\n                            <option *ngFor=\"let item of divisions\" value=\"{{ item.id }}\">{{item.name}}</option>\r\n                        </select>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"col-lg-2 col-md-3\">\r\n                                <div class=\"form-group\">\r\n                                    <label for=\"\">{{ \"academic year\" | trans }}</label>\r\n                                    <select name=\"filter.year_id\" class=\"form-control\" [(ngModel)]=\"filter.year_id\">\r\n                                    <option value=\"\">الكل</option>\r\n                                    <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\" value=\"{{ item.id }}\">{{item.name}}</option>\r\n                                    </select>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"col-lg-2 col-md-4\">\r\n                                <div class=\"form-group\">\r\n                                    <label for=\"\">{{ \"term\" | trans }}</label>\r\n                                    <select id=\"term_id\" name=\"filter.term_id\" class=\"form-control\" [(ngModel)]=\"filter.term_id\">\r\n                                    <option value=\"\">الكل</option>\r\n                                    <option *ngFor=\"let item of terms\" value=\"{{ item.id }}\">{{item.name}}</option>\r\n                                    </select>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"col-lg-2 col-md-3\">\r\n                                <div class=\"form-group\">                                   \r\n                                    <label>اللجنة</label>\r\n                                    <select class=\"form-control\" [(ngModel)]=\"filter.commission_id\">\r\n                                    <option *ngFor=\"let item of commissionsGet\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                    </select>\r\n                                </div>\r\n                            </div>\r\n\r\n                            <div class=\"col-lg-3 col-md-3\">\r\n                                <button style='margin-left: 34px;margin-top: 25px;' class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button>\r\n                                <button style=\"margin-top: 25px;margin-left: 20px !important \" class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button>\r\n                            </div>\r\n\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"\">\r\n                <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\" id=\"printable\">\r\n\r\n                    <div class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\r\n\r\n\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n\r\n\r\n        </div>\r\n\r\n\r\n    </div>\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -548,7 +566,7 @@ module.exports = "<div permission=\"print_seating_numbers\" class=\"container\">
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import url(\"https://fonts.googleapis.com/css2?family=Amiri&display=swap\");\n* {\n  font-family: \"Amiri\", serif;\n  box-sizing: border-box;\n  text-align: center;\n}\n#title {\n  padding-top: 40px;\n}\ntable,\nth,\ntd {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\ntable {\n  margin-top: 50px;\n}\nth h5 {\n  font-weight: bold;\n}\ntd {\n  font-weight: 400;\n  padding: 5px 0;\n  font-size: 20px;\n}\nh5 {\n  font-family: \"Amiri\", serif;\n  font-weight: 400;\n}\n#seating_number {\n  border: 1px solid black;\n  text-align: center;\n  width: 25%;\n  margin: 0 20px 0 0;\n}\n#seating_number th {\n  border-bottom: black 1px solid;\n}\n#img {\n  border: 1px solid black;\n  position: absolute;\n  left: 40px;\n  height: 140px;\n}\nimg {\n  width: 100%;\n}\n#name {\n  width: 94%;\n  margin: 10px 10px 0 0;\n  text-align: start;\n  border: 1px solid black;\n}\n#room {\n  display: flex;\n  justify-content: center;\n}\n#place {\n  width: 94%;\n  margin: 10px 10px 0 0;\n  text-align: start;\n  border: 1px solid black;\n  text-align: center;\n}\n#place-style {\n  display: flex;\n  justify-content: space-between;\n}\n.border {\n  border-right: 1px solid black;\n  border-left: 1px solid black;\n  padding: 0 40px;\n}\n#subjects {\n  padding-top: 31px;\n  border-right: black solid 1px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC1zZWF0aW5nLW51bWJlcnMvcHJpbnQtc2VhdGluZy1udW1iZXJzLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3ByaW50LXNlYXRpbmctbnVtYmVycy9wcmludC1zZWF0aW5nLW51bWJlcnMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQVEsMEVBQUE7QUFDUjtFQUNJLDJCQUFBO0VBQ0Esc0JBQUE7RUFDQSxrQkFBQTtBQ0NKO0FERUE7RUFDSSxpQkFBQTtBQ0NKO0FERUE7OztFQUdJLHVCQUFBO0VBQ0EseUJBQUE7QUNDSjtBREVBO0VBQ0ksZ0JBQUE7QUNDSjtBREVBO0VBQ0ksaUJBQUE7QUNDSjtBREVBO0VBQ0ksZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBQ0NKO0FERUE7RUFDSSwyQkFBQTtFQUNBLGdCQUFBO0FDQ0o7QURFQTtFQUNJLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7QUNDSjtBREVBO0VBQ0ksOEJBQUE7QUNDSjtBREVBO0VBQ0ksdUJBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxhQUFBO0FDQ0o7QURFQTtFQUNJLFdBQUE7QUNDSjtBREVBO0VBQ0ksVUFBQTtFQUNBLHFCQUFBO0VBQ0EsaUJBQUE7RUFDQSx1QkFBQTtBQ0NKO0FERUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7QUNDSjtBREVBO0VBQ0ksVUFBQTtFQUNBLHFCQUFBO0VBQ0EsaUJBQUE7RUFDQSx1QkFBQTtFQUNBLGtCQUFBO0FDQ0o7QURFQTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtBQ0NKO0FERUE7RUFDSSw2QkFBQTtFQUNBLDRCQUFBO0VBQ0EsZUFBQTtBQ0NKO0FERUE7RUFDSSxpQkFBQTtFQUNBLDZCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3ByaW50LXNlYXRpbmctbnVtYmVycy9wcmludC1zZWF0aW5nLW51bWJlcnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1BbWlyaSZkaXNwbGF5PXN3YXAnKTtcbioge1xuICAgIGZvbnQtZmFtaWx5OiAnQW1pcmknLCBzZXJpZjtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuI3RpdGxlIHtcbiAgICBwYWRkaW5nLXRvcDogNDBweDtcbn1cblxudGFibGUsXG50aCxcbnRkIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xufVxuXG50YWJsZSB7XG4gICAgbWFyZ2luLXRvcDogNTBweDtcbn1cblxudGggaDUge1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG50ZCB7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICBwYWRkaW5nOiA1cHggMDtcbiAgICBmb250LXNpemU6IDIwcHg7XG59XG5cbmg1IHtcbiAgICBmb250LWZhbWlseTogJ0FtaXJpJywgc2VyaWY7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbn1cblxuI3NlYXRpbmdfbnVtYmVyIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgd2lkdGg6IDI1JTtcbiAgICBtYXJnaW46IDAgMjBweCAwIDA7XG59XG5cbiNzZWF0aW5nX251bWJlciB0aCB7XG4gICAgYm9yZGVyLWJvdHRvbTogYmxhY2sgMXB4IHNvbGlkO1xufVxuXG4jaW1nIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogNDBweDtcbiAgICBoZWlnaHQ6IDE0MHB4O1xufVxuXG5pbWcge1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4jbmFtZSB7XG4gICAgd2lkdGg6IDk0JTtcbiAgICBtYXJnaW46IDEwcHggMTBweCAwIDA7XG4gICAgdGV4dC1hbGlnbjogc3RhcnQ7XG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG59XG5cbiNyb29tIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuXG4jcGxhY2Uge1xuICAgIHdpZHRoOiA5NCU7XG4gICAgbWFyZ2luOiAxMHB4IDEwcHggMCAwO1xuICAgIHRleHQtYWxpZ246IHN0YXJ0O1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuI3BsYWNlLXN0eWxlIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmJvcmRlciB7XG4gICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgYmxhY2s7XG4gICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCBibGFjaztcbiAgICBwYWRkaW5nOiAwIDQwcHg7XG59XG5cbiNzdWJqZWN0cyB7XG4gICAgcGFkZGluZy10b3A6IDMxcHg7XG4gICAgYm9yZGVyLXJpZ2h0OiBibGFjayBzb2xpZCAxcHg7XG59XG4iLCJAaW1wb3J0IHVybChcImh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QW1pcmkmZGlzcGxheT1zd2FwXCIpO1xuKiB7XG4gIGZvbnQtZmFtaWx5OiBcIkFtaXJpXCIsIHNlcmlmO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbiN0aXRsZSB7XG4gIHBhZGRpbmctdG9wOiA0MHB4O1xufVxuXG50YWJsZSxcbnRoLFxudGQge1xuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbn1cblxudGFibGUge1xuICBtYXJnaW4tdG9wOiA1MHB4O1xufVxuXG50aCBoNSB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG50ZCB7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIHBhZGRpbmc6IDVweCAwO1xuICBmb250LXNpemU6IDIwcHg7XG59XG5cbmg1IHtcbiAgZm9udC1mYW1pbHk6IFwiQW1pcmlcIiwgc2VyaWY7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG59XG5cbiNzZWF0aW5nX251bWJlciB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHdpZHRoOiAyNSU7XG4gIG1hcmdpbjogMCAyMHB4IDAgMDtcbn1cblxuI3NlYXRpbmdfbnVtYmVyIHRoIHtcbiAgYm9yZGVyLWJvdHRvbTogYmxhY2sgMXB4IHNvbGlkO1xufVxuXG4jaW1nIHtcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogNDBweDtcbiAgaGVpZ2h0OiAxNDBweDtcbn1cblxuaW1nIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNuYW1lIHtcbiAgd2lkdGg6IDk0JTtcbiAgbWFyZ2luOiAxMHB4IDEwcHggMCAwO1xuICB0ZXh0LWFsaWduOiBzdGFydDtcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG59XG5cbiNyb29tIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG5cbiNwbGFjZSB7XG4gIHdpZHRoOiA5NCU7XG4gIG1hcmdpbjogMTBweCAxMHB4IDAgMDtcbiAgdGV4dC1hbGlnbjogc3RhcnQ7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbiNwbGFjZS1zdHlsZSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmJvcmRlciB7XG4gIGJvcmRlci1yaWdodDogMXB4IHNvbGlkIGJsYWNrO1xuICBib3JkZXItbGVmdDogMXB4IHNvbGlkIGJsYWNrO1xuICBwYWRkaW5nOiAwIDQwcHg7XG59XG5cbiNzdWJqZWN0cyB7XG4gIHBhZGRpbmctdG9wOiAzMXB4O1xuICBib3JkZXItcmlnaHQ6IGJsYWNrIHNvbGlkIDFweDtcbn0iXX0= */"
+module.exports = "@import url(\"https://fonts.googleapis.com/css2?family=Amiri&display=swap\");\n* {\n  font-family: \"Amiri\", serif;\n  box-sizing: border-box;\n  text-align: center;\n}\n#title {\n  padding-top: 40px;\n}\ntable,\nth,\ntd {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\ntable {\n  margin-top: 50px;\n}\nth h5 {\n  font-weight: bold;\n}\ntd {\n  font-weight: 400;\n  padding: 5px 0;\n  font-size: 20px;\n}\nh5 {\n  font-family: \"Amiri\", serif;\n  font-weight: 400;\n}\n#seating_number {\n  border: 1px solid black;\n  text-align: center;\n  width: 25%;\n  margin: 0 20px 0 0;\n}\n#seating_number th {\n  border-bottom: black 1px solid;\n}\n#img {\n  border: 1px solid black;\n  position: absolute;\n  left: 40px;\n  height: 140px;\n}\nimg {\n  width: 100%;\n}\n#name {\n  width: 94%;\n  margin: 10px 10px 0 0;\n  text-align: start;\n  border: 1px solid black;\n}\n#room {\n  display: flex;\n  justify-content: center;\n}\n#place {\n  width: 94%;\n  margin: 10px 10px 0 0;\n  text-align: start;\n  border: 1px solid black;\n  text-align: center;\n}\n#place-style {\n  display: flex;\n  justify-content: space-between;\n}\n.border {\n  border-right: 1px solid black;\n  border-left: 1px solid black;\n  padding: 0 40px;\n}\n#subjects {\n  padding-top: 31px;\n  border-right: black solid 1px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC1zZWF0aW5nLW51bWJlcnMvRzpcXFNwaGlueFxcSElNXFxoaW1mcm9udDIvc3JjXFxhcHBcXGV4YW1zXFxjb21wb25lbnRzXFxwcmludC1zZWF0aW5nLW51bWJlcnNcXHByaW50LXNlYXRpbmctbnVtYmVycy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC1zZWF0aW5nLW51bWJlcnMvcHJpbnQtc2VhdGluZy1udW1iZXJzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFRLDBFQUFBO0FBQ1I7RUFDSSwyQkFBQTtFQUNBLHNCQUFBO0VBQ0Esa0JBQUE7QUNDSjtBREVBO0VBQ0ksaUJBQUE7QUNDSjtBREVBOzs7RUFHSSx1QkFBQTtFQUNBLHlCQUFBO0FDQ0o7QURFQTtFQUNJLGdCQUFBO0FDQ0o7QURFQTtFQUNJLGlCQUFBO0FDQ0o7QURFQTtFQUNJLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7QUNDSjtBREVBO0VBQ0ksMkJBQUE7RUFDQSxnQkFBQTtBQ0NKO0FERUE7RUFDSSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0FDQ0o7QURFQTtFQUNJLDhCQUFBO0FDQ0o7QURFQTtFQUNJLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0EsYUFBQTtBQ0NKO0FERUE7RUFDSSxXQUFBO0FDQ0o7QURFQTtFQUNJLFVBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsdUJBQUE7QUNDSjtBREVBO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FDQ0o7QURFQTtFQUNJLFVBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtBQ0NKO0FERUE7RUFDSSxhQUFBO0VBQ0EsOEJBQUE7QUNDSjtBREVBO0VBQ0ksNkJBQUE7RUFDQSw0QkFBQTtFQUNBLGVBQUE7QUNDSjtBREVBO0VBQ0ksaUJBQUE7RUFDQSw2QkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC1zZWF0aW5nLW51bWJlcnMvcHJpbnQtc2VhdGluZy1udW1iZXJzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QW1pcmkmZGlzcGxheT1zd2FwJyk7XHJcbioge1xyXG4gICAgZm9udC1mYW1pbHk6ICdBbWlyaScsIHNlcmlmO1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuI3RpdGxlIHtcclxuICAgIHBhZGRpbmctdG9wOiA0MHB4O1xyXG59XHJcblxyXG50YWJsZSxcclxudGgsXHJcbnRkIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcclxufVxyXG5cclxudGFibGUge1xyXG4gICAgbWFyZ2luLXRvcDogNTBweDtcclxufVxyXG5cclxudGggaDUge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuXHJcbnRkIHtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBwYWRkaW5nOiA1cHggMDtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG5cclxuaDUge1xyXG4gICAgZm9udC1mYW1pbHk6ICdBbWlyaScsIHNlcmlmO1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxufVxyXG5cclxuI3NlYXRpbmdfbnVtYmVyIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgd2lkdGg6IDI1JTtcclxuICAgIG1hcmdpbjogMCAyMHB4IDAgMDtcclxufVxyXG5cclxuI3NlYXRpbmdfbnVtYmVyIHRoIHtcclxuICAgIGJvcmRlci1ib3R0b206IGJsYWNrIDFweCBzb2xpZDtcclxufVxyXG5cclxuI2ltZyB7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGxlZnQ6IDQwcHg7XHJcbiAgICBoZWlnaHQ6IDE0MHB4O1xyXG59XHJcblxyXG5pbWcge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbiNuYW1lIHtcclxuICAgIHdpZHRoOiA5NCU7XHJcbiAgICBtYXJnaW46IDEwcHggMTBweCAwIDA7XHJcbiAgICB0ZXh0LWFsaWduOiBzdGFydDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG59XHJcblxyXG4jcm9vbSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbiNwbGFjZSB7XHJcbiAgICB3aWR0aDogOTQlO1xyXG4gICAgbWFyZ2luOiAxMHB4IDEwcHggMCAwO1xyXG4gICAgdGV4dC1hbGlnbjogc3RhcnQ7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuI3BsYWNlLXN0eWxlIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5ib3JkZXIge1xyXG4gICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgYmxhY2s7XHJcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgcGFkZGluZzogMCA0MHB4O1xyXG59XHJcblxyXG4jc3ViamVjdHMge1xyXG4gICAgcGFkZGluZy10b3A6IDMxcHg7XHJcbiAgICBib3JkZXItcmlnaHQ6IGJsYWNrIHNvbGlkIDFweDtcclxufVxyXG4iLCJAaW1wb3J0IHVybChcImh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QW1pcmkmZGlzcGxheT1zd2FwXCIpO1xuKiB7XG4gIGZvbnQtZmFtaWx5OiBcIkFtaXJpXCIsIHNlcmlmO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbiN0aXRsZSB7XG4gIHBhZGRpbmctdG9wOiA0MHB4O1xufVxuXG50YWJsZSxcbnRoLFxudGQge1xuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbn1cblxudGFibGUge1xuICBtYXJnaW4tdG9wOiA1MHB4O1xufVxuXG50aCBoNSB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG50ZCB7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIHBhZGRpbmc6IDVweCAwO1xuICBmb250LXNpemU6IDIwcHg7XG59XG5cbmg1IHtcbiAgZm9udC1mYW1pbHk6IFwiQW1pcmlcIiwgc2VyaWY7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG59XG5cbiNzZWF0aW5nX251bWJlciB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHdpZHRoOiAyNSU7XG4gIG1hcmdpbjogMCAyMHB4IDAgMDtcbn1cblxuI3NlYXRpbmdfbnVtYmVyIHRoIHtcbiAgYm9yZGVyLWJvdHRvbTogYmxhY2sgMXB4IHNvbGlkO1xufVxuXG4jaW1nIHtcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogNDBweDtcbiAgaGVpZ2h0OiAxNDBweDtcbn1cblxuaW1nIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNuYW1lIHtcbiAgd2lkdGg6IDk0JTtcbiAgbWFyZ2luOiAxMHB4IDEwcHggMCAwO1xuICB0ZXh0LWFsaWduOiBzdGFydDtcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG59XG5cbiNyb29tIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG5cbiNwbGFjZSB7XG4gIHdpZHRoOiA5NCU7XG4gIG1hcmdpbjogMTBweCAxMHB4IDAgMDtcbiAgdGV4dC1hbGlnbjogc3RhcnQ7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbiNwbGFjZS1zdHlsZSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmJvcmRlciB7XG4gIGJvcmRlci1yaWdodDogMXB4IHNvbGlkIGJsYWNrO1xuICBib3JkZXItbGVmdDogMXB4IHNvbGlkIGJsYWNrO1xuICBwYWRkaW5nOiAwIDQwcHg7XG59XG5cbiNzdWJqZWN0cyB7XG4gIHBhZGRpbmctdG9wOiAzMXB4O1xuICBib3JkZXItcmlnaHQ6IGJsYWNrIHNvbGlkIDFweDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -563,7 +581,7 @@ module.exports = "@import url(\"https://fonts.googleapis.com/css2?family=Amiri&d
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrintSeatingNumbersComponent", function() { return PrintSeatingNumbersComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
 /* harmony import */ var src_app_shared_request__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/request */ "./src/app/shared/request.ts");
 /* harmony import */ var src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/global.service */ "./src/app/shared/services/global.service.ts");
@@ -582,8 +600,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let PrintSeatingNumbersComponent = class PrintSeatingNumbersComponent {
-    constructor(courseService, globalService, applicationSettingService) {
+var PrintSeatingNumbersComponent = /** @class */ (function () {
+    function PrintSeatingNumbersComponent(courseService, globalService, applicationSettingService) {
+        var _this = this;
         this.courseService = courseService;
         this.globalService = globalService;
         this.applicationSettingService = applicationSettingService;
@@ -597,46 +616,48 @@ let PrintSeatingNumbersComponent = class PrintSeatingNumbersComponent {
         this.levels = [];
         this.applicationSettingService.queueRequests();
         var self = this;
-        src_app_shared_request__WEBPACK_IMPORTED_MODULE_3__["Request"].fire(false, () => {
+        src_app_shared_request__WEBPACK_IMPORTED_MODULE_3__["Request"].fire(false, function () {
         });
-        this.courseService.get().subscribe((res) => {
-            this.courses = res;
+        this.courseService.get().subscribe(function (res) {
+            _this.courses = res;
         });
     }
-    load() {
+    PrintSeatingNumbersComponent.prototype.load = function () {
         // if (!Helper.validator(this.filter, ['course_id'])) {
         //   return Message.error(Helper.trans('please choose all filters'));
         // }
-        this.globalService.loadHtml("affair/report8", this.filter).subscribe((res) => {
+        this.globalService.loadHtml("affair/report8", this.filter).subscribe(function (res) {
             $('#reportContent').html(res);
         });
-    }
-    printContent() {
+    };
+    PrintSeatingNumbersComponent.prototype.printContent = function () {
         this.doc.printJs();
-    }
-    ngOnInit() {
+    };
+    PrintSeatingNumbersComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(_account_services_level_service__WEBPACK_IMPORTED_MODULE_6__["LevelService"].LEVEL_PREFIX);
         // set select2
-        setTimeout(() => {
-            this.$('.select2').select2();
+        setTimeout(function () {
+            _this.$('.select2').select2();
         }, 500);
-        this.applicationSettingService.commissions().subscribe((res) => {
-            this.commissionsGet = res;
+        this.applicationSettingService.commissions().subscribe(function (res) {
+            _this.commissionsGet = res;
         });
         this.divisions = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_8__["DivisionService"].DIVISION_PREFIX);
         this.terms = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(src_app_account_services_term_service__WEBPACK_IMPORTED_MODULE_9__["TermService"].TERPM_PREFIX);
-    }
-};
-PrintSeatingNumbersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-print-seating-numbers',
-        template: __webpack_require__(/*! ./print-seating-numbers.component.html */ "./src/app/exams/components/print-seating-numbers/print-seating-numbers.component.html"),
-        styles: [__webpack_require__(/*! ./print-seating-numbers.component.scss */ "./src/app/exams/components/print-seating-numbers/print-seating-numbers.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_academic_services_course_service__WEBPACK_IMPORTED_MODULE_7__["CourseService"],
-        src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_4__["GlobalService"],
-        _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_5__["ApplicationSettingService"]])
-], PrintSeatingNumbersComponent);
+    };
+    PrintSeatingNumbersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-print-seating-numbers',
+            template: __webpack_require__(/*! ./print-seating-numbers.component.html */ "./src/app/exams/components/print-seating-numbers/print-seating-numbers.component.html"),
+            styles: [__webpack_require__(/*! ./print-seating-numbers.component.scss */ "./src/app/exams/components/print-seating-numbers/print-seating-numbers.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_academic_services_course_service__WEBPACK_IMPORTED_MODULE_7__["CourseService"],
+            src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_4__["GlobalService"],
+            _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_5__["ApplicationSettingService"]])
+    ], PrintSeatingNumbersComponent);
+    return PrintSeatingNumbersComponent;
+}());
 
 
 
@@ -649,7 +670,7 @@ PrintSeatingNumbersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"print_signs_reports\" class=\"container\">\n    <div class=\"w3-block w3-row\">\n        <div class=\"w3-white material-shadow safe-box w3-block\">\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n                طباعة كشوف توقيعات الطلاب\n            </div>\n            <div class=\"border-bottom-dashed\"></div>\n            <br>\n\n            <div class=\"\">\n\n                <div class=\"\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\n\n                        <div class=\"custom-panel-body table-responsive w3-padding\">\n\n                            <div class=\"row\">\n\n                                <div class=\"col-lg-3 col-md-4\">\n                                    <div class=\"form-group\">\n                                        <label for=\"\">{{ \"level\" | trans }}</label>\n                                        <select id=\"level_id\" name=\"filter.level_id\" class=\"form-control\" [(ngModel)]=\"filter.level_id\">\n                                        <option value=\"\">الكل</option>\n                                        <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{item.name}}</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <div class=\"col-lg-3 col-md-4\">\n                                    <div class=\"form-group\">\n                                        <label for=\"\">{{ \"term\" | trans }}</label>\n                                        <select id=\"term_id\" name=\"filter.term_id\" class=\"form-control\" [(ngModel)]=\"filter.term_id\">\n                                        <option value=\"\">الكل</option>\n                                        <option *ngFor=\"let item of terms\" value=\"{{ item.id }}\">{{item.name}}</option>\n                                        </select>\n                                    </div>\n                              </div>\n                                <div class=\"col-lg-3 col-md-4\">\n                                      <div class=\"form-group\">\n                                          <label for=\"\">{{ \"division\" | trans }}</label>\n                                          <select id=\"division_id\" name=\"filter.division_id\" class=\"form-control\" [(ngModel)]=\"filter.division_id\">\n                                          <option value=\"\">الكل</option>\n                                          <option *ngFor=\"let item of divisions\" value=\"{{ item.id }}\">{{item.name}}</option>\n                                          </select>\n                                      </div>\n                                </div>\n\n                                <div class=\"col-lg-3 col-md-4\">\n                                    <div class=\"form-group\">\n                                        <label for=\"\">{{ \"course\" | trans }}</label>\n                                        <select name=\"filter.course_id\" class=\"form-control\" [(ngModel)]=\"filter.course_id\">\n                                        <option value=\"\">الكل</option>\n                                        <!-- |level:level_id|term:term_id|division:division_id|year:year_id -->\n                                        <option *ngFor=\"let item of courses|level:level_id|term:term_id|division:division_id\" value=\"{{ item.course_id }}\">{{item.course_name}}</option>\n                                        </select>\n                                    </div>\n                                </div>\n        \n\n                                <div class=\"col-lg-3 col-md-3\" style=\"padding: 15px!important;\">\n                                    <button  class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button>\n                                    <button  class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button>\n                                    <button  class=\"btn btn-default w3-round\" (click)=\"exportExcel()\">{{ \"excel\" | trans }}</button>\n                                </div>\n\n\n                            </div>\n\n                        </div>\n                    </div>\n                </div>\n                <div class=\"\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\" id=\"printable\">\n\n                        <div dir=\"rtl\" class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\n\n\n                        </div>\n                    </div>\n                </div>\n\n\n\n            </div>\n\n\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div permission=\"print_signs_reports\" class=\"container\">\r\n    <div class=\"w3-block w3-row\">\r\n        <div class=\"w3-white material-shadow safe-box w3-block\">\r\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n                طباعة كشوف توقيعات الطلاب\r\n            </div>\r\n            <div class=\"border-bottom-dashed\"></div>\r\n            <br>\r\n\r\n            <div class=\"\">\r\n\r\n                <div class=\"\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\r\n\r\n                        <div class=\"custom-panel-body table-responsive w3-padding\">\r\n\r\n                            <div class=\"row\">\r\n\r\n                                <div class=\"col-lg-3 col-md-4\">\r\n                                    <div class=\"form-group\">\r\n                                        <label for=\"\">{{ \"level\" | trans }}</label>\r\n                                        <select id=\"level_id\" name=\"filter.level_id\" class=\"form-control\" [(ngModel)]=\"filter.level_id\">\r\n                                        <option value=\"\">الكل</option>\r\n                                        <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{item.name}}</option>\r\n                                        </select>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-lg-3 col-md-4\">\r\n                                    <div class=\"form-group\">\r\n                                        <label for=\"\">{{ \"term\" | trans }}</label>\r\n                                        <select id=\"term_id\" name=\"filter.term_id\" class=\"form-control\" [(ngModel)]=\"filter.term_id\">\r\n                                        <option value=\"\">الكل</option>\r\n                                        <option *ngFor=\"let item of terms\" value=\"{{ item.id }}\">{{item.name}}</option>\r\n                                        </select>\r\n                                    </div>\r\n                              </div>\r\n                                <div class=\"col-lg-3 col-md-4\">\r\n                                      <div class=\"form-group\">\r\n                                          <label for=\"\">{{ \"division\" | trans }}</label>\r\n                                          <select id=\"division_id\" name=\"filter.division_id\" class=\"form-control\" [(ngModel)]=\"filter.division_id\">\r\n                                          <option value=\"\">الكل</option>\r\n                                          <option *ngFor=\"let item of divisions\" value=\"{{ item.id }}\">{{item.name}}</option>\r\n                                          </select>\r\n                                      </div>\r\n                                </div>\r\n\r\n                                <div class=\"col-lg-3 col-md-4\">\r\n                                    <div class=\"form-group\">\r\n                                        <label for=\"\">{{ \"course\" | trans }}</label>\r\n                                        <select name=\"filter.course_id\" class=\"form-control\" [(ngModel)]=\"filter.course_id\">\r\n                                        <option value=\"\">الكل</option>\r\n                                        <!-- |level:level_id|term:term_id|division:division_id|year:year_id -->\r\n                                        <option *ngFor=\"let item of courses|level:level_id|term:term_id|division:division_id\" value=\"{{ item.course_id }}\">{{item.course_name}}</option>\r\n                                        </select>\r\n                                    </div>\r\n                                </div>\r\n        \r\n\r\n                                <div class=\"col-lg-3 col-md-3\" style=\"padding: 15px!important;\">\r\n                                    <button  class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button>\r\n                                    <button  class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button>\r\n                                    <button  class=\"btn btn-default w3-round\" (click)=\"exportExcel()\">{{ \"excel\" | trans }}</button>\r\n                                </div>\r\n\r\n\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\" id=\"printable\">\r\n\r\n                        <div dir=\"rtl\" class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\r\n\r\n\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -660,7 +681,7 @@ module.exports = "<div permission=\"print_signs_reports\" class=\"container\">\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC1zaWducy1yZXBvcnRzL3ByaW50LXNpZ25zLXJlcG9ydHMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvcHJpbnQtc2lnbnMtcmVwb3J0cy9wcmludC1zaWducy1yZXBvcnRzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3ByaW50LXNpZ25zLXJlcG9ydHMvcHJpbnQtc2lnbnMtcmVwb3J0cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNmb3JtIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG4iLCIjZm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59Il19 */"
+module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC1zaWducy1yZXBvcnRzL0c6XFxTcGhpbnhcXEhJTVxcaGltZnJvbnQyL3NyY1xcYXBwXFxleGFtc1xcY29tcG9uZW50c1xccHJpbnQtc2lnbnMtcmVwb3J0c1xccHJpbnQtc2lnbnMtcmVwb3J0cy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC1zaWducy1yZXBvcnRzL3ByaW50LXNpZ25zLXJlcG9ydHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvcHJpbnQtc2lnbnMtcmVwb3J0cy9wcmludC1zaWducy1yZXBvcnRzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2Zvcm0ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuIiwiI2Zvcm0ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -675,8 +696,8 @@ module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sour
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrintSignsReportsComponent", function() { return PrintSignsReportsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var src_app_academic_services_course_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/academic/services/course.service */ "./src/app/academic/services/course.service.ts");
 /* harmony import */ var src_app_account_services_academic_year_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/account/services/academic-year.service */ "./src/app/account/services/academic-year.service.ts");
 /* harmony import */ var src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/account/services/division.service */ "./src/app/account/services/division.service.ts");
@@ -703,8 +724,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { CourseService } from '../../services/course.service';
-let PrintSignsReportsComponent = class PrintSignsReportsComponent {
-    constructor(courseService, academicService, termService, titleService, globalService, applicationSettingService) {
+var PrintSignsReportsComponent = /** @class */ (function () {
+    function PrintSignsReportsComponent(courseService, academicService, termService, titleService, globalService, applicationSettingService) {
+        var _this = this;
         this.courseService = courseService;
         this.academicService = academicService;
         this.termService = termService;
@@ -724,68 +746,71 @@ let PrintSignsReportsComponent = class PrintSignsReportsComponent {
         this.doc = document;
         this.terms = [];
         this.data = [];
-        this.groups = this.applicationSettingService.groups().subscribe((res) => {
-            this.groups = res;
+        this.groups = this.applicationSettingService.groups().subscribe(function (res) {
+            _this.groups = res;
         });
-        this.courses = this.courseService.getopenCourses().subscribe((res) => {
-            this.courses = res;
+        this.courses = this.courseService.getopenCourses().subscribe(function (res) {
+            _this.courses = res;
         });
         this.titleService.setTitle("HIM" + " - " + src_app_shared_helper__WEBPACK_IMPORTED_MODULE_10__["Helper"].trans('print result'));
         this.applicationSettingService.queueRequests();
         var self = this;
-        src_app_shared_request__WEBPACK_IMPORTED_MODULE_12__["Request"].fire(false, () => {
+        src_app_shared_request__WEBPACK_IMPORTED_MODULE_12__["Request"].fire(false, function () {
         });
     }
-    load() {
+    PrintSignsReportsComponent.prototype.load = function () {
         console.log(this.filter);
         if (!src_app_shared_helper__WEBPACK_IMPORTED_MODULE_10__["Helper"].validator(this.filter, ['division_id'])) {
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_11__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_10__["Helper"].trans('please choose all filters'));
         }
         else {
-            this.globalService.loadHtml("affair/report7", this.filter).subscribe((res) => {
+            this.globalService.loadHtml("affair/report7", this.filter).subscribe(function (res) {
                 $('#reportContent').html(res);
             });
         }
-    }
-    getSections() {
-        this.sections = this.applicationSettingService.sections(this.filter).subscribe((res) => {
-            this.sections = res;
+    };
+    PrintSignsReportsComponent.prototype.getSections = function () {
+        var _this = this;
+        this.sections = this.applicationSettingService.sections(this.filter).subscribe(function (res) {
+            _this.sections = res;
         });
-    }
-    excel() {
+    };
+    PrintSignsReportsComponent.prototype.excel = function () {
         this.doc.exportExcel();
-    }
-    printContent() {
+    };
+    PrintSignsReportsComponent.prototype.printContent = function () {
         this.doc.printJs();
-    }
-    ngOnInit() {
-        $('#division_id').on('change', () => {
-            this.division_id = $('#division_id').val();
+    };
+    PrintSignsReportsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        $('#division_id').on('change', function () {
+            _this.division_id = $('#division_id').val();
         });
-        $('#term_id').on('change', () => {
-            this.term_id = $('#term_id').val();
+        $('#term_id').on('change', function () {
+            _this.term_id = $('#term_id').val();
         });
-        $('#level_id').on('change', () => {
-            this.level_id = $('#level_id').val();
+        $('#level_id').on('change', function () {
+            _this.level_id = $('#level_id').val();
         });
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_9__["Cache"].get(src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_6__["LevelService"].LEVEL_PREFIX);
         this.divisions = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_9__["Cache"].get(src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_5__["DivisionService"].DIVISION_PREFIX);
         this.terms = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_9__["Cache"].get(src_app_account_services_term_service__WEBPACK_IMPORTED_MODULE_7__["TermService"].TERPM_PREFIX);
-    }
-};
-PrintSignsReportsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-print-signs-reports',
-        template: __webpack_require__(/*! ./print-signs-reports.component.html */ "./src/app/exams/components/print-signs-reports/print-signs-reports.component.html"),
-        styles: [__webpack_require__(/*! ./print-signs-reports.component.scss */ "./src/app/exams/components/print-signs-reports/print-signs-reports.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_academic_services_course_service__WEBPACK_IMPORTED_MODULE_3__["CourseService"],
-        src_app_account_services_academic_year_service__WEBPACK_IMPORTED_MODULE_4__["AcademicYearService"],
-        src_app_account_services_term_service__WEBPACK_IMPORTED_MODULE_7__["TermService"],
-        _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"],
-        src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_13__["GlobalService"],
-        src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_8__["ApplicationSettingService"]])
-], PrintSignsReportsComponent);
+    };
+    PrintSignsReportsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-print-signs-reports',
+            template: __webpack_require__(/*! ./print-signs-reports.component.html */ "./src/app/exams/components/print-signs-reports/print-signs-reports.component.html"),
+            styles: [__webpack_require__(/*! ./print-signs-reports.component.scss */ "./src/app/exams/components/print-signs-reports/print-signs-reports.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_academic_services_course_service__WEBPACK_IMPORTED_MODULE_3__["CourseService"],
+            src_app_account_services_academic_year_service__WEBPACK_IMPORTED_MODULE_4__["AcademicYearService"],
+            src_app_account_services_term_service__WEBPACK_IMPORTED_MODULE_7__["TermService"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"],
+            src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_13__["GlobalService"],
+            src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_8__["ApplicationSettingService"]])
+    ], PrintSignsReportsComponent);
+    return PrintSignsReportsComponent;
+}());
 
 
 
@@ -798,7 +823,7 @@ PrintSignsReportsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"print_students_report\" class=\"w3-block\">\n\n    <div class=\"row\">\n\n        <div class=\"col-lg-3 w3-white material-shadow safe-box\">\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n                {{ \"print students report\" | trans }}\n            </div>\n            <div class=\"border-bottom-dashed\"></div>\n            <br>\n            <div class=\"custom-panel w3-display-container w3-round \">\n\n                <div class=\"custom-panel-body table-responsive w3-padding w3-center\">\n                    <a href=\"#\" [routerLink]=\"['/exams/print-walls-reports']\" role=\"button\" class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\n                        <b>{{ \"print walls reports\" | trans }}</b>\n                        <a href=\"#\" class=\"pull-left\">\n                            <i class=\"fa fa-newspaper-o\"></i>\n                        </a>\n                    </a>\n                    <a href=\"#\" [routerLink]=\"['/exams/print-signs-reports']\" role=\"button\" class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\n                        <b>{{ \"print signs reports\" | trans }}</b>\n                        <a href=\"#\" class=\"pull-left\">\n                            <i class=\"fa fa-newspaper-o\"></i>\n                        </a>\n                    </a>\n                    <!-- <a href=\"#\" [routerLink]=\"['/exams/print-year-score']\" role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\n            <b>{{ \"print year score\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-newspaper-o\"></i>\n            </a>\n          </a>\n          <a href=\"#\" [routerLink]=\"['/exams/print-scientific-test-report']\" role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\n            <b>{{ \"print scientific test report\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-newspaper-o\"></i>\n            </a>\n          </a>\n          <a href=\"#\" [routerLink]=\"['/exams/print-attendance-report']\" role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\n            <b>{{ \"print attendance report\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-check-square\"></i>\n            </a>\n          </a>\n          <a href=\"#\" [routerLink]=\"['/affairs/students/create']\" role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\n            <b>{{ \"print rooms map\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-users\"></i>\n            </a>\n          </a>\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\n            <b>{{ \"print_seating_numbers_lists\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-address-card-o\"></i>\n            </a>\n          </a>\n          <a href=\"#\" routerLink='/affairs/application_required' role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\n            <b>{{ \"absences_report\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-check-square\"></i>\n            </a>\n          </a>\n          <a href=\"#\" routerLink='/affairs/settings' role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\n            <b>{{ \"monitoring_report\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-newspaper-o\"></i>\n            </a>\n          </a>\n          <a href=\"#\" routerLink='/affairs/report/report1' role=\"button\"\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\n            <b>{{ \"print_research_report\" | trans }}</b>\n            <a href=\"#\" class=\"pull-left\">\n              <i class=\"fa fa-newspaper-o\"></i>\n            </a>\n          </a> -->\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-9 student-affair-container  \" style=\"overflow: auto;\">\n            <div class=\"table-responsive w3-padding\">\n                <router-outlet></router-outlet>\n            </div>\n        </div>\n\n\n\n    </div>\n\n\n</div>\n"
+module.exports = "<div permission=\"print_students_report\" class=\"w3-block\">\r\n\r\n    <div class=\"row\">\r\n\r\n        <div class=\"col-lg-3 w3-white material-shadow safe-box\">\r\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n                {{ \"print students report\" | trans }}\r\n            </div>\r\n            <div class=\"border-bottom-dashed\"></div>\r\n            <br>\r\n            <div class=\"custom-panel w3-display-container w3-round \">\r\n\r\n                <div class=\"custom-panel-body table-responsive w3-padding w3-center\">\r\n                    <a href=\"#\" [routerLink]=\"['/exams/print-walls-reports']\" role=\"button\" class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\r\n                        <b>{{ \"print walls reports\" | trans }}</b>\r\n                        <a href=\"#\" class=\"pull-left\">\r\n                            <i class=\"fa fa-newspaper-o\"></i>\r\n                        </a>\r\n                    </a>\r\n                    <a href=\"#\" [routerLink]=\"['/exams/print-signs-reports']\" role=\"button\" class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\r\n                        <b>{{ \"print signs reports\" | trans }}</b>\r\n                        <a href=\"#\" class=\"pull-left\">\r\n                            <i class=\"fa fa-newspaper-o\"></i>\r\n                        </a>\r\n                    </a>\r\n                    <!-- <a href=\"#\" [routerLink]=\"['/exams/print-year-score']\" role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\r\n            <b>{{ \"print year score\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-newspaper-o\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" [routerLink]=\"['/exams/print-scientific-test-report']\" role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\r\n            <b>{{ \"print scientific test report\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-newspaper-o\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" [routerLink]=\"['/exams/print-attendance-report']\" role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\r\n            <b>{{ \"print attendance report\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-check-square\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" [routerLink]=\"['/affairs/students/create']\" role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\" [queryParams]=\"{col: 'col-lg-12'}\">\r\n            <b>{{ \"print rooms map\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-users\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" routerLink='/affairs/required_documents' role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\r\n            <b>{{ \"print_seating_numbers_lists\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-address-card-o\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" routerLink='/affairs/application_required' role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\r\n            <b>{{ \"absences_report\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-check-square\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" routerLink='/affairs/settings' role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\r\n            <b>{{ \"monitoring_report\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-newspaper-o\"></i>\r\n            </a>\r\n          </a>\r\n          <a href=\"#\" routerLink='/affairs/report/report1' role=\"button\"\r\n            class=\"btn-margin-bottom btn btn-default w3-block small-shadow\">\r\n            <b>{{ \"print_research_report\" | trans }}</b>\r\n            <a href=\"#\" class=\"pull-left\">\r\n              <i class=\"fa fa-newspaper-o\"></i>\r\n            </a>\r\n          </a> -->\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-9 student-affair-container  \" style=\"overflow: auto;\">\r\n            <div class=\"table-responsive w3-padding\">\r\n                <router-outlet></router-outlet>\r\n            </div>\r\n        </div>\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -824,22 +849,24 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrintStudentsReportComponent", function() { return PrintStudentsReportComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-let PrintStudentsReportComponent = class PrintStudentsReportComponent {
-    constructor() { }
-    ngOnInit() {
+var PrintStudentsReportComponent = /** @class */ (function () {
+    function PrintStudentsReportComponent() {
     }
-};
-PrintStudentsReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-print-students-report',
-        template: __webpack_require__(/*! ./print-students-report.component.html */ "./src/app/exams/components/print-students-report/print-students-report.component.html"),
-        styles: [__webpack_require__(/*! ./print-students-report.component.scss */ "./src/app/exams/components/print-students-report/print-students-report.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-], PrintStudentsReportComponent);
+    PrintStudentsReportComponent.prototype.ngOnInit = function () {
+    };
+    PrintStudentsReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-print-students-report',
+            template: __webpack_require__(/*! ./print-students-report.component.html */ "./src/app/exams/components/print-students-report/print-students-report.component.html"),
+            styles: [__webpack_require__(/*! ./print-students-report.component.scss */ "./src/app/exams/components/print-students-report/print-students-report.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PrintStudentsReportComponent);
+    return PrintStudentsReportComponent;
+}());
 
 
 
@@ -852,7 +879,7 @@ PrintStudentsReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"print_walls_reports\" class=\"container\">\n    <div class=\"w3-block w3-row\">\n        <div class=\"w3-white material-shadow safe-box w3-block\">\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n                طباعة كشوف الحائط\n            </div>\n            <div class=\"border-bottom-dashed\"></div>\n            <br>\n\n            <div class=\"\">\n\n                <div class=\"\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\n\n                        <div class=\"custom-panel-body table-responsive w3-padding\">\n\n                            <div class=\"row\">\n                                <div class=\"col-lg-3 col-md-3\">\n                                    <div class=\"form-group\">\n                                        <label>{{ \"level\" | trans }}</label>\n                                        <select id=\"level_id\" class=\"form-control\" name=\"level_id\"\n                                            [(ngModel)]=\"filter.level_id\">\n                                            <option value=\"\">المستوي</option>\n                                            <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{ item.name }}\n                                            </option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <div class=\"col-lg-3 col-md-3\">\n                                    <div class=\"form-group\">\n                                        <label for=\"\">{{ \"division\" | trans }}</label>\n                                        <select class=\"form-control input-sm course_id\"\n                                            [(ngModel)]=\"filter.division_id\">\n                                            <option value=\"\">الشعبة</option>\n                                            <option *ngFor=\"let item of divisions\" value=\"{{ item.id }}\">{{item.name}}\n                                            </option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <div class=\"col-lg-3 col-md-3\">\n                                    <div class=\"form-group\">\n                                        <label>اللجنة</label>\n                                        <select class=\"form-control\" [(ngModel)]=\"filter.commission_id\">\n                                            <option value=\"\">اللجنة</option>\n                                            <option\n                                                *ngFor=\"let item of commissionsGet|division:division_id|level:level_id\"\n                                                value=\"{{ item.id }}\">{{ item.name }}</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <div class=\"col-lg-3 col-md-3\">\n                                    <div class=\"form-group\">\n                                        <label for=\"\">{{ \"academic year\" | trans }}</label>\n                                        <select name=\"filter.year_id\" class=\"form-control\" [(ngModel)]=\"filter.year_id\">\n                                            <option value=\"\">الكل</option>\n                                            <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"\n                                                value=\"{{ item.id }}\">{{item.name}}</option>\n                                        </select>\n                                    </div>\n                                </div>\n                                <div class=\"col-lg-3 col-md-3\">\n                                    <button class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans\n                                        }}</button>\n                                    <button style=\"margin: 0 5px;\" class=\"btn btn-default w3-round\"\n                                        (click)=\"printContent()\">{{ \"print\" | trans }}</button>\n                                    <button class=\"btn btn-default w3-round\" (click)=\"excel()\">{{ \"excel\" | trans\n                                        }}</button>\n\n                                </div>\n\n\n                            </div>\n\n                        </div>\n                    </div>\n                </div>\n                <div class=\"\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\"\n                        id=\"printable\">\n\n                        <div dir=\"rtl\" class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\n\n\n                        </div>\n                    </div>\n                </div>\n\n\n\n            </div>\n\n\n        </div>\n    </div>\n</div>"
+module.exports = "<div permission=\"print_walls_reports\" class=\"container\">\r\n    <div class=\"w3-block w3-row\">\r\n        <div class=\"w3-white material-shadow safe-box w3-block\">\r\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n                طباعة كشوف الحائط\r\n            </div>\r\n            <div class=\"border-bottom-dashed\"></div>\r\n            <br>\r\n\r\n            <div class=\"\">\r\n\r\n                <div class=\"\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\r\n\r\n                        <div class=\"custom-panel-body table-responsive w3-padding\">\r\n\r\n                            <div class=\"row\">\r\n                                <div class=\"col-lg-3 col-md-3\">\r\n                                    <div class=\"form-group\">\r\n                                        <label>{{ \"level\" | trans }}</label>\r\n                                        <select id=\"level_id\" class=\"form-control\" name=\"level_id\"\r\n                                            [(ngModel)]=\"filter.level_id\">\r\n                                            <option value=\"\">المستوي</option>\r\n                                            <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{ item.name }}\r\n                                            </option>\r\n                                        </select>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-lg-3 col-md-3\">\r\n                                    <div class=\"form-group\">\r\n                                        <label for=\"\">{{ \"division\" | trans }}</label>\r\n                                        <select class=\"form-control input-sm course_id\"\r\n                                            [(ngModel)]=\"filter.division_id\">\r\n                                            <option value=\"\">الشعبة</option>\r\n                                            <option *ngFor=\"let item of divisions\" value=\"{{ item.id }}\">{{item.name}}\r\n                                            </option>\r\n                                        </select>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-lg-3 col-md-3\">\r\n                                    <div class=\"form-group\">\r\n                                        <label>اللجنة</label>\r\n                                        <select class=\"form-control\" [(ngModel)]=\"filter.commission_id\">\r\n                                            <option value=\"\">اللجنة</option>\r\n                                            <option\r\n                                                *ngFor=\"let item of commissionsGet|division:division_id|level:level_id\"\r\n                                                value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                                        </select>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-lg-3 col-md-3\">\r\n                                    <div class=\"form-group\">\r\n                                        <label for=\"\">{{ \"academic year\" | trans }}</label>\r\n                                        <select name=\"filter.year_id\" class=\"form-control\" [(ngModel)]=\"filter.year_id\">\r\n                                            <option value=\"\">الكل</option>\r\n                                            <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"\r\n                                                value=\"{{ item.id }}\">{{item.name}}</option>\r\n                                        </select>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-lg-3 col-md-3\">\r\n                                    <button class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans\r\n                                        }}</button>\r\n                                    <button style=\"margin: 0 5px;\" class=\"btn btn-default w3-round\"\r\n                                        (click)=\"printContent()\">{{ \"print\" | trans }}</button>\r\n                                    <button class=\"btn btn-default w3-round\" (click)=\"excel()\">{{ \"excel\" | trans\r\n                                        }}</button>\r\n\r\n                                </div>\r\n\r\n\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\"\r\n                        id=\"printable\">\r\n\r\n                        <div dir=\"rtl\" class=\"custom-panel-body table-responsive w3-padding\" id=\"reportContent\">\r\n\r\n\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -863,7 +890,7 @@ module.exports = "<div permission=\"print_walls_reports\" class=\"container\">\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC13YWxscy1yZXBvcnRzL3ByaW50LXdhbGxzLXJlcG9ydHMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvcHJpbnQtd2FsbHMtcmVwb3J0cy9wcmludC13YWxscy1yZXBvcnRzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3ByaW50LXdhbGxzLXJlcG9ydHMvcHJpbnQtd2FsbHMtcmVwb3J0cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNmb3JtIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG4iLCIjZm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59Il19 */"
+module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC13YWxscy1yZXBvcnRzL0c6XFxTcGhpbnhcXEhJTVxcaGltZnJvbnQyL3NyY1xcYXBwXFxleGFtc1xcY29tcG9uZW50c1xccHJpbnQtd2FsbHMtcmVwb3J0c1xccHJpbnQtd2FsbHMtcmVwb3J0cy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9wcmludC13YWxscy1yZXBvcnRzL3ByaW50LXdhbGxzLXJlcG9ydHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvcHJpbnQtd2FsbHMtcmVwb3J0cy9wcmludC13YWxscy1yZXBvcnRzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2Zvcm0ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuIiwiI2Zvcm0ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -878,7 +905,7 @@ module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sour
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrintWallsReportsComponent", function() { return PrintWallsReportsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
 /* harmony import */ var src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/helper */ "./src/app/shared/helper.ts");
 /* harmony import */ var src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/message */ "./src/app/shared/message.ts");
@@ -897,8 +924,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let PrintWallsReportsComponent = class PrintWallsReportsComponent {
-    constructor(globalService, applicationSettingService) {
+var PrintWallsReportsComponent = /** @class */ (function () {
+    function PrintWallsReportsComponent(globalService, applicationSettingService) {
         this.globalService = globalService;
         this.applicationSettingService = applicationSettingService;
         this.filter = {};
@@ -910,40 +937,42 @@ let PrintWallsReportsComponent = class PrintWallsReportsComponent {
         this.doc = document;
         this.applicationSettingService.queueRequests();
         var self = this;
-        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, () => {
+        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, function () {
         });
     }
-    load() {
+    PrintWallsReportsComponent.prototype.load = function () {
         if (!src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].validator(this.filter, ['level_id', 'division_id'])) {
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('please choose all filters'));
         }
-        this.globalService.loadHtml("affair/report1", this.filter).subscribe((res) => {
+        this.globalService.loadHtml("affair/report1", this.filter).subscribe(function (res) {
             $('#reportContent').html(res);
         });
-    }
-    printContent() {
+    };
+    PrintWallsReportsComponent.prototype.printContent = function () {
         this.doc.printJs();
-    }
-    excel() {
+    };
+    PrintWallsReportsComponent.prototype.excel = function () {
         this.doc.exportExcel();
-    }
-    ngOnInit() {
+    };
+    PrintWallsReportsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(_account_services_level_service__WEBPACK_IMPORTED_MODULE_8__["LevelService"].LEVEL_PREFIX);
         this.divisions = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_9__["DivisionService"].DIVISION_PREFIX);
-        this.applicationSettingService.commissions().subscribe((res) => {
-            this.commissionsGet = res;
+        this.applicationSettingService.commissions().subscribe(function (res) {
+            _this.commissionsGet = res;
         });
-    }
-};
-PrintWallsReportsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-print-walls-reports',
-        template: __webpack_require__(/*! ./print-walls-reports.component.html */ "./src/app/exams/components/print-walls-reports/print-walls-reports.component.html"),
-        styles: [__webpack_require__(/*! ./print-walls-reports.component.scss */ "./src/app/exams/components/print-walls-reports/print-walls-reports.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
-        _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
-], PrintWallsReportsComponent);
+    };
+    PrintWallsReportsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-print-walls-reports',
+            template: __webpack_require__(/*! ./print-walls-reports.component.html */ "./src/app/exams/components/print-walls-reports/print-walls-reports.component.html"),
+            styles: [__webpack_require__(/*! ./print-walls-reports.component.scss */ "./src/app/exams/components/print-walls-reports/print-walls-reports.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
+            _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
+    ], PrintWallsReportsComponent);
+    return PrintWallsReportsComponent;
+}());
 
 
 
@@ -956,7 +985,7 @@ PrintWallsReportsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-sm-12\">\n    <div class=\"w3-white material-shadow safe-box\">\n      <div style=\"padding-top: 4px;\" class=\"safe-box-header w3-xlarge\">\n        {{ \"register exams schedule\" | trans }}\n      </div>\n      <br>\n      <div class=\"border-bottom-dashed\"></div>\n      <br>\n      <div style=\"padding: 15px;\"\n        class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\n        <div class=\"custom-panel-body\">\n          <div class=\"row\">\n            <div class=\"col-lg-6 col-md-6 col-sm-12\">\n              <table class=\"table w3-block\">\n                <tr>\n                  <th>{{ \"division\" | trans }} *</th>\n                  <td>\n                    <select class=\"custom-input form-control input-sm w3-input  input-sm\">\n                      <option value=\"0\">{{\"all\" | trans}}</option>\n                      <option *ngFor=\"let division of divisions\" value=\"{{division.id}}\">{{division.name}}</option>\n                    </select>\n                  </td>\n                </tr>\n              </table>\n            </div>\n            <div class=\"col-lg-6 col-md-6 col-sm-12\">\n              <table class=\"table w3-block\">\n                <tr>\n                  <th>{{ \"level\" | trans }} *</th>\n                  <td>\n                    <select class=\"custom-input form-control input-sm w3-input  input-sm\">\n                      <option value=\"0\">{{ \"all\" | trans }}</option>\n                      <option *ngFor=\"let level of levels\" value=\"{{level.id}}\">{{level.name}}</option>\n                    </select>\n                  </td>\n                </tr>\n              </table>\n            </div>\n          </div>\n          <div class=\"row\">\n\n            <div id=\"checkboxs\" class=\"row\">\n\n              <div class=\"col-lg-4 col-md-6 col-sm-12\">\n\n\n                <div class=\"border-dashed\" style=\"padding: 4px;\">\n                  <ul class=\"w3-ul\" style=\"padding-bottom: 6px;\">\n                    <li>\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\n                        {{ \"plan 1\" | trans }}\n                      </span>\n                    </li>\n                    <li>\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\n                        {{ \"plan 2\" | trans }}\n                      </span>\n                    </li>\n                    <li>\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\n                        {{ \"plan 3\" | trans }}\n                      </span>\n                    </li>\n                    <li>\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\n                        {{ \"plan 4\" | trans }}\n                      </span>\n                    </li>\n                  </ul>\n\n                </div>\n              </div>\n              <div class=\"col-lg-4 col-md-6 col-sm-12\">\n\n\n                <div class=\"border-dashed\" style=\"padding: 4px;\">\n                  <ul class=\"w3-ul\" style=\"padding-bottom: 6px;\">\n                    <li>\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\n                        {{ \"normal\" | trans }}\n                      </span>\n                    </li>\n                    <li>\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\n                        {{ \"absences\" | trans }}\n                      </span>\n                    </li>\n                    <li>\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\n                        {{ \"groups\" | trans }}\n                      </span>\n                    </li>\n                  </ul>\n                </div>\n\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-sm-12\">\n              <div class=\"border-dashed\" style=\"padding: 4px; margin-top: 10px;\">\n                <ul class=\"w3-ul\" style=\"padding-bottom: 6px;\">\n                  <li>\n                    <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                    <span style=\"padding: 4px;\" class=\"w3-medium\">\n                      {{ \"open courses\" | trans }}\n                    </span>\n                  </li>\n                  <li>\n                    <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                    <span style=\"padding: 4px;\" class=\"w3-medium\">\n                      {{ \"show_registered_subjects_only\" | trans }}\n                    </span>\n                  </li>\n                  <li>\n                    <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\n                    <span style=\"padding: 4px;\" class=\"w3-medium\">\n                      {{ \"show_both_terms_subjects\" | trans }}\n                    </span>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div style=\"margin-top: 10px;\" class=\"col-sm-12\">\n              <table class=\"table text-center\">\n                <tr class=\"w3-light-gray\">\n                  <th>#</th>\n                  <th>{{ \"subject code\" | trans }}</th>\n                  <th>{{ \"subject name\" | trans }}</th>\n                  <th>{{ \"duration\" | trans }}</th>\n                  <th>{{ \"exam date\" | trans }}</th>\n                  <th>{{ \"time\" | trans }}</th>\n                  <th>{{ \"level\" | trans }}</th>\n                  <th>{{ \"division\" | trans }}</th>\n                  <th></th>\n                </tr>\n                <tr class=\"w3-hover-light-gray\" style=\"cursor: pointer\">\n                  <td>{{ \"1\" | trans }}</td>\n                  <td>{{ \"1665\" | trans }}</td>\n                  <td>المحاسبه</td>\n                  <td>{{ \"hour\" | trans}}</td>\n                  <td>10/12/2021</td>\n                  <td>09:00 ص</td>\n                  <td>{{ \"1\" | trans }}</td>\n                  <td>{{ \"1\" | trans }}</td>\n                  <td>\n                    <button class=\"w3-red\" style=\"padding: 0px;min-width: 50px;height: 30px;\" mat-raised-button\n                      color=\"danger\">{{ \"remove\" | trans }}</button>\n                  </td>\n                </tr>\n                <tr class=\"w3-hover-light-gray\" style=\"cursor: pointer\">\n                  <td>{{ \"2\" | trans }}</td>\n                  <td>{{ \"1675\" | trans }}</td>\n                  <td>التمويل و الاستثمار</td>\n                  <td>{{ \"hour\" | trans}}</td>\n                  <td>11/12/2021</td>\n                  <td>09:30 ص</td>\n                  <td>{{ \"1\" | trans }}</td>\n                  <td>{{ \"1\" | trans }}</td>\n                  <td>\n                    <button class=\"w3-red\" style=\"padding: 0px;min-width: 50px;height: 30px;\" mat-raised-button\n                      color=\"danger\">{{ \"remove\" | trans }}</button>\n                  </td>\n                </tr>\n              </table>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-sm-12\">\r\n    <div class=\"w3-white material-shadow safe-box\">\r\n      <div style=\"padding-top: 4px;\" class=\"safe-box-header w3-xlarge\">\r\n        {{ \"register exams schedule\" | trans }}\r\n      </div>\r\n      <br>\r\n      <div class=\"border-bottom-dashed\"></div>\r\n      <br>\r\n      <div style=\"padding: 15px;\"\r\n        class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\r\n        <div class=\"custom-panel-body\">\r\n          <div class=\"row\">\r\n            <div class=\"col-lg-6 col-md-6 col-sm-12\">\r\n              <table class=\"table w3-block\">\r\n                <tr>\r\n                  <th>{{ \"division\" | trans }} *</th>\r\n                  <td>\r\n                    <select class=\"custom-input form-control input-sm w3-input  input-sm\">\r\n                      <option value=\"0\">{{\"all\" | trans}}</option>\r\n                      <option *ngFor=\"let division of divisions\" value=\"{{division.id}}\">{{division.name}}</option>\r\n                    </select>\r\n                  </td>\r\n                </tr>\r\n              </table>\r\n            </div>\r\n            <div class=\"col-lg-6 col-md-6 col-sm-12\">\r\n              <table class=\"table w3-block\">\r\n                <tr>\r\n                  <th>{{ \"level\" | trans }} *</th>\r\n                  <td>\r\n                    <select class=\"custom-input form-control input-sm w3-input  input-sm\">\r\n                      <option value=\"0\">{{ \"all\" | trans }}</option>\r\n                      <option *ngFor=\"let level of levels\" value=\"{{level.id}}\">{{level.name}}</option>\r\n                    </select>\r\n                  </td>\r\n                </tr>\r\n              </table>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n\r\n            <div id=\"checkboxs\" class=\"row\">\r\n\r\n              <div class=\"col-lg-4 col-md-6 col-sm-12\">\r\n\r\n\r\n                <div class=\"border-dashed\" style=\"padding: 4px;\">\r\n                  <ul class=\"w3-ul\" style=\"padding-bottom: 6px;\">\r\n                    <li>\r\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                        {{ \"plan 1\" | trans }}\r\n                      </span>\r\n                    </li>\r\n                    <li>\r\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                        {{ \"plan 2\" | trans }}\r\n                      </span>\r\n                    </li>\r\n                    <li>\r\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                        {{ \"plan 3\" | trans }}\r\n                      </span>\r\n                    </li>\r\n                    <li>\r\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                        {{ \"plan 4\" | trans }}\r\n                      </span>\r\n                    </li>\r\n                  </ul>\r\n\r\n                </div>\r\n              </div>\r\n              <div class=\"col-lg-4 col-md-6 col-sm-12\">\r\n\r\n\r\n                <div class=\"border-dashed\" style=\"padding: 4px;\">\r\n                  <ul class=\"w3-ul\" style=\"padding-bottom: 6px;\">\r\n                    <li>\r\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                        {{ \"normal\" | trans }}\r\n                      </span>\r\n                    </li>\r\n                    <li>\r\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                        {{ \"absences\" | trans }}\r\n                      </span>\r\n                    </li>\r\n                    <li>\r\n                      <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                      <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                        {{ \"groups\" | trans }}\r\n                      </span>\r\n                    </li>\r\n                  </ul>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"border-dashed\" style=\"padding: 4px; margin-top: 10px;\">\r\n                <ul class=\"w3-ul\" style=\"padding-bottom: 6px;\">\r\n                  <li>\r\n                    <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                    <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                      {{ \"open courses\" | trans }}\r\n                    </span>\r\n                  </li>\r\n                  <li>\r\n                    <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                    <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                      {{ \"show_registered_subjects_only\" | trans }}\r\n                    </span>\r\n                  </li>\r\n                  <li>\r\n                    <input type=\"checkbox\" style=\"margin: 0px!important\" class=\"w3-check\">\r\n                    <span style=\"padding: 4px;\" class=\"w3-medium\">\r\n                      {{ \"show_both_terms_subjects\" | trans }}\r\n                    </span>\r\n                  </li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div style=\"margin-top: 10px;\" class=\"col-sm-12\">\r\n              <table class=\"table text-center\">\r\n                <tr class=\"w3-light-gray\">\r\n                  <th>#</th>\r\n                  <th>{{ \"subject code\" | trans }}</th>\r\n                  <th>{{ \"subject name\" | trans }}</th>\r\n                  <th>{{ \"duration\" | trans }}</th>\r\n                  <th>{{ \"exam date\" | trans }}</th>\r\n                  <th>{{ \"time\" | trans }}</th>\r\n                  <th>{{ \"level\" | trans }}</th>\r\n                  <th>{{ \"division\" | trans }}</th>\r\n                  <th></th>\r\n                </tr>\r\n                <tr class=\"w3-hover-light-gray\" style=\"cursor: pointer\">\r\n                  <td>{{ \"1\" | trans }}</td>\r\n                  <td>{{ \"1665\" | trans }}</td>\r\n                  <td>المحاسبه</td>\r\n                  <td>{{ \"hour\" | trans}}</td>\r\n                  <td>10/12/2021</td>\r\n                  <td>09:00 ص</td>\r\n                  <td>{{ \"1\" | trans }}</td>\r\n                  <td>{{ \"1\" | trans }}</td>\r\n                  <td>\r\n                    <button class=\"w3-red\" style=\"padding: 0px;min-width: 50px;height: 30px;\" mat-raised-button\r\n                      color=\"danger\">{{ \"remove\" | trans }}</button>\r\n                  </td>\r\n                </tr>\r\n                <tr class=\"w3-hover-light-gray\" style=\"cursor: pointer\">\r\n                  <td>{{ \"2\" | trans }}</td>\r\n                  <td>{{ \"1675\" | trans }}</td>\r\n                  <td>التمويل و الاستثمار</td>\r\n                  <td>{{ \"hour\" | trans}}</td>\r\n                  <td>11/12/2021</td>\r\n                  <td>09:30 ص</td>\r\n                  <td>{{ \"1\" | trans }}</td>\r\n                  <td>{{ \"1\" | trans }}</td>\r\n                  <td>\r\n                    <button class=\"w3-red\" style=\"padding: 0px;min-width: 50px;height: 30px;\" mat-raised-button\r\n                      color=\"danger\">{{ \"remove\" | trans }}</button>\r\n                  </td>\r\n                </tr>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -967,7 +996,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-sm-12\">\n    <div cla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ul {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n}\n\nli {\n  border-bottom: 0;\n}\n\n#checkboxs {\n  display: flex;\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9yZWdpc3Rlci1leGFtcy1zY2hlZHVsZS9yZWdpc3Rlci1leGFtcy1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9yZWdpc3Rlci1leGFtcy1zY2hlZHVsZS9yZWdpc3Rlci1leGFtcy1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDZCQUFBO0FDQ0o7O0FEQ0E7RUFDSSxnQkFBQTtBQ0VKOztBREFBO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FDR0oiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3JlZ2lzdGVyLWV4YW1zLXNjaGVkdWxlL3JlZ2lzdGVyLWV4YW1zLXNjaGVkdWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWx7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xufVxubGl7XG4gICAgYm9yZGVyLWJvdHRvbTogMDtcbn1cbiNjaGVja2JveHN7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn1cbiIsInVsIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XG59XG5cbmxpIHtcbiAgYm9yZGVyLWJvdHRvbTogMDtcbn1cblxuI2NoZWNrYm94cyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufSJdfQ== */"
+module.exports = "ul {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n}\n\nli {\n  border-bottom: 0;\n}\n\n#checkboxs {\n  display: flex;\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9yZWdpc3Rlci1leGFtcy1zY2hlZHVsZS9HOlxcU3BoaW54XFxISU1cXGhpbWZyb250Mi9zcmNcXGFwcFxcZXhhbXNcXGNvbXBvbmVudHNcXHJlZ2lzdGVyLWV4YW1zLXNjaGVkdWxlXFxyZWdpc3Rlci1leGFtcy1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9yZWdpc3Rlci1leGFtcy1zY2hlZHVsZS9yZWdpc3Rlci1leGFtcy1zY2hlZHVsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDZCQUFBO0FDQ0o7O0FEQ0E7RUFDSSxnQkFBQTtBQ0VKOztBREFBO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FDR0oiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3JlZ2lzdGVyLWV4YW1zLXNjaGVkdWxlL3JlZ2lzdGVyLWV4YW1zLXNjaGVkdWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWx7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xyXG59XHJcbmxpe1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMDtcclxufVxyXG4jY2hlY2tib3hze1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcbiIsInVsIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XG59XG5cbmxpIHtcbiAgYm9yZGVyLWJvdHRvbTogMDtcbn1cblxuI2NoZWNrYm94cyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -982,7 +1011,7 @@ module.exports = "ul {\n  display: flex;\n  flex-direction: row;\n  justify-cont
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterExamsScheduleComponent", function() { return RegisterExamsScheduleComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/account/services/division.service */ "./src/app/account/services/division.service.ts");
 /* harmony import */ var src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/account/services/level.service */ "./src/app/account/services/level.service.ts");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
@@ -991,24 +1020,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let RegisterExamsScheduleComponent = class RegisterExamsScheduleComponent {
-    constructor() {
+var RegisterExamsScheduleComponent = /** @class */ (function () {
+    function RegisterExamsScheduleComponent() {
         this.levels = [];
         this.divisions = [];
     }
-    ngOnInit() {
+    RegisterExamsScheduleComponent.prototype.ngOnInit = function () {
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_4__["Cache"].get(src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_3__["LevelService"].LEVEL_PREFIX);
         this.divisions = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_4__["Cache"].get(src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_2__["DivisionService"].DIVISION_PREFIX);
-    }
-};
-RegisterExamsScheduleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-register-exams-schedule',
-        template: __webpack_require__(/*! ./register-exams-schedule.component.html */ "./src/app/exams/components/register-exams-schedule/register-exams-schedule.component.html"),
-        styles: [__webpack_require__(/*! ./register-exams-schedule.component.scss */ "./src/app/exams/components/register-exams-schedule/register-exams-schedule.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-], RegisterExamsScheduleComponent);
+    };
+    RegisterExamsScheduleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-register-exams-schedule',
+            template: __webpack_require__(/*! ./register-exams-schedule.component.html */ "./src/app/exams/components/register-exams-schedule/register-exams-schedule.component.html"),
+            styles: [__webpack_require__(/*! ./register-exams-schedule.component.scss */ "./src/app/exams/components/register-exams-schedule/register-exams-schedule.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], RegisterExamsScheduleComponent);
+    return RegisterExamsScheduleComponent;
+}());
 
 
 
@@ -1021,7 +1051,7 @@ RegisterExamsScheduleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"set_numbers_null\" class=\"row\">\n  <div class=\"col-lg-2 col-md-4\">\n    <div class=\"form-group\">\n        <label for=\"\">{{ \"level\" | trans }}</label>\n        <select id=\"level_id\" name=\"filter.level_id\" class=\"form-control\" [(ngModel)]=\"filter.level_id\">\n        <option value=\"\">الكل</option>\n        <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{item.name}}</option>\n        </select>\n    </div>\n</div>\n  <div id=\"btn\" class=\"col-lg-2 col-md-3\">\n    <button type=\"button\" class=\"btn btn-primary\" (click)='setNumbersNull()' data-whatever=\"@getbootstrap\"\n      style='margin-top: 23px !important;margin-right: 2px;'>تصفير أرقام الجلوس</button>\n  </div>\n</div>\n"
+module.exports = "<div permission=\"set_numbers_null\" class=\"row\">\r\n  <div class=\"col-lg-2 col-md-4\">\r\n    <div class=\"form-group\">\r\n        <label for=\"\">{{ \"level\" | trans }}</label>\r\n        <select id=\"level_id\" name=\"filter.level_id\" class=\"form-control\" [(ngModel)]=\"filter.level_id\">\r\n        <option value=\"\">الكل</option>\r\n        <option *ngFor=\"let item of levels\" value=\"{{ item.id }}\">{{item.name}}</option>\r\n        </select>\r\n    </div>\r\n</div>\r\n  <div id=\"btn\" class=\"col-lg-2 col-md-3\">\r\n    <button type=\"button\" class=\"btn btn-primary\" (click)='setNumbersNull()' data-whatever=\"@getbootstrap\"\r\n      style='margin-top: 23px !important;margin-right: 2px;'>تصفير أرقام الجلوس</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1032,7 +1062,7 @@ module.exports = "<div permission=\"set_numbers_null\" class=\"row\">\n  <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#btn {\n  display: flex;\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9zZXQtbnVtYmVycy1udWxsL3NldC1udW1iZXJzLW51bGwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvc2V0LW51bWJlcnMtbnVsbC9zZXQtbnVtYmVycy1udWxsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3NldC1udW1iZXJzLW51bGwvc2V0LW51bWJlcnMtbnVsbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNidG57XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn0iLCIjYnRuIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59Il19 */"
+module.exports = "#btn {\n  display: flex;\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9zZXQtbnVtYmVycy1udWxsL0c6XFxTcGhpbnhcXEhJTVxcaGltZnJvbnQyL3NyY1xcYXBwXFxleGFtc1xcY29tcG9uZW50c1xcc2V0LW51bWJlcnMtbnVsbFxcc2V0LW51bWJlcnMtbnVsbC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9zZXQtbnVtYmVycy1udWxsL3NldC1udW1iZXJzLW51bGwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvc2V0LW51bWJlcnMtbnVsbC9zZXQtbnVtYmVycy1udWxsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2J0bntcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufSIsIiNidG4ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn0iXX0= */"
 
 /***/ }),
 
@@ -1047,7 +1077,7 @@ module.exports = "#btn {\n  display: flex;\n  justify-content: center;\n}\n/*# s
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SetNumbersNullComponent", function() { return SetNumbersNullComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/account/services/level.service */ "./src/app/account/services/level.service.ts");
 /* harmony import */ var src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/adminision/services/application-setting.service */ "./src/app/adminision/services/application-setting.service.ts");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
@@ -1060,16 +1090,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let SetNumbersNullComponent = class SetNumbersNullComponent {
-    constructor(applicationSettingService) {
+var SetNumbersNullComponent = /** @class */ (function () {
+    function SetNumbersNullComponent(applicationSettingService) {
         this.applicationSettingService = applicationSettingService;
         this.filter = {};
         this.levels = [];
     }
-    setNumbersNull() {
+    SetNumbersNullComponent.prototype.setNumbersNull = function () {
+        var _this_1 = this;
         var _this = this;
-        src_app_shared_message__WEBPACK_IMPORTED_MODULE_6__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_5__["Helper"].trans('are you sure'), () => {
-            this.applicationSettingService.setNumbersNull().subscribe((res) => {
+        src_app_shared_message__WEBPACK_IMPORTED_MODULE_6__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_5__["Helper"].trans('are you sure'), function () {
+            _this_1.applicationSettingService.setNumbersNull().subscribe(function (res) {
                 if (res == 1) {
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_6__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_5__["Helper"].trans('done'));
                 }
@@ -1078,22 +1109,24 @@ let SetNumbersNullComponent = class SetNumbersNullComponent {
                 }
             });
         });
-    }
-    ngOnInit() {
-        $('#level_id').on('change', () => {
-            this.level_id = $('#level_id').val();
+    };
+    SetNumbersNullComponent.prototype.ngOnInit = function () {
+        var _this_1 = this;
+        $('#level_id').on('change', function () {
+            _this_1.level_id = $('#level_id').val();
         });
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_4__["Cache"].get(src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_2__["LevelService"].LEVEL_PREFIX);
-    }
-};
-SetNumbersNullComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-set-numbers-null',
-        template: __webpack_require__(/*! ./set-numbers-null.component.html */ "./src/app/exams/components/set-numbers-null/set-numbers-null.component.html"),
-        styles: [__webpack_require__(/*! ./set-numbers-null.component.scss */ "./src/app/exams/components/set-numbers-null/set-numbers-null.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationSettingService"]])
-], SetNumbersNullComponent);
+    };
+    SetNumbersNullComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-set-numbers-null',
+            template: __webpack_require__(/*! ./set-numbers-null.component.html */ "./src/app/exams/components/set-numbers-null/set-numbers-null.component.html"),
+            styles: [__webpack_require__(/*! ./set-numbers-null.component.scss */ "./src/app/exams/components/set-numbers-null/set-numbers-null.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_3__["ApplicationSettingService"]])
+    ], SetNumbersNullComponent);
+    return SetNumbersNullComponent;
+}());
 
 
 
@@ -1117,7 +1150,7 @@ module.exports = "<div class=\"w3-block w3-row\">\n  <div class=\"w3-white mater
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9zdHVkZW50cy1yb29tcy1tYW5hZ2UtcmVwb3J0L3N0dWRlbnRzLXJvb21zLW1hbmFnZS1yZXBvcnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvc3R1ZGVudHMtcm9vbXMtbWFuYWdlLXJlcG9ydC9zdHVkZW50cy1yb29tcy1tYW5hZ2UtcmVwb3J0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9leGFtcy9jb21wb25lbnRzL3N0dWRlbnRzLXJvb21zLW1hbmFnZS1yZXBvcnQvc3R1ZGVudHMtcm9vbXMtbWFuYWdlLXJlcG9ydC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNmb3JtIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbiIsIiNmb3JtIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn0iXX0= */"
+module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9zdHVkZW50cy1yb29tcy1tYW5hZ2UtcmVwb3J0L0c6XFxTcGhpbnhcXEhJTVxcaGltZnJvbnQyL3NyY1xcYXBwXFxleGFtc1xcY29tcG9uZW50c1xcc3R1ZGVudHMtcm9vbXMtbWFuYWdlLXJlcG9ydFxcc3R1ZGVudHMtcm9vbXMtbWFuYWdlLXJlcG9ydC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy9zdHVkZW50cy1yb29tcy1tYW5hZ2UtcmVwb3J0L3N0dWRlbnRzLXJvb21zLW1hbmFnZS1yZXBvcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvc3R1ZGVudHMtcm9vbXMtbWFuYWdlLXJlcG9ydC9zdHVkZW50cy1yb29tcy1tYW5hZ2UtcmVwb3J0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2Zvcm0ge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG4iLCIjZm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59Il19 */"
 
 /***/ }),
 
@@ -1132,8 +1165,8 @@ module.exports = "#form {\n  display: flex;\n  align-items: center;\n}\n/*# sour
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentsRoomsManageReportComponent", function() { return StudentsRoomsManageReportComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/account/services/division.service */ "./src/app/account/services/division.service.ts");
 /* harmony import */ var src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/account/services/level.service */ "./src/app/account/services/level.service.ts");
 /* harmony import */ var src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/adminision/services/application-setting.service */ "./src/app/adminision/services/application-setting.service.ts");
@@ -1153,8 +1186,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let StudentsRoomsManageReportComponent = class StudentsRoomsManageReportComponent {
-    constructor(titleService, globalService, applicationSettingService) {
+var StudentsRoomsManageReportComponent = /** @class */ (function () {
+    function StudentsRoomsManageReportComponent(titleService, globalService, applicationSettingService) {
         this.titleService = titleService;
         this.globalService = globalService;
         this.applicationSettingService = applicationSettingService;
@@ -1170,43 +1203,45 @@ let StudentsRoomsManageReportComponent = class StudentsRoomsManageReportComponen
         this.titleService.setTitle("HIM" + " - " + src_app_shared_helper__WEBPACK_IMPORTED_MODULE_7__["Helper"].trans('students_rooms_manage_report'));
         this.applicationSettingService.queueRequests();
         var self = this;
-        src_app_shared_request__WEBPACK_IMPORTED_MODULE_9__["Request"].fire(false, () => {
+        src_app_shared_request__WEBPACK_IMPORTED_MODULE_9__["Request"].fire(false, function () {
         });
     }
-    load() {
+    StudentsRoomsManageReportComponent.prototype.load = function () {
         if (!src_app_shared_helper__WEBPACK_IMPORTED_MODULE_7__["Helper"].validator(this.filter, ['level_id', 'division_id', 'distributed'])) {
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_8__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_7__["Helper"].trans('please choose all filters'));
         }
         else {
-            this.globalService.loadHtml("affair/report19", this.filter).subscribe((res) => {
+            this.globalService.loadHtml("affair/report19", this.filter).subscribe(function (res) {
                 $('#reportContent').html(res);
             });
         }
-    }
-    excel() {
+    };
+    StudentsRoomsManageReportComponent.prototype.excel = function () {
         this.doc.exportExcel();
-    }
-    printContent() {
+    };
+    StudentsRoomsManageReportComponent.prototype.printContent = function () {
         this.doc.printJs();
-    }
-    ngOnInit() {
+    };
+    StudentsRoomsManageReportComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_6__["Cache"].get(src_app_account_services_level_service__WEBPACK_IMPORTED_MODULE_4__["LevelService"].LEVEL_PREFIX);
         this.divisions = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_6__["Cache"].get(src_app_account_services_division_service__WEBPACK_IMPORTED_MODULE_3__["DivisionService"].DIVISION_PREFIX);
-        this.applicationSettingService.commissions().subscribe((res) => {
-            this.commissions = res;
+        this.applicationSettingService.commissions().subscribe(function (res) {
+            _this.commissions = res;
         });
-    }
-};
-StudentsRoomsManageReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-students-rooms-manage-report',
-        template: __webpack_require__(/*! ./students-rooms-manage-report.component.html */ "./src/app/exams/components/students-rooms-manage-report/students-rooms-manage-report.component.html"),
-        styles: [__webpack_require__(/*! ./students-rooms-manage-report.component.scss */ "./src/app/exams/components/students-rooms-manage-report/students-rooms-manage-report.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"],
-        src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_10__["GlobalService"],
-        src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_5__["ApplicationSettingService"]])
-], StudentsRoomsManageReportComponent);
+    };
+    StudentsRoomsManageReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-students-rooms-manage-report',
+            template: __webpack_require__(/*! ./students-rooms-manage-report.component.html */ "./src/app/exams/components/students-rooms-manage-report/students-rooms-manage-report.component.html"),
+            styles: [__webpack_require__(/*! ./students-rooms-manage-report.component.scss */ "./src/app/exams/components/students-rooms-manage-report/students-rooms-manage-report.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"],
+            src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_10__["GlobalService"],
+            src_app_adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_5__["ApplicationSettingService"]])
+    ], StudentsRoomsManageReportComponent);
+    return StudentsRoomsManageReportComponent;
+}());
 
 
 
@@ -1219,7 +1254,7 @@ StudentsRoomsManageReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decor
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div permission=\"theaters\" class=\"container\">\n    <div class=\"w3-block w3-row\">\n        <div class=\"w3-white material-shadow safe-box col-lg-12 col-md-12 col-sm-12\">\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\n                المدرجات\n            </div>\n            <div class=\"border-bottom-dashed\"></div>\n            <br>\n\n            <div class=\"row\">\n\n                <div class=\"col-lg-12\">\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\n                        <div permission=\"theater_add\" class=\"add-theater\">\n                            <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal1\" data-whatever=\"@getbootstrap\" style='margin-top: 23px !important;margin-right: 2px;'>اضافة\n                            مدرج</button>\n                        </div>\n                        <div class=\"custom-panel-body table-responsive w3-padding w3-center\" style=\"height: 400px;\">\n                            <table class=\" table-bordered\">\n                                <thead>\n                                    <th>#</th>\n                                    <th>{{ \"theater name\" | trans }}</th>\n                                    <th></th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let theater of prevTheaters index as i\">\n                                        <td>{{ i + 1 }}</td>\n                                        <td>\n                                            <!-- <input type=\"text\" class=\"form-control input-sm\" [(ngModel)]=\"theater.name\"> -->\n                                            {{ theater.name }}\n                                        </td>\n                                        <td>\n                                            <button permission=\"theater_edit\" style=\"margin-left: 5px;\" class=\"btn btn-success\" [disabled]=\"isSubmitted\" (click)=\"setCurrent(theater.name, theater.id)\" data-toggle=\"modal\" data-target=\"#exampleModal2\">\n                                            <i *ngIf=\"!isSubmitted\" data-whatever=\"@getbootstrap\" class=\"fa fa-pencil\"></i>\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\n                                        </button>\n                                            <button permission=\"theater_remove\" class=\"btn btn-danger\" [disabled]=\"isSubmitted\" (click)=\"destroyTheater(theater.id)\">\n                                            <i *ngIf=\"!isSubmitted\" class=\"fa fa-trash\"></i>\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\n                                        </button>\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n\n                        </div>\n                    </div>\n\n\n                </div>\n\n\n\n            </div>\n\n\n        </div>\n    </div>\n</div>\n<div class=\"\">\n\n    <div class=\"\">\n\n        <div class=\"custom-panel-body table-responsive w3-padding\">\n\n            <div class=\"row\">\n\n                <!-- <div class=\"col-lg-3 col-md-3\">\n                              <div class=\"form-group\">\n                                  <label>{{ \"level\" | trans }}</label>\n                                  <select class=\"form-control\" [(ngModel)]=\"filter.level_id\">\n                              <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                            </select>\n                              </div>\n                          </div>\n\n                          <div class=\"col-lg-3 col-md-3\">\n                              <div class=\"form-group\">\n                                  <label>{{ \"division\" | trans }}</label>\n                                  <select class=\"form-control\" [(ngModel)]=\"filter.division_id\">\n                              <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\n                            </select>\n                              </div>\n                          </div> -->\n\n                <!-- <div class=\"col-lg-3 col-md-3\">\n                              <div class=\"form-group\">\n                                  <label>{{ \"academic_year\" | trans }}</label>\n                                  <select class=\"form-control\" [(ngModel)]=\"filter.academic_year_id\">\n                            <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"  value=\"{{ item.id }}\">{{ item.name }}</option>\n                          </select>\n                              </div>\n                          </div> -->\n\n                <div class=\"col-lg-3 col-md-3\">\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button> -->\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button> -->\n                    <div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel1\" aria-hidden=\"true\">\n                        <div class=\"modal-dialog\">\n                            <div class=\"modal-content\">\n                                <div class=\"modal-header\">\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel1\">اضافة مدرج</h5>\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                                        <span aria-hidden=\"true\">&times;</span>\n                                    </button>\n                                </div>\n                                <div class=\"modal-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label for=\"message-text\" class=\"col-form-label\">أسم المدرج:</label>\n                                            <input class=\"form-control\" id=\"message-text\" type=\"text\" name='theater' [(ngModel)]=\"theater\" required>\n                                        </div>\n                                    </form>\n                                </div>\n                                <div class=\"modal-footer\">\n                                    <button id='closeNumber1' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\n                                    <button id='beforeLoading' (click)='createTheater()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\n                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\n                                            aria-hidden=\"true\"></span>\n                                        Loading...\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col-lg-3 col-md-3\">\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button> -->\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button> -->\n                    <div class=\"modal fade\" id=\"exampleModal2\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel2\" aria-hidden=\"true\">\n                        <div class=\"modal-dialog\">\n                            <div class=\"modal-content\">\n                                <div class=\"modal-header\">\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel2\">تعديل مدرج</h5>\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                                        <span aria-hidden=\"true\">&times;</span>\n                                    </button>\n                                </div>\n                                <div class=\"modal-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label for=\"message-text\" class=\"col-form-label\">أسم المدرج:</label>\n                                            <input placeholder=\"الاسم الحالي : {{ currentTheaterName }}\" class=\"form-control\" id=\"message-text\" type=\"text\" name='theater' [(ngModel)]=\"theater\" required>\n                                        </div>\n                                    </form>\n                                </div>\n                                <div class=\"modal-footer\">\n                                    <button id='closeNumber2' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\n                                    <button id='beforeLoading' (click)='updateTheater(currentTheaterName, currentTheaterId)' type=\"button\" class=\"btn btn-primary\">تعديل</button>\n                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\n                                            aria-hidden=\"true\"></span>\n                                        Loading...\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div permission=\"theaters\" class=\"container\">\r\n    <div class=\"w3-block w3-row\">\r\n        <div class=\"w3-white material-shadow safe-box col-lg-12 col-md-12 col-sm-12\">\r\n            <div class=\"safe-box-header w3-large\" style=\"padding: 5px!important\">\r\n                المدرجات\r\n            </div>\r\n            <div class=\"border-bottom-dashed\"></div>\r\n            <br>\r\n\r\n            <div class=\"row\">\r\n\r\n                <div class=\"col-lg-12\">\r\n                    <div class=\"custom-panel w3-display-container w3-round application-panel student-info-panel\">\r\n                        <div permission=\"theater_add\" class=\"add-theater\">\r\n                            <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal1\" data-whatever=\"@getbootstrap\" style='margin-top: 23px !important;margin-right: 2px;'>اضافة\r\n                            مدرج</button>\r\n                        </div>\r\n                        <div class=\"custom-panel-body table-responsive w3-padding w3-center\" style=\"height: 400px;\">\r\n                            <table class=\" table-bordered\">\r\n                                <thead>\r\n                                    <th>#</th>\r\n                                    <th>{{ \"theater name\" | trans }}</th>\r\n                                    <th></th>\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let theater of prevTheaters index as i\">\r\n                                        <td>{{ i + 1 }}</td>\r\n                                        <td>\r\n                                            <!-- <input type=\"text\" class=\"form-control input-sm\" [(ngModel)]=\"theater.name\"> -->\r\n                                            {{ theater.name }}\r\n                                        </td>\r\n                                        <td>\r\n                                            <button permission=\"theater_edit\" style=\"margin-left: 5px;\" class=\"btn btn-success\" [disabled]=\"isSubmitted\" (click)=\"setCurrent(theater.name, theater.id)\" data-toggle=\"modal\" data-target=\"#exampleModal2\">\r\n                                            <i *ngIf=\"!isSubmitted\" data-whatever=\"@getbootstrap\" class=\"fa fa-pencil\"></i>\r\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\r\n                                        </button>\r\n                                            <button permission=\"theater_remove\" class=\"btn btn-danger\" [disabled]=\"isSubmitted\" (click)=\"destroyTheater(theater.id)\">\r\n                                            <i *ngIf=\"!isSubmitted\" class=\"fa fa-trash\"></i>\r\n                                            <i *ngIf=\"isSubmitted\" class=\"fa fa-spin fa-spinner\"></i>\r\n                                        </button>\r\n                                        </td>\r\n                                    </tr>\r\n                                </tbody>\r\n                            </table>\r\n\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"\">\r\n\r\n    <div class=\"\">\r\n\r\n        <div class=\"custom-panel-body table-responsive w3-padding\">\r\n\r\n            <div class=\"row\">\r\n\r\n                <!-- <div class=\"col-lg-3 col-md-3\">\r\n                              <div class=\"form-group\">\r\n                                  <label>{{ \"level\" | trans }}</label>\r\n                                  <select class=\"form-control\" [(ngModel)]=\"filter.level_id\">\r\n                              <option *ngFor=\"let item of levels\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                            </select>\r\n                              </div>\r\n                          </div>\r\n\r\n                          <div class=\"col-lg-3 col-md-3\">\r\n                              <div class=\"form-group\">\r\n                                  <label>{{ \"division\" | trans }}</label>\r\n                                  <select class=\"form-control\" [(ngModel)]=\"filter.division_id\">\r\n                              <option *ngFor=\"let item of applicationService.DIVISIONS\" value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                            </select>\r\n                              </div>\r\n                          </div> -->\r\n\r\n                <!-- <div class=\"col-lg-3 col-md-3\">\r\n                              <div class=\"form-group\">\r\n                                  <label>{{ \"academic_year\" | trans }}</label>\r\n                                  <select class=\"form-control\" [(ngModel)]=\"filter.academic_year_id\">\r\n                            <option *ngFor=\"let item of applicationService.ACADEMIC_YEARS\"  value=\"{{ item.id }}\">{{ item.name }}</option>\r\n                          </select>\r\n                              </div>\r\n                          </div> -->\r\n\r\n                <div class=\"col-lg-3 col-md-3\">\r\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button> -->\r\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button> -->\r\n                    <div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel1\" aria-hidden=\"true\">\r\n                        <div class=\"modal-dialog\">\r\n                            <div class=\"modal-content\">\r\n                                <div class=\"modal-header\">\r\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel1\">اضافة مدرج</h5>\r\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                                        <span aria-hidden=\"true\">&times;</span>\r\n                                    </button>\r\n                                </div>\r\n                                <div class=\"modal-body\">\r\n                                    <form>\r\n                                        <div class=\"form-group\">\r\n                                            <label for=\"message-text\" class=\"col-form-label\">أسم المدرج:</label>\r\n                                            <input class=\"form-control\" id=\"message-text\" type=\"text\" name='theater' [(ngModel)]=\"theater\" required>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                                <div class=\"modal-footer\">\r\n                                    <button id='closeNumber1' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\r\n                                    <button id='beforeLoading' (click)='createTheater()' type=\"button\" class=\"btn btn-primary\">تأكيد</button>\r\n                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\r\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\r\n                                            aria-hidden=\"true\"></span>\r\n                                        Loading...\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-md-3\">\r\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"load()\">{{ \"search\" | trans }}</button> -->\r\n                    <!-- <button class=\"btn btn-default w3-round\" (click)=\"printContent()\">{{ \"print\" | trans }}</button> -->\r\n                    <div class=\"modal fade\" id=\"exampleModal2\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel2\" aria-hidden=\"true\">\r\n                        <div class=\"modal-dialog\">\r\n                            <div class=\"modal-content\">\r\n                                <div class=\"modal-header\">\r\n                                    <h5 class=\"modal-title\" id=\"exampleModalLabel2\">تعديل مدرج</h5>\r\n                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                                        <span aria-hidden=\"true\">&times;</span>\r\n                                    </button>\r\n                                </div>\r\n                                <div class=\"modal-body\">\r\n                                    <form>\r\n                                        <div class=\"form-group\">\r\n                                            <label for=\"message-text\" class=\"col-form-label\">أسم المدرج:</label>\r\n                                            <input placeholder=\"الاسم الحالي : {{ currentTheaterName }}\" class=\"form-control\" id=\"message-text\" type=\"text\" name='theater' [(ngModel)]=\"theater\" required>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                                <div class=\"modal-footer\">\r\n                                    <button id='closeNumber2' type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">غلق</button>\r\n                                    <button id='beforeLoading' (click)='updateTheater(currentTheaterName, currentTheaterId)' type=\"button\" class=\"btn btn-primary\">تعديل</button>\r\n                                    <button id='buttonLoading' class=\"btn btn-primary\" type=\"button\" disabled>\r\n                                        <span class=\"spinner-border spinner-border-sm\" role=\"status\"\r\n                                            aria-hidden=\"true\"></span>\r\n                                        Loading...\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1230,7 +1265,7 @@ module.exports = "<div permission=\"theaters\" class=\"container\">\n    <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n.modal {\n  overflow: auto !important;\n}\n\n/*\n  custom button style\n*/\n\nselect, input[type=file] {\n  padding: 0px !important;\n}\n\n.filter-top {\n  height: 200px !important;\n  overflow: auto;\n}\n\n.filter-side {\n  height: 400px !important;\n  overflow: auto;\n}\n\n.w3-ul li {\n  padding: 2px !important;\n  font-size: 12px !important;\n}\n\n.number_input {\n  width: 45px;\n}\n\n.input-setting {\n  border-radius: 5em;\n  border: 1px solid lightgray;\n  padding-right: 10px;\n}\n\n.table-right tr, .table-right td, .table-right th {\n  text-align: right;\n}\n\n#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n#btn {\n  display: flex;\n  justify-content: center;\n}\n\n.add-theater {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9tb2hhbWVkLzZDMzJFOEZFMzJFOENERTAvcHJvamVjdHMvSElNLUZyb250L3NyYy9hcHAvZXhhbXMvY29tcG9uZW50cy90aGVhdGVycy90aGVhdGVycy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy90aGVhdGVycy90aGVhdGVycy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGFBQUE7QUNDSjs7QURFQTtFQUNJLHlCQUFBO0FDQ0o7O0FEQ0U7O0NBQUE7O0FBSUE7RUFDRSx1QkFBQTtBQ0NKOztBREVFO0VBQ0Usd0JBQUE7RUFDQSxjQUFBO0FDQ0o7O0FERUU7RUFDRSx3QkFBQTtFQUNBLGNBQUE7QUNDSjs7QURHRTtFQUNFLHVCQUFBO0VBQ0EsMEJBQUE7QUNBSjs7QURHRTtFQUNFLFdBQUE7QUNBSjs7QURJRTtFQUNFLGtCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQkFBQTtBQ0RKOztBREtFO0VBQ0UsaUJBQUE7QUNGSjs7QURLRTtFQUNFLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNGSjs7QURLRTtFQUNFLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNGSjs7QURLRTtFQUNFLGFBQUE7QUNGSjs7QURJRTtFQUNFLGFBQUE7RUFDQSx1QkFBQTtBQ0RKOztBREdFO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0Usa0JBQUE7QUNBTiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvdGhlYXRlcnMvdGhlYXRlcnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYWxlcnROdW1iZXIge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAxMCU7XG4gICAgbGVmdDogMHB4O1xuICAgIHJpZ2h0OiAwcHg7XG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAxMCU7XG4gICAgbGVmdDogMHB4O1xuICAgIHJpZ2h0OiAwcHg7XG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nIHtcbiAgICBkaXNwbGF5OiBub25lO1xufVxuXG4ubW9kYWwge1xuICAgIG92ZXJmbG93OiBhdXRvIWltcG9ydGFudDtcbiAgfVxuICAvKlxuICAgIGN1c3RvbSBidXR0b24gc3R5bGVcbiAgKi9cbiAgXG4gIHNlbGVjdCwgaW5wdXRbdHlwZT1maWxlXSB7XG4gICAgcGFkZGluZzogMHB4IWltcG9ydGFudDtcbiAgfVxuICBcbiAgLmZpbHRlci10b3Age1xuICAgIGhlaWdodDogMjAwcHghaW1wb3J0YW50O1xuICAgIG92ZXJmbG93OiBhdXRvO1xuICB9XG4gIFxuICAuZmlsdGVyLXNpZGUge1xuICAgIGhlaWdodDogNDAwcHghaW1wb3J0YW50O1xuICAgIG92ZXJmbG93OiBhdXRvO1xuICB9XG4gIFxuICBcbiAgLnczLXVsIGxpIHtcbiAgICBwYWRkaW5nOiAycHghaW1wb3J0YW50O1xuICAgIGZvbnQtc2l6ZTogMTJweCFpbXBvcnRhbnQ7XG4gIH1cbiAgXG4gIC5udW1iZXJfaW5wdXQge1xuICAgIHdpZHRoOiA0NXB4XG4gIH1cbiAgXG4gIFxuICAuaW5wdXQtc2V0dGluZyB7XG4gICAgYm9yZGVyLXJhZGl1czogNWVtO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIGxpZ2h0Z3JheTtcbiAgICBwYWRkaW5nLXJpZ2h0OiAxMHB4XG4gIH1cbiAgXG4gIFxuICAudGFibGUtcmlnaHQgdHIsIC50YWJsZS1yaWdodCB0ZCwgLnRhYmxlLXJpZ2h0IHRoIHtcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcbiAgfVxuICBcbiAgI2FsZXJ0TnVtYmVyIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogMTAlO1xuICAgIGxlZnQ6IDBweDtcbiAgICByaWdodDogMHB4O1xuICAgIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gICAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG4gIFxuICAjYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogMTAlO1xuICAgIGxlZnQ6IDBweDtcbiAgICByaWdodDogMHB4O1xuICAgIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gICAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG4gIFxuICAjYnV0dG9uTG9hZGluZyB7XG4gICAgZGlzcGxheTogbm9uZTtcbiAgfVxuICAjYnRue1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIH1cbiAgLmFkZC10aGVhdGVye1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIH0iLCIjYWxlcnROdW1iZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMCU7XG4gIGxlZnQ6IDBweDtcbiAgcmlnaHQ6IDBweDtcbiAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMCU7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMCU7XG4gIGxlZnQ6IDBweDtcbiAgcmlnaHQ6IDBweDtcbiAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcbiAgbWFyZ2luLXJpZ2h0OiAzMCU7XG4gIG1hcmdpbi1sZWZ0OiAzMCU7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidXR0b25Mb2FkaW5nIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLm1vZGFsIHtcbiAgb3ZlcmZsb3c6IGF1dG8gIWltcG9ydGFudDtcbn1cblxuLypcbiAgY3VzdG9tIGJ1dHRvbiBzdHlsZVxuKi9cbnNlbGVjdCwgaW5wdXRbdHlwZT1maWxlXSB7XG4gIHBhZGRpbmc6IDBweCAhaW1wb3J0YW50O1xufVxuXG4uZmlsdGVyLXRvcCB7XG4gIGhlaWdodDogMjAwcHggIWltcG9ydGFudDtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi5maWx0ZXItc2lkZSB7XG4gIGhlaWdodDogNDAwcHggIWltcG9ydGFudDtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi53My11bCBsaSB7XG4gIHBhZGRpbmc6IDJweCAhaW1wb3J0YW50O1xuICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcbn1cblxuLm51bWJlcl9pbnB1dCB7XG4gIHdpZHRoOiA0NXB4O1xufVxuXG4uaW5wdXQtc2V0dGluZyB7XG4gIGJvcmRlci1yYWRpdXM6IDVlbTtcbiAgYm9yZGVyOiAxcHggc29saWQgbGlnaHRncmF5O1xuICBwYWRkaW5nLXJpZ2h0OiAxMHB4O1xufVxuXG4udGFibGUtcmlnaHQgdHIsIC50YWJsZS1yaWdodCB0ZCwgLnRhYmxlLXJpZ2h0IHRoIHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG59XG5cbiNhbGVydE51bWJlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDEwJTtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xuICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgbWFyZ2luLWxlZnQ6IDMwJTtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2FsZXJ0TnVtYmVyU3VjY2VzcyB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDEwJTtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xuICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgbWFyZ2luLWxlZnQ6IDMwJTtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2J1dHRvbkxvYWRpbmcge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnRuIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG5cbi5hZGQtdGhlYXRlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59Il19 */"
+module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n.modal {\n  overflow: auto !important;\n}\n\n/*\n  custom button style\n*/\n\nselect, input[type=file] {\n  padding: 0px !important;\n}\n\n.filter-top {\n  height: 200px !important;\n  overflow: auto;\n}\n\n.filter-side {\n  height: 400px !important;\n  overflow: auto;\n}\n\n.w3-ul li {\n  padding: 2px !important;\n  font-size: 12px !important;\n}\n\n.number_input {\n  width: 45px;\n}\n\n.input-setting {\n  border-radius: 5em;\n  border: 1px solid lightgray;\n  padding-right: 10px;\n}\n\n.table-right tr, .table-right td, .table-right th {\n  text-align: right;\n}\n\n#alertNumber {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#alertNumberSuccess {\n  text-align: center;\n  position: fixed;\n  top: 10%;\n  left: 0px;\n  right: 0px;\n  z-index: 20000000000000000 !important;\n  margin-right: 30%;\n  margin-left: 30%;\n  display: none;\n}\n\n#buttonLoading {\n  display: none;\n}\n\n#btn {\n  display: flex;\n  justify-content: center;\n}\n\n.add-theater {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy90aGVhdGVycy9HOlxcU3BoaW54XFxISU1cXGhpbWZyb250Mi9zcmNcXGFwcFxcZXhhbXNcXGNvbXBvbmVudHNcXHRoZWF0ZXJzXFx0aGVhdGVycy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhhbXMvY29tcG9uZW50cy90aGVhdGVycy90aGVhdGVycy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDSjs7QURFQTtFQUNJLGFBQUE7QUNDSjs7QURFQTtFQUNJLHlCQUFBO0FDQ0o7O0FEQ0U7O0NBQUE7O0FBSUE7RUFDRSx1QkFBQTtBQ0NKOztBREVFO0VBQ0Usd0JBQUE7RUFDQSxjQUFBO0FDQ0o7O0FERUU7RUFDRSx3QkFBQTtFQUNBLGNBQUE7QUNDSjs7QURHRTtFQUNFLHVCQUFBO0VBQ0EsMEJBQUE7QUNBSjs7QURHRTtFQUNFLFdBQUE7QUNBSjs7QURJRTtFQUNFLGtCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQkFBQTtBQ0RKOztBREtFO0VBQ0UsaUJBQUE7QUNGSjs7QURLRTtFQUNFLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNGSjs7QURLRTtFQUNFLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLHFDQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNGSjs7QURLRTtFQUNFLGFBQUE7QUNGSjs7QURJRTtFQUNFLGFBQUE7RUFDQSx1QkFBQTtBQ0RKOztBREdFO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0Usa0JBQUE7QUNBTiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zL2NvbXBvbmVudHMvdGhlYXRlcnMvdGhlYXRlcnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYWxlcnROdW1iZXIge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAxMCU7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgICByaWdodDogMHB4O1xyXG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1yaWdodDogMzAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNhbGVydE51bWJlclN1Y2Nlc3Mge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAxMCU7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgICByaWdodDogMHB4O1xyXG4gICAgei1pbmRleDogMjAwMDAwMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1yaWdodDogMzAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwJTtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNidXR0b25Mb2FkaW5nIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5tb2RhbCB7XHJcbiAgICBvdmVyZmxvdzogYXV0byFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC8qXHJcbiAgICBjdXN0b20gYnV0dG9uIHN0eWxlXHJcbiAgKi9cclxuICBcclxuICBzZWxlY3QsIGlucHV0W3R5cGU9ZmlsZV0ge1xyXG4gICAgcGFkZGluZzogMHB4IWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLmZpbHRlci10b3Age1xyXG4gICAgaGVpZ2h0OiAyMDBweCFpbXBvcnRhbnQ7XHJcbiAgICBvdmVyZmxvdzogYXV0bztcclxuICB9XHJcbiAgXHJcbiAgLmZpbHRlci1zaWRlIHtcclxuICAgIGhlaWdodDogNDAwcHghaW1wb3J0YW50O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgfVxyXG4gIFxyXG4gIFxyXG4gIC53My11bCBsaSB7XHJcbiAgICBwYWRkaW5nOiAycHghaW1wb3J0YW50O1xyXG4gICAgZm9udC1zaXplOiAxMnB4IWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLm51bWJlcl9pbnB1dCB7XHJcbiAgICB3aWR0aDogNDVweFxyXG4gIH1cclxuICBcclxuICBcclxuICAuaW5wdXQtc2V0dGluZyB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1ZW07XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBsaWdodGdyYXk7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAxMHB4XHJcbiAgfVxyXG4gIFxyXG4gIFxyXG4gIC50YWJsZS1yaWdodCB0ciwgLnRhYmxlLXJpZ2h0IHRkLCAudGFibGUtcmlnaHQgdGgge1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgfVxyXG4gIFxyXG4gICNhbGVydE51bWJlciB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDEwJTtcclxuICAgIGxlZnQ6IDBweDtcclxuICAgIHJpZ2h0OiAwcHg7XHJcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAzMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICB9XHJcbiAgXHJcbiAgI2FsZXJ0TnVtYmVyU3VjY2VzcyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDEwJTtcclxuICAgIGxlZnQ6IDBweDtcclxuICAgIHJpZ2h0OiAwcHg7XHJcbiAgICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAzMCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICB9XHJcbiAgXHJcbiAgI2J1dHRvbkxvYWRpbmcge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICB9XHJcbiAgI2J0bntcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICB9XHJcbiAgLmFkZC10aGVhdGVye1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfSIsIiNhbGVydE51bWJlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDEwJTtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xuICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgbWFyZ2luLWxlZnQ6IDMwJTtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2FsZXJ0TnVtYmVyU3VjY2VzcyB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDEwJTtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xuICB6LWluZGV4OiAyMDAwMDAwMDAwMDAwMDAwMCAhaW1wb3J0YW50O1xuICBtYXJnaW4tcmlnaHQ6IDMwJTtcbiAgbWFyZ2luLWxlZnQ6IDMwJTtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2J1dHRvbkxvYWRpbmcge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4ubW9kYWwge1xuICBvdmVyZmxvdzogYXV0byAhaW1wb3J0YW50O1xufVxuXG4vKlxuICBjdXN0b20gYnV0dG9uIHN0eWxlXG4qL1xuc2VsZWN0LCBpbnB1dFt0eXBlPWZpbGVdIHtcbiAgcGFkZGluZzogMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5maWx0ZXItdG9wIHtcbiAgaGVpZ2h0OiAyMDBweCAhaW1wb3J0YW50O1xuICBvdmVyZmxvdzogYXV0bztcbn1cblxuLmZpbHRlci1zaWRlIHtcbiAgaGVpZ2h0OiA0MDBweCAhaW1wb3J0YW50O1xuICBvdmVyZmxvdzogYXV0bztcbn1cblxuLnczLXVsIGxpIHtcbiAgcGFkZGluZzogMnB4ICFpbXBvcnRhbnQ7XG4gIGZvbnQtc2l6ZTogMTJweCAhaW1wb3J0YW50O1xufVxuXG4ubnVtYmVyX2lucHV0IHtcbiAgd2lkdGg6IDQ1cHg7XG59XG5cbi5pbnB1dC1zZXR0aW5nIHtcbiAgYm9yZGVyLXJhZGl1czogNWVtO1xuICBib3JkZXI6IDFweCBzb2xpZCBsaWdodGdyYXk7XG4gIHBhZGRpbmctcmlnaHQ6IDEwcHg7XG59XG5cbi50YWJsZS1yaWdodCB0ciwgLnRhYmxlLXJpZ2h0IHRkLCAudGFibGUtcmlnaHQgdGgge1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cblxuI2FsZXJ0TnVtYmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYWxlcnROdW1iZXJTdWNjZXNzIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMTAlO1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG4gIHotaW5kZXg6IDIwMDAwMDAwMDAwMDAwMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1yaWdodDogMzAlO1xuICBtYXJnaW4tbGVmdDogMzAlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jYnV0dG9uTG9hZGluZyB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNidG4ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn1cblxuLmFkZC10aGVhdGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXX0= */"
 
 /***/ }),
 
@@ -1245,7 +1280,7 @@ module.exports = "#alertNumber {\n  text-align: center;\n  position: fixed;\n  t
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TheatersComponent", function() { return TheatersComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/cache */ "./src/app/shared/cache.ts");
 /* harmony import */ var src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/helper */ "./src/app/shared/helper.ts");
 /* harmony import */ var src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/message */ "./src/app/shared/message.ts");
@@ -1262,8 +1297,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let TheatersComponent = class TheatersComponent {
-    constructor(globalService, applicationSettingService) {
+var TheatersComponent = /** @class */ (function () {
+    function TheatersComponent(globalService, applicationSettingService) {
         this.globalService = globalService;
         this.applicationSettingService = applicationSettingService;
         this.filter = {};
@@ -1275,18 +1310,19 @@ let TheatersComponent = class TheatersComponent {
         this.doc = document;
         this.applicationSettingService.queueRequests();
         var self = this;
-        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, () => {
+        src_app_shared_request__WEBPACK_IMPORTED_MODULE_5__["Request"].fire(false, function () {
         });
     }
-    load() {
+    TheatersComponent.prototype.load = function () {
         if (!src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].validator(this.filter, ['level_id', 'division_id', 'academic_year_id'])) {
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('please choose all filters'));
         }
-        this.globalService.loadHtml("affair/report4", this.filter).subscribe((res) => {
+        this.globalService.loadHtml("affair/report4", this.filter).subscribe(function (res) {
             $('#reportContent').html(res);
         });
-    }
-    createTheater() {
+    };
+    TheatersComponent.prototype.createTheater = function () {
+        var _this_1 = this;
         $('#beforeLoading').hide();
         $('#buttonLoading').show();
         var objectSend = { name: this.theater };
@@ -1295,24 +1331,24 @@ let TheatersComponent = class TheatersComponent {
             $('#alertNumber').slideDown(300);
             $('#beforeLoading').show();
             $('#buttonLoading').hide();
-            setTimeout(() => {
+            setTimeout(function () {
                 $('#alertNumber').slideUp(1000);
             }, 1000);
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('fill all required data'));
         }
         else {
-            this.applicationSettingService.theaterStore(objectSend).subscribe((res) => {
+            this.applicationSettingService.theaterStore(objectSend).subscribe(function (res) {
                 if (res == 1) {
                     $('#alertNumberSuccess').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumberSuccess').slideUp(1000);
                         $('#closeNumber1').trigger('click');
-                        this.theater = '';
+                        _this_1.theater = '';
                     }, 1000);
-                    this.applicationSettingService.theaters().subscribe((res) => {
-                        this.prevTheaters = res;
+                    _this_1.applicationSettingService.theaters().subscribe(function (res) {
+                        _this_1.prevTheaters = res;
                     });
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -1320,19 +1356,20 @@ let TheatersComponent = class TheatersComponent {
                     $('#alertNumber').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumber').slideUp(1000);
                     }, 1000);
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('failed'));
                 }
             });
         }
-    }
-    setCurrent(name, id) {
+    };
+    TheatersComponent.prototype.setCurrent = function (name, id) {
         this.currentTheaterName = name;
         this.currentTheaterId = id;
-    }
-    updateTheater(name, id) {
+    };
+    TheatersComponent.prototype.updateTheater = function (name, id) {
+        var _this_1 = this;
         console.log(name);
         console.log(id);
         $('#beforeLoading').hide();
@@ -1343,24 +1380,24 @@ let TheatersComponent = class TheatersComponent {
             $('#alertNumber').slideDown(300);
             $('#beforeLoading').show();
             $('#buttonLoading').hide();
-            setTimeout(() => {
+            setTimeout(function () {
                 $('#alertNumber').slideUp(1000);
             }, 1000);
             return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('fill all required data'));
         }
         else {
-            this.applicationSettingService.theaterEdit(objectSend).subscribe((res) => {
+            this.applicationSettingService.theaterEdit(objectSend).subscribe(function (res) {
                 if (res == 1) {
                     $('#alertNumberSuccess').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumberSuccess').slideUp(1000);
                         $('#closeNumber2').trigger('click');
-                        this.theater = '';
+                        _this_1.theater = '';
                     }, 1000);
-                    this.applicationSettingService.theaters().subscribe((res) => {
-                        this.prevTheaters = res;
+                    _this_1.applicationSettingService.theaters().subscribe(function (res) {
+                        _this_1.prevTheaters = res;
                     });
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -1368,19 +1405,20 @@ let TheatersComponent = class TheatersComponent {
                     $('#alertNumber').slideDown(300);
                     $('#beforeLoading').show();
                     $('#buttonLoading').hide();
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('#alertNumber').slideUp(1000);
                     }, 1000);
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('failed'));
                 }
             });
         }
-    }
-    destroyTheater(id) {
+    };
+    TheatersComponent.prototype.destroyTheater = function (id) {
+        var _this_1 = this;
         // console.log(id);
         var _this = this;
-        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), () => {
-            this.applicationSettingService.theaterDestroy(id).subscribe((res) => {
+        src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].confirm(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('are you sure'), function () {
+            _this_1.applicationSettingService.theaterDestroy(id).subscribe(function (res) {
                 if (res == 1) {
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].success(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('done'));
                 }
@@ -1388,36 +1426,38 @@ let TheatersComponent = class TheatersComponent {
                     return src_app_shared_message__WEBPACK_IMPORTED_MODULE_4__["Message"].error(src_app_shared_helper__WEBPACK_IMPORTED_MODULE_3__["Helper"].trans('failed'));
                 }
             });
-            this.applicationSettingService.theaters().subscribe((res) => {
-                this.prevTheaters = res;
+            _this_1.applicationSettingService.theaters().subscribe(function (res) {
+                _this_1.prevTheaters = res;
             });
         });
-        this.applicationSettingService.theaters().subscribe((res) => {
-            this.prevTheaters = res;
+        this.applicationSettingService.theaters().subscribe(function (res) {
+            _this_1.prevTheaters = res;
         });
-    }
-    printContent() {
+    };
+    TheatersComponent.prototype.printContent = function () {
         this.doc.printJs();
-    }
-    ngOnInit() {
+    };
+    TheatersComponent.prototype.ngOnInit = function () {
+        var _this_1 = this;
         this.levels = src_app_shared_cache__WEBPACK_IMPORTED_MODULE_2__["Cache"].get(_account_services_level_service__WEBPACK_IMPORTED_MODULE_8__["LevelService"].LEVEL_PREFIX);
         // this.globalService.loadHtml("affair/report6", this.filter).subscribe((res) => {
         //   $('#reportContent').html(res);
         // });
-        this.applicationSettingService.theaters().subscribe((res) => {
-            this.prevTheaters = res;
+        this.applicationSettingService.theaters().subscribe(function (res) {
+            _this_1.prevTheaters = res;
         });
-    }
-};
-TheatersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-theaters',
-        template: __webpack_require__(/*! ./theaters.component.html */ "./src/app/exams/components/theaters/theaters.component.html"),
-        styles: [__webpack_require__(/*! ./theaters.component.scss */ "./src/app/exams/components/theaters/theaters.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
-        _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
-], TheatersComponent);
+    };
+    TheatersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-theaters',
+            template: __webpack_require__(/*! ./theaters.component.html */ "./src/app/exams/components/theaters/theaters.component.html"),
+            styles: [__webpack_require__(/*! ./theaters.component.scss */ "./src/app/exams/components/theaters/theaters.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_global_service__WEBPACK_IMPORTED_MODULE_6__["GlobalService"],
+            _adminision_services_application_setting_service__WEBPACK_IMPORTED_MODULE_7__["ApplicationSettingService"]])
+    ], TheatersComponent);
+    return TheatersComponent;
+}());
 
 
 
@@ -1434,8 +1474,8 @@ TheatersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamsRoutingModule", function() { return ExamsRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_commissions_commissions_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/commissions/commissions.component */ "./src/app/exams/components/commissions/commissions.component.ts");
 /* harmony import */ var _components_add_seating_numbers_add_seating_numbers_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/add-seating-numbers/add-seating-numbers.component */ "./src/app/exams/components/add-seating-numbers/add-seating-numbers.component.ts");
 /* harmony import */ var _components_manage_rooms_map_manage_rooms_map_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/manage-rooms-map/manage-rooms-map.component */ "./src/app/exams/components/manage-rooms-map/manage-rooms-map.component.ts");
@@ -1465,7 +1505,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const routes = [
+var routes = [
     {
         path: '',
         component: _exams_component__WEBPACK_IMPORTED_MODULE_13__["ExamsComponent"]
@@ -1524,14 +1564,17 @@ const routes = [
         pathMatch: 'full'
     }
 ];
-let ExamsRoutingModule = class ExamsRoutingModule {
-};
-ExamsRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
-    })
-], ExamsRoutingModule);
+var ExamsRoutingModule = /** @class */ (function () {
+    function ExamsRoutingModule() {
+    }
+    ExamsRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        })
+    ], ExamsRoutingModule);
+    return ExamsRoutingModule;
+}());
 
 
 
@@ -1544,7 +1587,7 @@ ExamsRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  exams works!\n</p>\n"
+module.exports = "<p>\r\n  exams works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1570,22 +1613,24 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamsComponent", function() { return ExamsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-let ExamsComponent = class ExamsComponent {
-    constructor() { }
-    ngOnInit() {
+var ExamsComponent = /** @class */ (function () {
+    function ExamsComponent() {
     }
-};
-ExamsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-exams',
-        template: __webpack_require__(/*! ./exams.component.html */ "./src/app/exams/exams.component.html"),
-        styles: [__webpack_require__(/*! ./exams.component.scss */ "./src/app/exams/exams.component.scss")]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-], ExamsComponent);
+    ExamsComponent.prototype.ngOnInit = function () {
+    };
+    ExamsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-exams',
+            template: __webpack_require__(/*! ./exams.component.html */ "./src/app/exams/exams.component.html"),
+            styles: [__webpack_require__(/*! ./exams.component.scss */ "./src/app/exams/exams.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ExamsComponent);
+    return ExamsComponent;
+}());
 
 
 
@@ -1602,8 +1647,8 @@ ExamsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamsModule", function() { return ExamsModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _exams_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./exams-routing.module */ "./src/app/exams/exams-routing.module.ts");
 /* harmony import */ var _components_manage_rooms_map_manage_rooms_map_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/manage-rooms-map/manage-rooms-map.component */ "./src/app/exams/components/manage-rooms-map/manage-rooms-map.component.ts");
 /* harmony import */ var _components_manage_seating_rooms_report_manage_seating_rooms_report_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/manage-seating-rooms-report/manage-seating-rooms-report.component */ "./src/app/exams/components/manage-seating-rooms-report/manage-seating-rooms-report.component.ts");
@@ -1637,17 +1682,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let ExamsModule = class ExamsModule {
-};
-ExamsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_components_manage_rooms_map_manage_rooms_map_component__WEBPACK_IMPORTED_MODULE_4__["ManageRoomsMapComponent"], _components_manage_seating_rooms_report_manage_seating_rooms_report_component__WEBPACK_IMPORTED_MODULE_5__["ManageSeatingRoomsReportComponent"], _components_print_seating_numbers_print_seating_numbers_component__WEBPACK_IMPORTED_MODULE_6__["PrintSeatingNumbersComponent"], _components_print_students_report_print_students_report_component__WEBPACK_IMPORTED_MODULE_7__["PrintStudentsReportComponent"], _components_register_exams_schedule_register_exams_schedule_component__WEBPACK_IMPORTED_MODULE_8__["RegisterExamsScheduleComponent"], _exams_component__WEBPACK_IMPORTED_MODULE_9__["ExamsComponent"], _components_theaters_theaters_component__WEBPACK_IMPORTED_MODULE_11__["TheatersComponent"], _components_commissions_commissions_component__WEBPACK_IMPORTED_MODULE_12__["CommissionsComponent"], _components_print_walls_reports_print_walls_reports_component__WEBPACK_IMPORTED_MODULE_13__["PrintWallsReportsComponent"], _components_print_signs_reports_print_signs_reports_component__WEBPACK_IMPORTED_MODULE_14__["PrintSignsReportsComponent"], _components_add_seating_numbers_add_seating_numbers_component__WEBPACK_IMPORTED_MODULE_15__["AddSeatingNumbers"], _components_set_numbers_null_set_numbers_null_component__WEBPACK_IMPORTED_MODULE_16__["SetNumbersNullComponent"], _components_students_rooms_manage_report_students_rooms_manage_report_component__WEBPACK_IMPORTED_MODULE_17__["StudentsRoomsManageReportComponent"]],
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-            _exams_routing_module__WEBPACK_IMPORTED_MODULE_3__["ExamsRoutingModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"]
-        ]
-    })
-], ExamsModule);
+var ExamsModule = /** @class */ (function () {
+    function ExamsModule() {
+    }
+    ExamsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [_components_manage_rooms_map_manage_rooms_map_component__WEBPACK_IMPORTED_MODULE_4__["ManageRoomsMapComponent"], _components_manage_seating_rooms_report_manage_seating_rooms_report_component__WEBPACK_IMPORTED_MODULE_5__["ManageSeatingRoomsReportComponent"], _components_print_seating_numbers_print_seating_numbers_component__WEBPACK_IMPORTED_MODULE_6__["PrintSeatingNumbersComponent"], _components_print_students_report_print_students_report_component__WEBPACK_IMPORTED_MODULE_7__["PrintStudentsReportComponent"], _components_register_exams_schedule_register_exams_schedule_component__WEBPACK_IMPORTED_MODULE_8__["RegisterExamsScheduleComponent"], _exams_component__WEBPACK_IMPORTED_MODULE_9__["ExamsComponent"], _components_theaters_theaters_component__WEBPACK_IMPORTED_MODULE_11__["TheatersComponent"], _components_commissions_commissions_component__WEBPACK_IMPORTED_MODULE_12__["CommissionsComponent"], _components_print_walls_reports_print_walls_reports_component__WEBPACK_IMPORTED_MODULE_13__["PrintWallsReportsComponent"], _components_print_signs_reports_print_signs_reports_component__WEBPACK_IMPORTED_MODULE_14__["PrintSignsReportsComponent"], _components_add_seating_numbers_add_seating_numbers_component__WEBPACK_IMPORTED_MODULE_15__["AddSeatingNumbers"], _components_set_numbers_null_set_numbers_null_component__WEBPACK_IMPORTED_MODULE_16__["SetNumbersNullComponent"], _components_students_rooms_manage_report_students_rooms_manage_report_component__WEBPACK_IMPORTED_MODULE_17__["StudentsRoomsManageReportComponent"]],
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _exams_routing_module__WEBPACK_IMPORTED_MODULE_3__["ExamsRoutingModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"]
+            ]
+        })
+    ], ExamsModule);
+    return ExamsModule;
+}());
 
 
 

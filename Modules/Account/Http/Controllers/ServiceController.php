@@ -128,8 +128,6 @@ class ServiceController extends Controller
             if (!isset($p[0])) return false;
             $payment = $p[0];
             if (isset($payment->model_object)) {
-
-
                 return
                     $payment->academic_year_id == $request->year_id &&
                     ($request->service_id ? $payment->model_object->id == $request->service_id : true);

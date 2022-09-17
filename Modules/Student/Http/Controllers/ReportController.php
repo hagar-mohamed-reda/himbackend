@@ -576,6 +576,9 @@ class ReportController extends Controller
 
     public function getResultStatistics(Request $request)
     {
+      
+        $academic_year_id =request()->year_id;
+        $term_id = request()->term_id;
 
         $academic_year_id = request()->year_id;
         $term_id = request()->term_id;

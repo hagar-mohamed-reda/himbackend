@@ -10,7 +10,8 @@ class StudentService extends Model
  
     protected $fillable = [
         'service_id',
-        'student_id' 
+        'student_id' ,
+        'service_type' 
     ];
     
     public function service() {

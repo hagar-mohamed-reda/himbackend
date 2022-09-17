@@ -9,6 +9,7 @@ class Payment extends Model
     protected $table = "account_payments";
 
     protected $fillable = [
+        'serial',
         'student_id',
         'store_id',
         'date',
@@ -16,6 +17,7 @@ class Payment extends Model
         'user_id',
         'model_type', //[academic_year_expense, service, installment]
         'model_id',
+        'service_type',
         'installment_id',
         'service_count',
         'is_refund',
@@ -76,6 +78,7 @@ class Payment extends Model
     }
 
     public function model() {
+        
         if ($this->model_type == 'academic_year_expense') {
             return $this->belongsTo('Modules\Account\Entities\AcademicYearExpenseDetail', 'model_id');
         }

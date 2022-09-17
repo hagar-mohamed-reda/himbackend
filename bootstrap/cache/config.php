@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:o8Ea8y7t/2ZUv+2Fk0SutDZF5d9pfv3ZZqw1U9RcZhU=',
+    'key' => 'base64:xTx4PlVyIar4+bZuPPePZK8hKUWSEObef7CjVmuyFCA=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -182,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/msabnsor/public_html/him/storage/framework/cache/data',
+        'path' => 'F:\\company\\himback\\himbackend\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -259,7 +259,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'msabnsor_him',
+        'database' => 'pnpskkmy_him',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -269,9 +269,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'msabnsor_him',
-        'username' => 'msabnsor_him',
-        'password' => 'msabnsor_him',
+        'database' => 'pnpskkmy_him',
+        'username' => 'root',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -289,9 +289,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'msabnsor_him',
-        'username' => 'msabnsor_him',
-        'password' => 'msabnsor_him',
+        'database' => 'pnpskkmy_him',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -304,9 +304,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'msabnsor_him',
-        'username' => 'msabnsor_him',
-        'password' => 'msabnsor_him',
+        'database' => 'pnpskkmy_him',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -489,7 +489,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => '/home/msabnsor/public_html/him/storage/framework/laravel-excel',
+      'local_path' => 'F:\\company\\himback\\himbackend\\storage\\framework/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -504,12 +504,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/msabnsor/public_html/him/storage/app',
+        'root' => 'F:\\company\\himback\\himbackend\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/msabnsor/public_html/him/storage/app/public',
+        'root' => 'F:\\company\\himback\\himbackend\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -526,7 +526,7 @@
     ),
     'links' => 
     array (
-      '/home/msabnsor/public_html/him/public/storage' => '/home/msabnsor/public_html/him/storage/app/public',
+      'F:\\company\\himback\\himbackend\\public\\storage' => 'F:\\company\\himback\\himbackend\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -691,13 +691,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/home/msabnsor/public_html/him/storage/logs/laravel.log',
+        'path' => 'F:\\company\\himback\\himbackend\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/home/msabnsor/public_html/him/storage/logs/laravel.log',
+        'path' => 'F:\\company\\himback\\himbackend\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -747,7 +747,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/home/msabnsor/public_html/him/storage/logs/laravel.log',
+        'path' => 'F:\\company\\himback\\himbackend\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -804,7 +804,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home/msabnsor/public_html/him/resources/views/vendor/mail',
+        0 => 'F:\\company\\himback\\himbackend\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -814,7 +814,7 @@
     'stubs' => 
     array (
       'enabled' => false,
-      'path' => '/home/msabnsor/public_html/him/vendor/nwidart/laravel-modules/src/Commands/stubs',
+      'path' => 'F:\\company\\himback\\himbackend/vendor/nwidart/laravel-modules/src/Commands/stubs',
       'files' => 
       array (
         'routes/web' => 'Routes/web.php',
@@ -878,9 +878,9 @@
     ),
     'paths' => 
     array (
-      'modules' => '/home/msabnsor/public_html/him/Modules',
-      'assets' => '/home/msabnsor/public_html/him/public/modules',
-      'migration' => '/home/msabnsor/public_html/him/database/migrations',
+      'modules' => 'F:\\company\\himback\\himbackend\\Modules',
+      'assets' => 'F:\\company\\himback\\himbackend\\public\\modules',
+      'migration' => 'F:\\company\\himback\\himbackend\\database/migrations',
       'generator' => 
       array (
         'config' => 
@@ -1015,7 +1015,7 @@
       'enabled' => false,
       'paths' => 
       array (
-        0 => '/home/msabnsor/public_html/him/vendor/*/*',
+        0 => 'F:\\company\\himback\\himbackend\\vendor/*/*',
       ),
     ),
     'composer' => 
@@ -1043,7 +1043,7 @@
       'file' => 
       array (
         'class' => 'Nwidart\\Modules\\Activators\\FileActivator',
-        'statuses-file' => '/home/msabnsor/public_html/him/modules_statuses.json',
+        'statuses-file' => 'F:\\company\\himback\\himbackend\\modules_statuses.json',
         'cache-key' => 'activator.installed',
         'cache-lifetime' => 604800,
       ),
@@ -1125,7 +1125,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/msabnsor/public_html/him/storage/framework/sessions',
+    'files' => 'F:\\company\\himback\\himbackend\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1145,9 +1145,9 @@
   array (
     'paths' => 
     array (
-      0 => '/home/msabnsor/public_html/him/resources/views',
+      0 => 'F:\\company\\himback\\himbackend\\resources\\views',
     ),
-    'compiled' => '/home/msabnsor/public_html/him/storage/framework/views',
+    'compiled' => 'F:\\company\\himback\\himbackend\\storage\\framework\\views',
   ),
   'flare' => 
   array (

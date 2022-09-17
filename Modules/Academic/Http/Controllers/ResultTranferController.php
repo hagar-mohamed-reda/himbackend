@@ -49,7 +49,7 @@ class ResultTranferController extends Controller
             $problemStudents = [];
             foreach($students as $student) {
                 $valid = $student->checkIfCanTransferToAnotherLevel();
-                $student->startCalculateGpa();
+                $student->getAllGPA();
                 if (!$valid) {
                     $student->faild_transfer_reason = $student->failedTransferReason;
                     $problemStudents[] = $student;

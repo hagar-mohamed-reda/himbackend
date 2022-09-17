@@ -153,15 +153,17 @@
             //printJS('printable', 'docs/pdf');
         }
 
-        document.exportExcel = function(name) {
-            $("#printable").table2excel({
-                exclude: ".noExl",
-                name: name,
-                filename: name,
-                fileext: ".xls",
-                exclude_img: true,
-                exclude_links: true,
-                exclude_inputs: true
+        document.exportExcel = function(name, selector = "#printable") {
+            $(selector).each(function() {
+                $(this).table2excel({
+                    exclude: ".noExl",
+                    name: name,
+                    filename: name,
+                    fileext: ".xls",
+                    exclude_img: true,
+                    exclude_links: true,
+                    exclude_inputs: true
+                });
             });
         }
 

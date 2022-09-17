@@ -2,6 +2,7 @@
 
 namespace Modules\Student\Http\Controllers;
 
+use App\Term as AppTerm;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -56,8 +57,11 @@ class StudentExcusesController extends Controller {
         }
         
         $resources = $resource->latest()->get();
-        
-        return $resources;
+        // return $resource;
+        $level = Level::find(request()->level_id);
+        $devision = Division::find(request()->division_id);
+        $acadimic = AcademicYear::find(request()->year_id); 
+        return view("report.student_excuses_report",compact('resources','level','devision','acadimic'));
     }
     
     public function store(Request $request) {

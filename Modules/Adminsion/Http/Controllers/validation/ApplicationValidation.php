@@ -16,26 +16,26 @@ class ApplicationValidation   {
     public function validateOnRequest(Request $request) { 
         $validator = validator()->make($request->all(),[
             'name' => 'required',
-            'qualification_id' => 'required',
+            // 'qualification_id' => 'required',
             'national_id' => 'required',
-            'registration_status_id' => 'required',
-            'academic_years_id' => 'required', 
-            'grade' => 'required', 
-            'qualification_date' => 'required', 
-            'qualification_types_id' => 'required',
-            'national_id' => 'unique:students,national_id,'. request()->id,
-            'qualification_set_number' => 'unique:students,qualification_set_number,'. request()->id,
+            // 'registration_status_id' => 'required',
+            // 'academic_years_id' => 'required', 
+            // 'grade' => 'required', 
+            // 'qualification_date' => 'required', 
+            // 'qualification_types_id' => 'required',
+            // 'national_id' => 'unique:students,national_id,'. request()->id,
+            // 'qualification_set_number' => 'unique:students,qualification_set_number,'. request()->id,
             // 'set_number' => 'unique:students,set_number,'. request()->id,
         ], [
             "name.required" => __('name is required'),
-            "qualification_id.required" => __('qualification is required'),
-            "registration_status_id.required" => __('registration_status is required'),
+            // "qualification_id.required" => __('qualification is required'),
+            // "registration_status_id.required" => __('registration_status is required'),
             "national_id.required" => __('national_id is required'),
-            "academic_years_id.required" => __('academic_years is required'), 
-            "grade.required" => __('grade is required'),
-            "qualification_date.required" => __('qualification_date is required'),
-            "qualification_types_id.required" => __('qualification_types is required'),
-            "national_id.required" => __('national_id is unique')
+            // "academic_years_id.required" => __('academic_years is required'), 
+            // "grade.required" => __('grade is required'),
+            // "qualification_date.required" => __('qualification_date is required'),
+            // "qualification_types_id.required" => __('qualification_types is required'),
+            // "national_id.required" => __('national_id is unique')
         ]);
         
         if ($validator->fails()) {
@@ -124,22 +124,22 @@ class ApplicationValidation   {
     public function validateOnRegisterationStatusField(Request $request) { 
         $validator = validator()->make($request->all(),[
             'name' => 'required',
-            'qualification_id' => 'required',
+            // 'qualification_id' => 'required',
             'national_id' => 'required',
-            'registration_status_id' => 'required',
-            'academic_years_id' => 'required', 
-            'grade' => 'required', 
-            'qualification_date' => 'required', 
-            'qualification_types_id' => 'required',
+            // 'registration_status_id' => 'required',
+            // 'academic_years_id' => 'required', 
+            // 'grade' => 'required', 
+            // 'qualification_date' => 'required', 
+            // 'qualification_types_id' => 'required',
         ], [
             "name.required" => __('name is required'),
-            "qualification_id.required" => __('qualification is required'),
-            "registration_status_id.required" => __('registration_status is required'),
+            // "qualification_id.required" => __('qualification is required'),
+            // "registration_status_id.required" => __('registration_status is required'),
             "national_id.required" => __('national_id is required'),
-            "academic_years_id.required" => __('academic_years is required'), 
-            "grade.required" => __('grade is required'),
-            "qualification_date.required" => __('qualification_date is required'),
-            "qualification_types_id.required" => __('qualification_types is required'),
+            // "academic_years_id.required" => __('academic_years is required'), 
+            // "grade.required" => __('grade is required'),
+            // "qualification_date.required" => __('qualification_date is required'),
+            // "qualification_types_id.required" => __('qualification_types is required'),
         ]);
         
         if ($validator->fails()) {

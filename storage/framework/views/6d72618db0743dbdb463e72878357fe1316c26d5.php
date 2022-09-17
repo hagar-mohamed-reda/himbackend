@@ -23,6 +23,11 @@
                  المعهد العالي للأدارة </div>
         </div>
     </div>
+    <div class="m-auto">
+        <div class="text-center">
+            <div><?php echo e($degree->key); ?></div>
+        </div>
+    </div>
     
 
     <table class="table table-bordered">

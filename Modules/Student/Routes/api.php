@@ -93,18 +93,9 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::get('affair/get-result-statistics', 'ReportController@getResultStatistics');
         Route::get('affair/get-courses-statistics', 'ReportController@getCoursesStatistics');
         Route::get('affair/get-result-absence', 'ReportController@getResultAbsence');
-        
-        
-        
+
         ///////////////////////////////////  Sync Apis  //////////////////////////////////
         Route::get('sync/students', 'StudentController@syncStudents');
-        
-        
-        
-        
-        
-        
-
 
     });
 });

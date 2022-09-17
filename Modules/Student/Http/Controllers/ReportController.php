@@ -575,12 +575,13 @@ class ReportController extends Controller {
       
         $academic_year_id =request()->year_id;
         $term_id = request()->term_id;
-
+        $degree_id = request()->degree_id;
+      
         $courses = Course::where('level_id',request()->level_id)
                             ->where('term',request()->term_id)->where('division_id',request()->division_id)
                             ->get();
 
-        return view('report.result_statistics',compact('courses','academic_year_id','term_id'));
+        return view('report.result_statistics',compact('courses','degree_id','academic_year_id','term_id'));
 
     }
        public function getCoursesStatistics(Request $request)
@@ -588,11 +589,12 @@ class ReportController extends Controller {
         $academic_year_id =request()->year_id;
         $term_id = request()->term_id;
         $degree_id = request()->degree_id;
+        $degree = DegreeMap::find($degree_id);
         $courses = Course::where('level_id',request()->level_id)
                             ->where('term',request()->term_id)->where('division_id',request()->division_id)
                             ->get();
         // return $courses;
-        return view('report.courses_statistics',compact('courses','degree_id','academic_year_id','term_id'));
+        return view('report.courses_statistics',compact('courses','degree','degree_id','academic_year_id','term_id'));
     }
     
       public function getResultAbsence(Request $request)

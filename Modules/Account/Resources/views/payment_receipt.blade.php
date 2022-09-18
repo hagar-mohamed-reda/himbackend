@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
   <link rel="stylesheet" href="{{ url('/css/w3.css') }}">
-<title>ايصال رقم {{ $payment->id }}</title>
+<title>ايصال رقم {{ $payment->serial }}</title>
 </head>
 <body> 
     @php
@@ -43,7 +43,7 @@
                 <div style="width: 100%;text-align: center" >
                     <b style="font-size: 16px" >رقم القسيمة</b>
 
-                        <span id="paymentId" >{{ $payment->id }}</span>
+                        <span id="paymentId" >{{ $payment->serial }}</span>
                 </div>
                 @else
                 <br>

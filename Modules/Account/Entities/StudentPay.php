@@ -45,7 +45,11 @@ class StudentPay
                 $discountModelForStudent = Discount::where('student_id',$student->id)->where('model_id',$detail->id)->sum('value');
                 $discountForModel =  $detail->discount;
 
+                $wzServiceMax = Payment::where('service_type', '!=', 'in')
+                                        ->orWhere('service_type', null)->max('serial');
+
                 $payment = Payment::addPayment([
+                    "serial" => $wzServiceMax + 1,
                     "date" => date('Y-m-d'),
                     "value" => $detail->value - $discountForModel -  $discountModelForStudent,
                     "model_type" => "academic_year_expense",
@@ -56,6 +60,7 @@ class StudentPay
                 ]);
 
                 $data = [
+                    "serial" => $wzServiceMax + 1,
                     "date" => date('Y-m-d'),
                     "value" => $detail->value,
                     "model_type" => "academic_year_expense",

@@ -7,6 +7,11 @@
             <br>
             <br>
 
+            <div class="text-center"
+            style='font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;border: 1px solid black;'>
+                تقرير الطلبه المتخلفه عن الميد تيرم
+            </div>
+
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <br>
@@ -24,14 +29,12 @@
                 <td>الكود</td>
                 <td>المادة</td>
                 <td>التخصص</td>
-                <td>درجات اعمال السنة</td>
-                <td>درجات التحريري</td>
-                <td>درجات العملي</td>
-                <td>درجات الميدتيرم</td>
-                <td>الدرجة النهائية</td>
             </tr>
         </thead>
         <tbody>
+
+
+
 
             @if (count($results) == 0)
                 <tr>
@@ -51,11 +54,7 @@
                                 {{ optional($result->student->division)->name }}
                             @endisset
                         </td>
-                        <td> {{ $result->work_year_degree }}</td>
-                        <td>{{ $result->final_tahrery_degree }}</td>
-                        <td>{{ $result->amly_degree }}</td>
-                        <td>{{ $result->mid_degree }}</td>
-                        <td>{{ $result->final_degree }}</td>
+                      
                     </tr>
                 @endisset
             @endforeach

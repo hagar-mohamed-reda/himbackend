@@ -900,47 +900,25 @@ class ReportController extends Controller
     }
     public function report23(Request $request)
     {
-        // dd(request()->year_id);
-        $academicYear = AcademicYear::find(request()->year_id);
-        $term = DB::table('terms')->where('id', request()->term_id)->first();
-        $level = DB::table('levels')->where('id', request()->level_id)->first();
+        $query = StudentResult::query()->where('mid_degree' , null);
 
-
-
-        $courses = null;
-
-
-        $registerIds = DB::table('academic_student_register_courses');
-
-
-        if (request()->academic_year_id) {
-            $registerIds->where('academic_year_id', request()->year_id);
+        if($request->course_id){
+            $query->where('course_id' , $request->course_id);
         }
-        if (request()->term_id) {
-            $registerIds->where('term_id', request()->term_id);
+        if($request->year_id){
+            $query->where('academic_year_id' , $request->year_id);
+        }
+        if($request->term_id){
+            $query->where('term_id' , $request->term_id);
         }
 
+        $query->with(['student' => function ($query) use ($request) {
+            if ($request->level_id > 0)
+                $query->where('level_id', $request->level_id);
+            return $query;
+        },'student.division', 'course']);
 
-
-        $registerIds = $registerIds->pluck('student_id')->toArray();
-
-
-        $query = DB::table('academic_student_courses_result')
-            ->select('students.name', 'students.code', 'students.set_number')
-            ->join('students', 'students.id', '=', 'academic_student_courses_result.student_id')
-            ->where('academic_student_courses_result.mid_degree', null)
-            ->whereIn('students.id', $registerIds)->groupby('academic_student_courses_result.student_id');
-
-        if (request()->course_id) {
-            $query->where('course_id', request()->course_id);
-        }
-
-
-        $responses = $query->paginate(2000);
-        // 	dd($responses);
-
-
-        return view('report.report23', compact('responses', 'courses', 'term', 'academicYear'));
+        return view('student::students.medterm',['results' => $query->get()]);
     }
 
 
@@ -1038,6 +1016,7 @@ class ReportController extends Controller
                 $query->where('division_id', $request->division_id);
             return $query;
         },'student.division', 'course']);
+
         return view('student::students.student_year_work_results',['results' => $query->get()]);
     }
     public function report27(Request $request)

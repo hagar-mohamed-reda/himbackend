@@ -7,6 +7,11 @@
             <br>
             <br>
 
+            <div class="text-center"
+            style='font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;border: 1px solid black;'>
+                تقرير الطلبه المتخلفه عن الميد
+            </div>
+
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <br>
@@ -24,18 +29,11 @@
                 <td>الكود</td>
                 <td>المادة</td>
                 <td>التخصص</td>
-                <td>درجات اعمال السنة</td>
-                <td>درجات التحريري</td>
-                <td>درجات العملي</td>
-                <td>درجات الميدتيرم</td>
-                <td>الدرجة النهائية</td>
             </tr>
         </thead>
         <tbody>
 
 
-
-            <?php echo e(count($results)); ?>
 
 
             <?php if(count($results) == 0): ?>
@@ -57,11 +55,7 @@
 
                             <?php endif; ?>
                         </td>
-                        <td> <?php echo e($result->work_year_degree); ?></td>
-                        <td><?php echo e($result->final_tahrery_degree); ?></td>
-                        <td><?php echo e($result->amly_degree); ?></td>
-                        <td><?php echo e($result->mid_degree); ?></td>
-                        <td><?php echo e($result->final_degree); ?></td>
+                      
                     </tr>
                 <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -70,4 +64,4 @@
     </table>
 
 </div>
-<?php /**PATH /home/mohamed/Documents/work-drhamdi/himbackend/Modules/Student/Resources/views/students/student_year_work_results.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/mohamed/Documents/work-drhamdi/himbackend/Modules/Student/Resources/views/students/medterm.blade.php ENDPATH**/ ?>

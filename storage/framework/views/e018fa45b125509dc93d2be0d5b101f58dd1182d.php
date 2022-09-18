@@ -11,7 +11,7 @@
             <br>
             <br>
             <div class="text-center" style='font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;border: 1px solid black;'>
-              تقرير احصائيات المواد  
+              تقرير  المتطلبات السابقه  
             </div>
           
         </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="m-auto">
         <div class="text-center">
-            <div><?php echo e($degree->key); ?></div>
+            <div><?php echo e($course_name->name); ?></div>
         </div>
     </div>
     
@@ -35,17 +35,15 @@
             <tr>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;width: 43px !important;">م</td>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;"> اسم المادة </td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;"> عدد الطلاب الحاصلين على هذا التقدير </td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;"> المواد المطلوبه  </td>
             </tr>
         </thead>
         <tbody>
-            <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-            
+            <?php $__currentLoopData = $prerequests; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $prerequest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;"><?php echo e($index); ?></td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($course->name); ?></td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e(Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('degree_map_id',$degree_id)->count()); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($prerequest->course->name); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($prerequest->relatedCourse->name); ?></td>
             </tr>
             
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -69,4 +67,4 @@
 </div>
 
 
-<?php /**PATH F:\company\himback\himbackend\resources\views/report/courses_statistics.blade.php ENDPATH**/ ?>
+<?php /**PATH F:\company\himback\himbackend\resources\views/report/prerquest.blade.php ENDPATH**/ ?>

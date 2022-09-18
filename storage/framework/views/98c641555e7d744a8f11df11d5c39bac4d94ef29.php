@@ -5,7 +5,7 @@
 <div class="container" style="padding: 0px !important;margin: 0px !important; ">
     <div class="row" style='direction: ltr !important;'>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <img src="{{url('/logo.png')}}" width="100px" style="margin: auto" >
+            <img src="<?php echo e(url('/logo.png')); ?>" width="100px" style="margin: auto" >
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
             <br>
@@ -42,26 +42,26 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($courses as $index => $course)
-            <div style="display:none"> {{ $registerStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->count() }}  </div>
-            <div style="display:none"> {{ $presentStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','!=','AB')->count() }}  </div>
-            <div style="display:none"> {{ $absenceStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','=','AB')->count() }}  </div>
-            <div style="display:none"> {{ $successStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa', '>', 1)->count() }}  </div>
-            <div style="display:none"> {{ $failedStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa', '=', 'F')->count() }}  </div>
-            @if($presentStudents != 0)
-            <div style="display:none"> {{ $percentage = $successStudents / $presentStudents * 100 }}  </div>
-            @else
-            <div style="display:none"> {{ $percentage = 0 }} </div>
-            @endif
+            <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div style="display:none"> <?php echo e($registerStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->count()); ?>  </div>
+            <div style="display:none"> <?php echo e($presentStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','!=','AB')->count()); ?>  </div>
+            <div style="display:none"> <?php echo e($absenceStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','=','AB')->count()); ?>  </div>
+            <div style="display:none"> <?php echo e($successStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa', '>', 1)->count()); ?>  </div>
+            <div style="display:none"> <?php echo e($failedStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa', '=', 'F')->count()); ?>  </div>
+            <?php if($presentStudents != 0): ?>
+            <div style="display:none"> <?php echo e($percentage = $successStudents / $presentStudents * 100); ?>  </div>
+            <?php else: ?>
+            <div style="display:none"> <?php echo e($percentage = 0); ?> </div>
+            <?php endif; ?>
             <tr>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;">{{ $index  }}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $course->name}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $registerStudents}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $presentStudents}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $absenceStudents}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $successStudents}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $failedStudents}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ round($percentage, 2)}} %</td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;"><?php echo e($index); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($course->name); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($registerStudents); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($presentStudents); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($absenceStudents); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($successStudents); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($failedStudents); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e(round($percentage, 2)); ?> %</td>
 
 
 
@@ -69,7 +69,7 @@
 
             </tr>
           
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         </tbody>
     </table class="table table-bordered">
@@ -91,3 +91,4 @@
 </div>
 
 
+<?php /**PATH F:\company\himback\himbackend\resources\views/report/result_statistics.blade.php ENDPATH**/ ?>

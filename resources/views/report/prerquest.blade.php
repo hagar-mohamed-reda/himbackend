@@ -5,13 +5,13 @@
 <div class="container" style="padding: 0px !important;margin: 0px !important; ">
     <div class="row" style='direction: ltr !important;'>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <img src="<?php echo e(url('/logo.png')); ?>" width="100px" style="margin: auto" >
+            <img src="{{url('/logo.png')}}" width="100px" style="margin: auto" >
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
             <br>
             <br>
             <div class="text-center" style='font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;border: 1px solid black;'>
-              تقرير احصائيات المواد  
+              تقرير  المتطلبات السابقه  
             </div>
           
         </div>
@@ -24,8 +24,8 @@
         </div>
     </div>
     <div class="m-auto">
-        <div class="text-center">
-            <div><?php echo e($degree->key); ?></div>
+        <div class="text-center p-2">
+            <div>{{$course_name->name}}</div>
         </div>
     </div>
     
@@ -35,20 +35,18 @@
             <tr>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;width: 43px !important;">م</td>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;"> اسم المادة </td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;"> عدد الطلاب الحاصلين على هذا التقدير </td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;height: 43px !important;"> المواد المطلوبه  </td>
             </tr>
         </thead>
         <tbody>
-            <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-            
+            @foreach($prerequests as $index => $prerequest)
             <tr>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;"><?php echo e($index); ?></td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($course->name); ?></td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e(Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('degree_map_id',$degree_id)->count()); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;">{{ $index }}</td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $prerequest->course->name}}</td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{$prerequest->relatedCourse->name}}</td>
             </tr>
             
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            @endforeach
         </tbody>
     </table class="table table-bordered">
     
@@ -69,4 +67,3 @@
 </div>
 
 
-<?php /**PATH F:\company\himback\himbackend\resources\views/report/courses_statistics.blade.php ENDPATH**/ ?>

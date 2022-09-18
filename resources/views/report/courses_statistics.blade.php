@@ -23,6 +23,11 @@
                  المعهد العالي للأدارة </div>
         </div>
     </div>
+    <div class="m-auto">
+        <div class="text-center">
+            <div>{{$degree->key}}</div>
+        </div>
+    </div>
     
 
     <table class="table table-bordered">
@@ -50,7 +55,7 @@
             <tr>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;">{{ $index }}</td>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $course->name}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $course->course->count()}}</td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('degree_map_id',$degree_id)->count()}}</td>
             </tr>
             
             @endforeach

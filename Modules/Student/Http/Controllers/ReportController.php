@@ -103,6 +103,7 @@ class ReportController extends Controller {
      * @return Response
      */
     public function report3(Request $request) {
+        // return $request->all();
         $query = Student::with(['academicYear', 'qualification', 'level', 'registerationStatus', 'department']);
 
         $academicYear = AcademicYear::find(request()->academic_year_id);
@@ -173,6 +174,11 @@ class ReportController extends Controller {
          {
             $query->whereBetween('birthdate',[request()->from_date, request()->to_date ]);
          } 
+
+         if(isset(request()->case_constraint_id))
+         {
+            $query->where('case_constraint_id',request()->case_constraint_id);
+         }
 
         if (request()->search_key) {
             $query

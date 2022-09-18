@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +94,7 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::get('affair/get-result-statistics', 'ReportController@getResultStatistics');
         Route::get('affair/get-courses-statistics', 'ReportController@getCoursesStatistics');
         Route::get('affair/get-result-absence', 'ReportController@getResultAbsence');
+        Route::get('affair/prerequsite','ReportController@coursePrequests');
 
         ///////////////////////////////////  Sync Apis  //////////////////////////////////
         Route::get('sync/students', 'StudentController@syncStudents');

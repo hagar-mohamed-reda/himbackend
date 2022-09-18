@@ -1019,9 +1019,6 @@ class ReportController extends Controller
     // }
     public function report26(Request $request)
     {
-        // std name
-        // name
-        // تخصص
         $query = StudentResult::query();
 
         if($request->course_id){
@@ -1042,7 +1039,6 @@ class ReportController extends Controller
             return $query;
         },'student.division', 'course']);
         return view('student::students.student_year_work_results',['results' => $query->get()]);
-        return $query->get();
     }
     public function report27(Request $request)
     {

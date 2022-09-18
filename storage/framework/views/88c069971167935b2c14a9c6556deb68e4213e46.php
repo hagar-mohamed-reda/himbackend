@@ -44,7 +44,7 @@
 
                                 <?php endif; ?>
                             </td>
-                            <td><?php echo e($result->work_year_degree); ?></td>
+                            <td> <?php echo e($result->work_year_degree); ?></td>
                             <td><?php echo e($result->final_tahrery_degree); ?></td>
                             <td><?php echo e($result->amly_degree); ?></td>
                             <td><?php echo e($result->mid_degree); ?></td>

@@ -43,7 +43,7 @@
                                     {{ optional($result->student->division)->name }}
                                 @endisset
                             </td>
-                            <td>{{ $result->work_year_degree }}</td>
+                            <td> {{ $result->work_year_degree }}</td>
                             <td>{{ $result->final_tahrery_degree }}</td>
                             <td>{{ $result->amly_degree }}</td>
                             <td>{{ $result->mid_degree }}</td>

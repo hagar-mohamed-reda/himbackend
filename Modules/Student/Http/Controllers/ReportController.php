@@ -23,10 +23,12 @@ use DB;
 use Modules\Divisions\Entities\Division;
 use Modules\Divisions\Entities\Level;
 use App\Term;
+use Illuminate\Support\Facades\Artisan;
 use Modules\Academic\Entities\StudentRegisterCourse;
 use Modules\Academic\Entities\StudentGroup;
 use Modules\Academic\Entities\StudentSection;
 use Modules\Academic\Entities\DegreeMap;
+use Modules\Academic\Entities\StudentResult;
 use Modules\Account\Entities\AccountSetting;
 use Modules\Student\Entities\StudentCaseConstraint;
 
@@ -1017,6 +1019,30 @@ class ReportController extends Controller
     // }
     public function report26(Request $request)
     {
+        // std name
+        // name
+        // تخصص
+        $query = StudentResult::query();
+
+        if($request->course_id){
+            $query->where('course_id' , $request->course_id);
+        }
+        if($request->year_id){
+            $query->where('academic_year_id' , $request->year_id);
+        }
+        if($request->term_id){
+            $query->where('term_id' , $request->term_id);
+        }
+
+        $query->with(['student' => function ($query) use ($request) {
+            if ($request->level_id > 0)
+                $query->where('level_id', $request->level_id);
+            if ($request->division_id > 0)
+                $query->where('division_id', $request->division_id);
+            return $query;
+        },'student.division', 'course']);
+        return view('student::students.student_year_work_results',['results' => $query->get()]);
+        return $query->get();
     }
     public function report27(Request $request)
     {

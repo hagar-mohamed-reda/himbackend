@@ -6,10 +6,6 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
             <br>
             <br>
-            <div class="text-center"
-                style='font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;border: 1px solid black;'>
-                كشوف خدمات الطالب
-            </div>
 
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -38,16 +34,22 @@
             @isset($results)
 
                 @foreach ($results as $result)
-                    <tr>
-                        <td>{{ optional($result->student)->name }}</td>
-                        <td>{{ optional($result->course)->name }}</td>
-                        <td>{{ optional($result->student->division)->name }}</td>
-                        <td>{{ $result->work_year_degree }}</td>
-                        <td>{{ $result->final_tahrery_degree }}</td>
-                        <td>{{ $result->amly_degree }}</td>
-                        <td>{{ $result->mid_degree }}</td>
-                        <td>{{ $result->final_degree }}</td>
-                    </tr>
+                    @isset($result->student)
+                        <tr>
+                            <td>{{ optional($result->student)->name }}</td>
+                            <td>{{ optional($result->course)->name }}</td>
+                            <td>
+                                @isset($result->student)
+                                    {{ optional($result->student->division)->name }}
+                                @endisset
+                            </td>
+                            <td>{{ $result->work_year_degree }}</td>
+                            <td>{{ $result->final_tahrery_degree }}</td>
+                            <td>{{ $result->amly_degree }}</td>
+                            <td>{{ $result->mid_degree }}</td>
+                            <td>{{ $result->final_degree }}</td>
+                        </tr>
+                    @endisset
                 @endforeach
             @endisset
 

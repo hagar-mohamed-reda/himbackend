@@ -117,6 +117,8 @@ class ServiceController extends Controller
             // join('students' , 'students.id' , 'account_payments.student_id')
             whereHas('student', function ($query) use ($request) {
                 $query->where('level_id', $request->level_id);
+                if($request->student_id)
+                    $query->where('student_id' , $request->student_id);
             })
             ->where([
                 ['model_type', 'service']

@@ -195,13 +195,13 @@ class ApplicationController extends Controller {
      */
     public function destroy($id) {
         $application = Application::find($id);
+        if(! $application) return "ملف التقديم غير موجود";
         try {
             $application->delete();
-            notify()->success(__('process has been success'), "", "bottomLeft");
+            return ['status' => 1];
         } catch (\Exception $th) {
-            notify()->error($th->getMessage(), "", "bottomLeft");
+            return ['status' => 0];
         }
-        return redirect()->route('required_documents.index');
     }
 
 }

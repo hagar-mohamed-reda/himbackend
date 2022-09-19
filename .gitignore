@@ -13,3 +13,4 @@ yarn-error.log
 *.zip
 /**/*.zip
 /public
+/bootstrap/cache

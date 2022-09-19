@@ -8,7 +8,10 @@
             <br>
             <div class="text-center"
                 style='font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;border: 1px solid black;'>
-                كشوف خدمات الطالب
+               (<?php if(isset($payments_data[0])): ?>
+                   <?php echo e(count($payments_data[0]->groupBy('student_id'))); ?>
+
+               <?php endif; ?>) كشوف خدمات الطالب
             </div>
 
         </div>

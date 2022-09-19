@@ -182,7 +182,7 @@
         <div class="w3-modal-content w3-white w3-round w3-card w3-padding" style="direction: rlt" >
             <div class="w3-center"  style="direction: rtl" >
                <b> يتم طباعة الوصل برقم  : </b>
-               <input type="number" class="w3-input" id="paymentIdInput" value="{{ $payment->id }}" >
+               <input type="number" class="w3-input" id="paymentIdInput" value="{{ $payment->serial }}" >
             </div>
             <br>
             <div class="w3-center" >

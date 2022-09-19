@@ -11,6 +11,9 @@ class StudentPay
      * detect the payment type if
      * ['academic_year_expense','service','installment','old_academic_year_expense']
      */
+
+    
+
     public static function getPayType(Student $student, Request $request) {
         if ($request->payment_type == 'service')
             return "service";
@@ -29,6 +32,10 @@ class StudentPay
      */
     public static function pay(Request $request, $installment=null, $payments=[]) {
                 // dd($request);
+                
+        $wzServiceMax = Payment::where('service_type', '!=', 'in')
+        ->orWhere('service_type', null)->max('serial');
+        $inServiceMax = Payment::where('service_type','in')->max('serial');
 
         $student = Student::find($request->student_id);
         $details = $student->getStudentBalance()->getCurrrentAcademicYearExpenseDetail();
@@ -45,8 +52,6 @@ class StudentPay
                 $discountModelForStudent = Discount::where('student_id',$student->id)->where('model_id',$detail->id)->sum('value');
                 $discountForModel =  $detail->discount;
 
-                $wzServiceMax = Payment::where('service_type', '!=', 'in')
-                                        ->orWhere('service_type', null)->max('serial');
 
                 $payment = Payment::addPayment([
                     "serial" => $wzServiceMax + 1,
@@ -102,9 +107,7 @@ class StudentPay
         else if ($type == 'service') {
             foreach($request->services as $item) {
                 $service = Service::find($item['id']);
-                $wzServiceMax = Payment::where('service_type', '!=', 'in')
-                                        ->orWhere('service_type', null)->max('serial');
-                $inServiceMax = Payment::where('service_type','in')->max('serial');
+                
                 
                 if ($service) {
                     if($service->type == "wz"){
@@ -143,7 +146,9 @@ class StudentPay
         else if ($type == "old_academic_year_expense") {
             // old balance store
             $store = AccountSetting::getOldBalanceStore();
+
             $payment = Payment::addPayment([
+                "serial" => $wzServiceMax + 1,
                 "date" => date('Y-m-d'),
                 "value" => $request->value,
                 "model_type" => "old_academic_year_expense",
@@ -176,6 +181,7 @@ class StudentPay
                             $value = $detail->value;
 
                         $payment = Payment::addPayment([
+                            "serial" => $wzServiceMax + 1,
                             "date" => date('Y-m-d'),
                             "value" => $value,
                             "model_type" => "academic_year_expense",
@@ -206,6 +212,7 @@ class StudentPay
                 // old balance store
                 $store = AccountSetting::getOldBalanceStore();
                 $payment = Payment::addPayment([
+                    "serial" => $wzServiceMax + 1,
                     "date" => date('Y-m-d'),
                     "value" => $request->value,
                     "model_type" => "installment",
@@ -237,6 +244,7 @@ class StudentPay
         $payment = Payment::find($request->payment_id);
 
         $refund = Payment::addRefund([
+            "serial" => $wzServiceMax + 1,
             "date" => date('Y-m-d'),
             "value" => $payment->value,
             "model_type" => "refund",

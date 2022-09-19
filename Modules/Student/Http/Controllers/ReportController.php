@@ -595,13 +595,26 @@ class ReportController extends Controller {
     {
         $academic_year_id =request()->year_id;
         $term_id = request()->term_id;
+        $level_id = request()->level_id;
         $degree_id = request()->degree_id;
         $degree = DegreeMap::find($degree_id);
-        $courses = Course::where('level_id',request()->level_id)
-                            ->where('term',request()->term_id)->where('division_id',request()->division_id)
-                            ->get();
+        $courses = Course::query();
+        if( isset( request()->level_id))
+        {
+            $courses->where('level_id',request()->level_id);
+        }
+
+        if(isset(request()->term_id))
+        {
+            $courses->where('term',request()->term_id);
+        }
+        if(isset(request()->division_id))
+        {
+            $courses->where('division_id',request()->division_id);
+        }
+        $courses = $courses->get();
         // return $courses;
-        return view('report.courses_statistics',compact('courses','degree','degree_id','academic_year_id','term_id'));
+        return view('report.courses_statistics',compact('courses','level_id','degree','degree_id','academic_year_id','term_id'));
     }
     
       public function getResultAbsence(Request $request)
@@ -1085,8 +1098,9 @@ class ReportController extends Controller {
         //     $courses->join('academic_open_courses','academic_open_courses.course_id','academic_courses.id')->where('academic_year_id',request()->year_id);
         // }
         // $courses = $courses->get();
-        // return $courses;
+        // return $courses-;
         $course_id =  $courses->pluck('academic_courses.id');
+        // return $course_id;
         $course_name = Course::find(request()->course_id);
         $prerequests = CoursePrerequsite::whereIn('course_id',$course_id)->get();
         // return $prerequests;

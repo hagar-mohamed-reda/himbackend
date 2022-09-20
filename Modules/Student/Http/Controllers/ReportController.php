@@ -107,6 +107,7 @@ class ReportController extends Controller
      * @return Response
      */
     public function report3(Request $request) {
+
         // return $request->all();
         $query = Student::with(['academicYear', 'qualification', 'level', 'registerationStatus', 'department']);
 
@@ -114,19 +115,33 @@ class ReportController extends Controller
         $level = Level::find(request()->level_id);
         $division = Division::find(request()->division_id);
 
+
+        if($request->registration_date_from){
+            $query->where('registeration_date', '>=', $request->registration_date_from);
+        }
+        if($request->registration_date_to){
+            $query->where('registeration_date', '<=', $request->registration_date_to);
+        } 
+
+        if($request->from_date){
+            $query->where('birthdate', '>=', $request->from_date);
+        }
+        if($request->to_date){
+            $query->where('birthdate', '<=', $request->to_date);
+        } 
+        
+
         if (request()->nationality_id > 0)
             $query->where('nationality_id', request()->nationality_id);
-
 
         if (request()->academic_year_id)
             $query->where('academic_years_id', request()->academic_year_id);
 
-        if (request()->gender == 0 && request()->gender != null)
-            $query->where('gender', 'female');
-
-        if (request()->gender == 1 && request()->gender != null)
-            $query->where('gender', 'male');
-
+        if(request()->gender != null){
+            $identifier = request()->gender == 0 ? 'female' : 'male';
+            $query->where('gender', $identifier);
+        }
+        
         if (request()->isVaccinated  == 1 || request()->isVaccinated == 0 && request()->isVaccinated != null)
             $query->where('iscorona', request()->isVaccinated);
 
@@ -138,11 +153,11 @@ class ReportController extends Controller
         if (request()->qualification_id > 0)
             $query->where('qualification_id', request()->qualification_id);
 
-        if (request()->created_at > 0) {
-            $myDate = \Carbon\Carbon::now();
-            $myDateParse = \Carbon\Carbon::parse($myDate)->format('Y-m-d');
-            $query->whereDate('created_at', $myDateParse);
-        }
+        // if (request()->created_at > 0) {
+        //     $myDate = \Carbon\Carbon::now();
+        //     $myDateParse = \Carbon\Carbon::parse($myDate)->format('Y-m-d');
+        //     $query->whereDate('created_at', $myDateParse);
+        // }
 
         if (request()->level_id > 0)
             $query->where('level_id', request()->level_id);
@@ -160,10 +175,6 @@ class ReportController extends Controller
             $newDateTime = \Carbon\Carbon::now()->subYears(18);
             $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
             $query->whereDate('birthdate', '>', $newDateTimeParse);
-        }
-
-        if (request()->from_date > 0 && request()->to_date > 0) {
-            $query->whereBetween('birthdate', [request()->from_date, request()->to_date]);
         }
 
          if(isset(request()->case_constraint_id))

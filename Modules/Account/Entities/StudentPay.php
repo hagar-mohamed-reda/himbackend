@@ -45,7 +45,11 @@ class StudentPay
                 $discountModelForStudent = Discount::where('student_id',$student->id)->where('model_id',$detail->id)->sum('value');
                 $discountForModel =  $detail->discount;
 
+                $wzServiceMax = Payment::where('service_type', '!=', 'in')
+                                        ->orWhere('service_type', null)->max('serial');
+
                 $payment = Payment::addPayment([
+                    "serial" => $wzServiceMax + 1,
                     "date" => date('Y-m-d'),
                     "value" => $detail->value - $discountForModel -  $discountModelForStudent,
                     "model_type" => "academic_year_expense",
@@ -56,6 +60,7 @@ class StudentPay
                 ]);
 
                 $data = [
+                    "serial" => $wzServiceMax + 1,
                     "date" => date('Y-m-d'),
                     "value" => $detail->value,
                     "model_type" => "academic_year_expense",
@@ -97,13 +102,29 @@ class StudentPay
         else if ($type == 'service') {
             foreach($request->services as $item) {
                 $service = Service::find($item['id']);
+                $wzServiceMax = Payment::where('service_type', '!=', 'in')
+                                        ->orWhere('service_type', null)->max('serial');
+                $inServiceMax = Payment::where('service_type','in')->max('serial');
+                
                 if ($service) {
+                    if($service->type == "wz"){
+                        $service->serial = $wzServiceMax + 1 ;
+                        $service->service_type = "wz" ;
+                    }else{
+                        if(!$inServiceMax)
+                            $inServiceMax = 0;
+                        $service->serial = $inServiceMax + 1 ;
+                        $service->service_type = "in" ;
+                    }
+                    
                     $total = $item['number'] * ($service->value + $service->additional_value);
                      $payment = Payment::addPayment([
+                        "serial" => $service->serial,
                         "date" => date('Y-m-d'),
                         "value" => $total,
                         "model_type" => "service",
                         "model_id" => $service->id,
+                        "service_type" => $service->service_type,
                         "user_id" => $request->user->id,
                         "store_id" => $service->store_id,
                         "student_id" => $student->id,
@@ -113,6 +134,7 @@ class StudentPay
                     StudentService::create([
                         "service_id" => $service->id,
                         "student_id" => $student->id,
+                        "service_type" => $service->service_type,
                     ]);
                 }
             }

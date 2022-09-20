@@ -24,6 +24,7 @@ use Modules\Divisions\Entities\Division;
 use Modules\Divisions\Entities\Level;
 use App\Term;
 use Illuminate\Support\Facades\Artisan;
+use Modules\Academic\Entities\CoursePrerequsite;
 use Modules\Academic\Entities\StudentRegisterCourse;
 use Modules\Academic\Entities\StudentGroup;
 use Modules\Academic\Entities\StudentSection;
@@ -106,8 +107,8 @@ class ReportController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function report3(Request $request)
-    {
+    public function report3(Request $request) {
+        // return $request->all();
         $query = Student::with(['academicYear', 'qualification', 'level', 'registerationStatus', 'department']);
 
         $academicYear = AcademicYear::find(request()->academic_year_id);
@@ -174,6 +175,11 @@ class ReportController extends Controller
         if (request()->from_date > 0 && request()->to_date > 0) {
             $query->whereBetween('birthdate', [request()->from_date, request()->to_date]);
         }
+
+         if(isset(request()->case_constraint_id))
+         {
+            $query->where('case_constraint_id',request()->case_constraint_id);
+         }
 
         if (request()->search_key) {
             $query
@@ -578,13 +584,16 @@ class ReportController extends Controller
 
     public function getResultStatistics(Request $request)
     {
-
-        $academic_year_id = request()->year_id;
+      
+        $academic_year_id =request()->year_id;
         $term_id = request()->term_id;
+        $degree_id = request()->degree_id;
+      
+        $courses = Course::where('level_id',request()->level_id)
+                            ->where('term',request()->term_id)->where('division_id',request()->division_id)
+                            ->get();
 
-        $courses = Course::where('level_id', request()->level_id)
-            ->where('term', request()->term_id)->where('division_id', request()->division_id)
-            ->get();
+        return view('report.result_statistics',compact('courses','degree_id','academic_year_id','term_id'));
 
         return view('report.result_statistics', compact('courses', 'academic_year_id', 'term_id'));
     }
@@ -592,10 +601,26 @@ class ReportController extends Controller
     {
         $academic_year_id = request()->year_id;
         $term_id = request()->term_id;
-        $courses = Course::where('level_id', request()->level_id)
-            ->where('term', request()->term_id)->where('division_id', request()->division_id)
-            ->get();
-        return view('report.courses_statistics', compact('courses', 'academic_year_id', 'term_id'));
+        $level_id = request()->level_id;
+        $degree_id = request()->degree_id;
+        $degree = DegreeMap::find($degree_id);
+        $courses = Course::query();
+        if( isset( request()->level_id))
+        {
+            $courses->where('level_id',request()->level_id);
+        }
+
+        if(isset(request()->term_id))
+        {
+            $courses->where('term',request()->term_id);
+        }
+        if(isset(request()->division_id))
+        {
+            $courses->where('division_id',request()->division_id);
+        }
+        $courses = $courses->get();
+        // return $courses;
+        return view('report.courses_statistics',compact('courses','level_id','degree','degree_id','academic_year_id','term_id'));
     }
 
     public function getResultAbsence(Request $request)
@@ -1046,6 +1071,38 @@ class ReportController extends Controller
         $responses = $studentCaseConsraints->get();
 
         return view('report.report27', compact('responses', 'academicYear', 'level', 'term', 'division'));
+    }
+
+    public function coursePrequests(Request $request)
+    {
+        $courses = Course::query();
+        // return $courses;
+        if(isset(request()->level_id))
+        {
+            $courses->where('level_id',request()->level_id);
+        }
+
+        if(isset(request()->term_id))
+        {
+            $courses->where('term',request()->term_id);
+        }
+        
+        if(isset(request()->course_id))
+        {
+            $courses->where('id',request()->course_id);
+        }
+        // if(isset(request()->year_id))
+        // {
+        //     $courses->join('academic_open_courses','academic_open_courses.course_id','academic_courses.id')->where('academic_year_id',request()->year_id);
+        // }
+        // $courses = $courses->get();
+        // return $courses-;
+        $course_id =  $courses->pluck('academic_courses.id');
+        // return $course_id;
+        $course_name = Course::find(request()->course_id);
+        $prerequests = CoursePrerequsite::whereIn('course_id',$course_id)->get();
+        // return $prerequests;
+        return view('report.prerquest',compact('prerequests','course_name'));
     }
     public function getTermsefyStudents(Request $req){
         $query =  StudentRegisterCourse::whereHas('student')->with('course' , 'student' , 'level', 'term');

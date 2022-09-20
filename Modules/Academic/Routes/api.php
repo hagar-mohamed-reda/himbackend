@@ -101,6 +101,9 @@ Route::group(['middleware' => 'api_auth'], function () {
         // get top 10 student gpa
         Route::get('/report25', 'AcademicController@getTopGpaStudents');
 
+        // payment seeting //
+        Route::get('payment_settings','SettingController@getPaymentSettings');
+        Route::post('update/payment_settings','SettingController@updatePaymentSettings');
 
 
         ///////////////////////////////// Sync Apis ///////////////////////////////////////

@@ -8,6 +8,7 @@ use DB;
 
 class AccountSetting extends Model
 {
+    //tarek
 
     protected $table = "account_settings";
 

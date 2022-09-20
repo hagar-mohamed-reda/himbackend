@@ -170,13 +170,13 @@ class Student extends StudentOrigin
             ->orderby('student_schedule.day');
     }
 
-    public function getActualRegisterCourses()
-    {
+    public function getActualRegisterCourses() {
+        $successGpa = optional(AcademicSetting::find(2))->value;
         return StudentRegisterCourse::with('section')
-            ->where('student_id', $this->id)
-            ->where('degree_map_id', '>', 1)
-            ->select('*', 'academic_courses.id as id', 'academic_student_register_courses.created_at as register_date')
-            ->join('academic_courses', 'academic_courses.id', '=', 'course_id');
+                        ->where('student_id', $this->id)
+                        ->where('gpa', '>', $successGpa)
+                        ->select('*', 'academic_courses.id as id', 'academic_student_register_courses.created_at as register_date')
+                        ->join('academic_courses', 'academic_courses.id', '=', 'course_id');
     }
 
     public function getCurrentRegisterCoursesAttribute()

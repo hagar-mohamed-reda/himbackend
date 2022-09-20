@@ -33,11 +33,6 @@
         </thead>
         <tbody>
 
-
-
-            <?php echo e(count($results)); ?>
-
-
             <?php if(count($results) == 0): ?>
                 <tr>
                     <td style="text-align: center;font-size : 30px" colspan="8">لا يوجد بيانات</td>

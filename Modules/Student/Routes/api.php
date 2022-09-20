@@ -85,7 +85,7 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::get('affair/report22', 'ReportController@report22');
         Route::get('affair/report23', 'ReportController@report23');
         Route::get('affair/report24', 'ReportController@report24');
-
+        Route::get('affair/termsefy', 'ReportController@getTermsefyStudents');
         // this route was moved to the academic module
         // Route::get('affair/report25', 'ReportController@report25');
         Route::get('affair/report26', 'ReportController@report26');

@@ -25,7 +25,7 @@
     </div>
     <div class="m-auto">
         <div class="text-center">
-            <div>{{$degree->key}}</div>
+            <div>{{$degree->key ?? ''}}</div>
         </div>
     </div>
     
@@ -41,7 +41,7 @@
         <tbody>
             @foreach($courses as $index => $course)
 
-            {{-- <div style="display:none"> {{ $registerStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->count() }}  </div>
+            <div style="display:none"> {{ $registerStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->count() }}  </div>
             <div style="display:none"> {{ $presentStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','!=','AB')->count() }}  </div>
             <div style="display:none"> {{ $absenceStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa_word','=','AB')->count() }}  </div>
             <div style="display:none"> {{ $successStudents = Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('gpa', '>', 1)->count() }}  </div>
@@ -51,11 +51,11 @@
             <div style="display:none"> {{ $percentage = $successStudents / $presentStudents * 100 }}  </div>
             @else
             <div style="display:none"> {{ $percentage = 0 }} </div>
-            @endif --}}
+            @endif
             <tr>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;">{{ $index }}</td>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ $course->name}}</td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('degree_map_id',$degree_id)->count()}}</td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;">{{ Modules\Academic\Entities\StudentRegisterCourse::where('course_id',$course->id)->where('academic_year_id',$academic_year_id)->where('term_id', $term_id)->where('level_id',$level_id)->where('degree_map_id',$degree_id)->count()}}</td>
             </tr>
             
             @endforeach

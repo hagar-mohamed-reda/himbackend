@@ -19,8 +19,15 @@ class CourseController extends Controller
      */
     public function get()
     {
-        return Course::latest()->get();
+        return Course::all();
     }
+
+    public function getCoursesHistory(){
+        return OpenCourse::join('academic_courses' , 'academic_courses.id' , 'academic_open_courses.course_id')
+        ->select('term_id as term' , 'level_id','division_id' ,'name' ,  'academic_courses.id as id')
+        ->get();
+    }
+
     
     public function syncCourses()
     {

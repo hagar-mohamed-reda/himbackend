@@ -8,7 +8,9 @@
             <br>
             <div class="text-center"
                 style='font-weight: bolder !important;font-size:14px !important;background-color: #d4d4d4 !important;border: 1px solid black;'>
-                كشوف خدمات الطالب
+               (@isset($payments_data[0])
+                   {{count($payments_data[0]->groupBy('student_id'))}}
+               @endisset) كشوف خدمات الطالب
             </div>
 
         </div>

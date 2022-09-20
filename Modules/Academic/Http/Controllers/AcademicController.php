@@ -81,7 +81,6 @@ class AcademicController extends Controller
         if ($validator->fails()) {
             return responseJson(0, $validator->errors()->first());
         }
-
         $students = Student::query()->where([
             ['academic_years_id', $req->year_id],
             ['level_id', $req->level_id]
@@ -104,7 +103,7 @@ class AcademicController extends Controller
 
         $gpas =  $gpas->sortByDesc(function($item){
             return $item['gpa'];
-        })->forPage(1 , 10)->all();
+        })->forPage(1 , $req->count)->all();
 
         return view('academic::topten' , compact('gpas'));
     }

@@ -24,8 +24,8 @@
         </div>
     </div>
     <div class="m-auto">
-        <div class="text-center">
-            <div><?php echo e($course_name->name); ?></div>
+        <div class="text-center p-2">
+            <div><?php echo e($course_name->name??''); ?></div>
         </div>
     </div>
     
@@ -42,8 +42,8 @@
             <?php $__currentLoopData = $prerequests; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $prerequest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
                 <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;width: 43px !important;"><?php echo e($index); ?></td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($prerequest->course->name); ?></td>
-                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e($prerequest->relatedCourse->name); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e(optional($prerequest->course)->name); ?></td>
+                <td style="padding: 1px!important;text-align: center !important;vertical-align: middle !important;border: 1px solid black !important;font-weight: bolder !important;font-size:14px !important;height: 43px !important;"><?php echo e(optional($prerequest->relatedCourse)->name); ?></td>
             </tr>
             
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

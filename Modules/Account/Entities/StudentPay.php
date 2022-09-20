@@ -44,8 +44,6 @@ class StudentPay
         $type = self::getPayType($student, $request);
          
         if ($type == "academic_year_expense") {
-            
-         
 
             foreach($details as $detail) {
                 

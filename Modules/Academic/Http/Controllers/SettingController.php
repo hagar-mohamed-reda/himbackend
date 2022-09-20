@@ -101,8 +101,8 @@ class SettingController extends Controller
 
     public function getPaymentSettings()
     {
-        $restricted =  AcademicAdvisingPaymentDetails::where('case_constrain_id',2)->get();
-        $unrestricted = AcademicAdvisingPaymentDetails::where('case_constrain_id',3)->get();
+        $restricted =  AcademicAdvisingPaymentDetails::where('case_constrain_id',2)->get();  // المقيد
+        $unrestricted = AcademicAdvisingPaymentDetails::where('case_constrain_id',3)->get(); // الساقط
         return Response()->json(['status' => 1, 'message' => 'success', 'restricted' => $restricted,'unrestricted'=>$unrestricted]);
     }
 

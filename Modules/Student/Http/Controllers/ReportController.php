@@ -1048,7 +1048,7 @@ class ReportController extends Controller
         return view('report.report27', compact('responses', 'academicYear', 'level', 'term', 'division'));
     }
     public function getTermsefyStudents(Request $req){
-        $query =  StudentRegisterCourse::with('course' , 'student' , 'level', 'term');
+        $query =  StudentRegisterCourse::whereHas('student')->with('course' , 'student' , 'level', 'term');
         if($req->level_id > 0){
             $query->where('level_id' , $req->level_id);
         }

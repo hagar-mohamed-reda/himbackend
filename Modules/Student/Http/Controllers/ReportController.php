@@ -23,12 +23,12 @@ use DB;
 use Modules\Divisions\Entities\Division;
 use Modules\Divisions\Entities\Level;
 use App\Term;
+use Illuminate\Support\Facades\Artisan;
 use Modules\Academic\Entities\CoursePrerequsite;
 use Modules\Academic\Entities\StudentRegisterCourse;
 use Modules\Academic\Entities\StudentGroup;
 use Modules\Academic\Entities\StudentSection;
 use Modules\Academic\Entities\DegreeMap;
-use Modules\Academic\Entities\StudentResult;
 use Modules\Account\Entities\AccountSetting;
 use Modules\Student\Entities\StudentCaseConstraint;
 
@@ -107,6 +107,7 @@ class ReportController extends Controller
      * @return Response
      */
     public function report3(Request $request) {
+
         // return $request->all();
         $query = Student::with(['academicYear', 'qualification', 'level', 'registerationStatus', 'department']);
 
@@ -114,68 +115,68 @@ class ReportController extends Controller
         $level = Level::find(request()->level_id);
         $division = Division::find(request()->division_id);
 
-        if (request()->nationality_id > 0)
-            $query->where('nationality_id', request()->nationality_id);
 
+        if($request->registration_date_from){
+            $query->where('registeration_date', '>=', $request->registration_date_from);
+        }
+        if($request->registration_date_to){
+            $query->where('registeration_date', '<=', $request->registration_date_to);
+        } 
 
-        if (request()->is_register == 1)
-            $query->Join('academic_student_register_courses', 'students.id', '=', 'academic_student_register_courses.student_id');
+        if($request->from_date){
+            $query->where('birthdate', '>=', $request->from_date);
+        }
+        if($request->to_date){
+            $query->where('birthdate', '<=', $request->to_date);
+        } 
+        
 
-        if (request()->is_register == 2)
-            $query->where('is_register', 0);
+      
+        if (request()->academic_year_id)
+            $query->where('academic_years_id', request()->academic_year_id);
 
-        if (request()->academic_years_id > 0)
-            $query->where('academic_years_id', request()->academic_years_id);
-
-        if (request()->gender == 0 && request()->gender != null)
-            $query->where('gender', 'female');
-
-        if (request()->gender == 1 && request()->gender != null)
+        if(request()->gender == 1){
             $query->where('gender', 'male');
+        }
+          if(request()->gender == 2){
+            $query->where('gender', 'female');
+        }
+        
+        if (request()->isVaccinated){
+            if(request()->isVaccinated == 1)
+                $query->where('iscorona', 1);
+            else
+                $query->where('iscorona', 0);
+        }
+            
+        
 
-        if (request()->isVaccinated  == 1 || request()->isVaccinated == 0 && request()->isVaccinated != null)
-            $query->where('iscorona', request()->isVaccinated);
-
-
-
-        if (request()->division_id > 0)
+        if (request()->division_id)
             $query->where('division_id', request()->division_id);
 
-        if (request()->qualification_id > 0)
+        if (request()->qualification_id)
             $query->where('qualification_id', request()->qualification_id);
 
-        if (request()->is_application == 0 || request()->is_application == 1)
-            $query->where('is_application', request()->is_application);
-
-        if (request()->created_at > 0) {
-            $myDate = \Carbon\Carbon::now();
-            $myDateParse = \Carbon\Carbon::parse($myDate)->format('Y-m-d');
-            $query->whereDate('created_at', $myDateParse);
-        }
-
-        if (request()->level_id > 0)
+    
+        if (request()->level_id)
             $query->where('level_id', request()->level_id);
 
 
-        if (request()->qualification_types_id > 0)
+        if (request()->qualification_types_id)
             $query->where('qualification_types_id', request()->qualification_types_id);
 
-        if (request()->is_adult == 1) {
-            $newDateTime = \Carbon\Carbon::now()->subYears(18);
-            $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
-            $query->whereDate('birthdate', '<', $newDateTimeParse);
-        }
-        if (request()->is_adult == 2) {
-            $newDateTime = \Carbon\Carbon::now()->subYears(18);
-            $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
-            $query->whereDate('birthdate', '>', $newDateTimeParse);
-        }
+        // if (request()->is_adult == 1) {
+        //     $newDateTime = \Carbon\Carbon::now()->subYears(18);
+        //     $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
+        //     $query->whereDate('birthdate', '<', $newDateTimeParse);
+        // }
+        // if (request()->is_adult == 2) {
+        //     $newDateTime = \Carbon\Carbon::now()->subYears(18);
+        //     $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
+        //     $query->whereDate('birthdate', '>', $newDateTimeParse);
+        // }
 
-        if (request()->from_date > 0 && request()->to_date > 0) {
-            $query->whereBetween('birthdate', [request()->from_date, request()->to_date]);
-        }
-
-         if(isset(request()->case_constraint_id))
+         if(request()->case_constraint_id)
          {
             $query->where('case_constraint_id',request()->case_constraint_id);
          }
@@ -600,13 +601,26 @@ class ReportController extends Controller
     {
         $academic_year_id = request()->year_id;
         $term_id = request()->term_id;
+        $level_id = request()->level_id;
         $degree_id = request()->degree_id;
         $degree = DegreeMap::find($degree_id);
-        $courses = Course::where('level_id',request()->level_id)
-                            ->where('term',request()->term_id)->where('division_id',request()->division_id)
-                            ->get();
+        $courses = Course::query();
+        if( isset( request()->level_id))
+        {
+            $courses->where('level_id',request()->level_id);
+        }
+
+        if(isset(request()->term_id))
+        {
+            $courses->where('term',request()->term_id);
+        }
+        if(isset(request()->division_id))
+        {
+            $courses->where('division_id',request()->division_id);
+        }
+        $courses = $courses->get();
         // return $courses;
-        return view('report.courses_statistics',compact('courses','degree','degree_id','academic_year_id','term_id'));
+        return view('report.courses_statistics',compact('courses','level_id','degree','degree_id','academic_year_id','term_id'));
     }
 
     public function getResultAbsence(Request $request)
@@ -911,25 +925,47 @@ class ReportController extends Controller
     }
     public function report23(Request $request)
     {
-        $query = StudentResult::query()->where('mid_degree' , null);
+        // dd(request()->year_id);
+        $academicYear = AcademicYear::find(request()->year_id);
+        $term = DB::table('terms')->where('id', request()->term_id)->first();
+        $level = DB::table('levels')->where('id', request()->level_id)->first();
 
-        if($request->course_id){
-            $query->where('course_id' , $request->course_id);
+
+
+        $courses = null;
+
+
+        $registerIds = DB::table('academic_student_register_courses');
+
+
+        if (request()->academic_year_id) {
+            $registerIds->where('academic_year_id', request()->year_id);
         }
-        if($request->year_id){
-            $query->where('academic_year_id' , $request->year_id);
-        }
-        if($request->term_id){
-            $query->where('term_id' , $request->term_id);
+        if (request()->term_id) {
+            $registerIds->where('term_id', request()->term_id);
         }
 
-        $query->with(['student' => function ($query) use ($request) {
-            if ($request->level_id > 0)
-                $query->where('level_id', $request->level_id);
-            return $query;
-        },'student.division', 'course']);
 
-        return view('student::students.medterm',['results' => $query->get()]);
+
+        $registerIds = $registerIds->pluck('student_id')->toArray();
+
+
+        $query = DB::table('academic_student_courses_result')
+            ->select('students.name', 'students.code', 'students.set_number')
+            ->join('students', 'students.id', '=', 'academic_student_courses_result.student_id')
+            ->where('academic_student_courses_result.mid_degree', null)
+            ->whereIn('students.id', $registerIds)->groupby('academic_student_courses_result.student_id');
+
+        if (request()->course_id) {
+            $query->where('course_id', request()->course_id);
+        }
+
+
+        $responses = $query->paginate(2000);
+        // 	dd($responses);
+
+
+        return view('report.report23', compact('responses', 'courses', 'term', 'academicYear'));
     }
 
 
@@ -1008,27 +1044,6 @@ class ReportController extends Controller
     // }
     public function report26(Request $request)
     {
-        $query = StudentResult::query();
-
-        if($request->course_id){
-            $query->where('course_id' , $request->course_id);
-        }
-        if($request->year_id){
-            $query->where('academic_year_id' , $request->year_id);
-        }
-        if($request->term_id){
-            $query->where('term_id' , $request->term_id);
-        }
-
-        $query->with(['student' => function ($query) use ($request) {
-            if ($request->level_id > 0)
-                $query->where('level_id', $request->level_id);
-            if ($request->division_id > 0)
-                $query->where('division_id', $request->division_id);
-            return $query;
-        },'student.division', 'course']);
-
-        return view('student::students.student_year_work_results',['results' => $query->get()]);
     }
     public function report27(Request $request)
     {
@@ -1082,11 +1097,31 @@ class ReportController extends Controller
         //     $courses->join('academic_open_courses','academic_open_courses.course_id','academic_courses.id')->where('academic_year_id',request()->year_id);
         // }
         // $courses = $courses->get();
-        // return $courses;
+        // return $courses-;
         $course_id =  $courses->pluck('academic_courses.id');
+        // return $course_id;
         $course_name = Course::find(request()->course_id);
         $prerequests = CoursePrerequsite::whereIn('course_id',$course_id)->get();
         // return $prerequests;
         return view('report.prerquest',compact('prerequests','course_name'));
+    }
+    public function getTermsefyStudents(Request $req){
+        $query =  StudentRegisterCourse::whereHas('student')->with('course' , 'student' , 'level', 'term');
+        if($req->level_id > 0){
+            $query->where('level_id' , $req->level_id);
+        }
+        if($req->course_id > 0){
+            $query->where('course_id' , $req->course_id);
+        }
+
+        if($req->division_id > 0){
+            $query->where('division_id' , $req->division_id);
+        }
+
+        if($req->term_id > 0){
+            $query->where('term_id' , $req->term_id);
+        }
+    
+        return view('student::term-sefy' , ['students' => $query->get()]);
     }
 }

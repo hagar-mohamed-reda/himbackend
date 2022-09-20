@@ -23,6 +23,7 @@ use DB;
 use Modules\Divisions\Entities\Division;
 use Modules\Divisions\Entities\Level;
 use App\Term;
+use Illuminate\Support\Facades\Artisan;
 use Modules\Academic\Entities\CoursePrerequsite;
 use Modules\Academic\Entities\StudentRegisterCourse;
 use Modules\Academic\Entities\StudentGroup;
@@ -1061,6 +1062,38 @@ class ReportController extends Controller
         $responses = $studentCaseConsraints->get();
 
         return view('report.report27', compact('responses', 'academicYear', 'level', 'term', 'division'));
+    }
+
+    public function coursePrequests(Request $request)
+    {
+        $courses = Course::query();
+        // return $courses;
+        if(isset(request()->level_id))
+        {
+            $courses->where('level_id',request()->level_id);
+        }
+
+        if(isset(request()->term_id))
+        {
+            $courses->where('term',request()->term_id);
+        }
+        
+        if(isset(request()->course_id))
+        {
+            $courses->where('id',request()->course_id);
+        }
+        // if(isset(request()->year_id))
+        // {
+        //     $courses->join('academic_open_courses','academic_open_courses.course_id','academic_courses.id')->where('academic_year_id',request()->year_id);
+        // }
+        // $courses = $courses->get();
+        // return $courses-;
+        $course_id =  $courses->pluck('academic_courses.id');
+        // return $course_id;
+        $course_name = Course::find(request()->course_id);
+        $prerequests = CoursePrerequsite::whereIn('course_id',$course_id)->get();
+        // return $prerequests;
+        return view('report.prerquest',compact('prerequests','course_name'));
     }
     public function getTermsefyStudents(Request $req){
         $query =  StudentRegisterCourse::whereHas('student')->with('course' , 'student' , 'level', 'term');

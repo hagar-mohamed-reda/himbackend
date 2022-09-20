@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:xTx4PlVyIar4+bZuPPePZK8hKUWSEObef7CjVmuyFCA=',
+    'key' => 'base64:5rnRMIYbbQ7psIxV+kWLfzYx5+KvK6NX+sKV9qo+Gkc=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -135,12 +135,12 @@
       'pusher' => 
       array (
         'driver' => 'pusher',
-        'key' => '',
-        'secret' => '',
-        'app_id' => '',
+        'key' => NULL,
+        'secret' => NULL,
+        'app_id' => NULL,
         'options' => 
         array (
-          'cluster' => 'mt1',
+          'cluster' => NULL,
           'useTLS' => true,
         ),
       ),
@@ -182,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'F:\\company\\himback\\himbackend\\storage\\framework/cache/data',
+        'path' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -259,7 +259,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'pnpskkmy_him',
+        'database' => 'him',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -269,9 +269,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'pnpskkmy_him',
+        'database' => 'him',
         'username' => 'root',
-        'password' => '',
+        'password' => '123456',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -289,9 +289,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'pnpskkmy_him',
+        'database' => 'him',
         'username' => 'root',
-        'password' => '',
+        'password' => '123456',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -304,9 +304,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'pnpskkmy_him',
+        'database' => 'him',
         'username' => 'root',
-        'password' => '',
+        'password' => '123456',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -489,7 +489,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'F:\\company\\himback\\himbackend\\storage\\framework/laravel-excel',
+      'local_path' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/framework/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -504,12 +504,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\company\\himback\\himbackend\\storage\\app',
+        'root' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\company\\himback\\himbackend\\storage\\app/public',
+        'root' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -526,7 +526,7 @@
     ),
     'links' => 
     array (
-      'F:\\company\\himback\\himbackend\\public\\storage' => 'F:\\company\\himback\\himbackend\\storage\\app/public',
+      '/home/mohamed/Documents/work-drhamdi/himbackend/public/storage' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/app/public',
     ),
   ),
   'hashing' => 
@@ -691,13 +691,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'F:\\company\\himback\\himbackend\\storage\\logs/laravel.log',
+        'path' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'F:\\company\\himback\\himbackend\\storage\\logs/laravel.log',
+        'path' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -747,7 +747,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'F:\\company\\himback\\himbackend\\storage\\logs/laravel.log',
+        'path' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/logs/laravel.log',
       ),
     ),
   ),
@@ -759,11 +759,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.mailtrap.io',
-        'port' => '2525',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'smtp.gmail.com',
+        'port' => '465',
+        'encryption' => 'ssl',
+        'username' => 'seyouf.info@gmail.com',
+        'password' => 'hxjgxbzzbjcsbbsi',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -796,15 +796,15 @@
     ),
     'from' => 
     array (
-      'address' => NULL,
-      'name' => 'Laravel',
+      'address' => 'hello@example.com',
+      'name' => 'Example',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'F:\\company\\himback\\himbackend\\resources\\views/vendor/mail',
+        0 => '/home/mohamed/Documents/work-drhamdi/himbackend/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -814,7 +814,7 @@
     'stubs' => 
     array (
       'enabled' => false,
-      'path' => 'F:\\company\\himback\\himbackend/vendor/nwidart/laravel-modules/src/Commands/stubs',
+      'path' => '/home/mohamed/Documents/work-drhamdi/himbackend/vendor/nwidart/laravel-modules/src/Commands/stubs',
       'files' => 
       array (
         'routes/web' => 'Routes/web.php',
@@ -878,9 +878,9 @@
     ),
     'paths' => 
     array (
-      'modules' => 'F:\\company\\himback\\himbackend\\Modules',
-      'assets' => 'F:\\company\\himback\\himbackend\\public\\modules',
-      'migration' => 'F:\\company\\himback\\himbackend\\database/migrations',
+      'modules' => '/home/mohamed/Documents/work-drhamdi/himbackend/Modules',
+      'assets' => '/home/mohamed/Documents/work-drhamdi/himbackend/public/modules',
+      'migration' => '/home/mohamed/Documents/work-drhamdi/himbackend/database/migrations',
       'generator' => 
       array (
         'config' => 
@@ -1015,7 +1015,7 @@
       'enabled' => false,
       'paths' => 
       array (
-        0 => 'F:\\company\\himback\\himbackend\\vendor/*/*',
+        0 => '/home/mohamed/Documents/work-drhamdi/himbackend/vendor/*/*',
       ),
     ),
     'composer' => 
@@ -1043,7 +1043,7 @@
       'file' => 
       array (
         'class' => 'Nwidart\\Modules\\Activators\\FileActivator',
-        'statuses-file' => 'F:\\company\\himback\\himbackend\\modules_statuses.json',
+        'statuses-file' => '/home/mohamed/Documents/work-drhamdi/himbackend/modules_statuses.json',
         'cache-key' => 'activator.installed',
         'cache-lifetime' => 604800,
       ),
@@ -1125,7 +1125,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'F:\\company\\himback\\himbackend\\storage\\framework/sessions',
+    'files' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1145,9 +1145,9 @@
   array (
     'paths' => 
     array (
-      0 => 'F:\\company\\himback\\himbackend\\resources\\views',
+      0 => '/home/mohamed/Documents/work-drhamdi/himbackend/resources/views',
     ),
-    'compiled' => 'F:\\company\\himback\\himbackend\\storage\\framework\\views',
+    'compiled' => '/home/mohamed/Documents/work-drhamdi/himbackend/storage/framework/views',
   ),
   'flare' => 
   array (

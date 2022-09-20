@@ -108,58 +108,66 @@ class SettingController extends Controller
 
     public function updatePaymentSettings(Request $request)
     {
-        try{
-             // get current year and term //
+
         $year = AccountSetting::getCurrentAcademicYear();
         $term = AccountSetting::getCurrentTerm();
         
-        foreach($request->paymentSettings as $payment)
-        {
-            if(AcademicAdvisingPaymentDetails::where('id',$payment['id'])->exists())
-            {
-                // update //
-               $data =  AcademicAdvisingPaymentDetails::find($payment['id']);
-               $data->update([
-                'value'=>$payment['value']
-               ]);
-            }
-            else{
-                   // insert //
-                   if(AcademicAdvisingPaymentDetails::where('acadimic_year_id',$year->id)->where('case_constrain_id',3)->count() == 5){
-                    AcademicAdvisingPaymentDetails::create([
-                        'acadimic_year_id'=>$year->id,
-                        'term_id' => $term->id,
-                        'case_constrain_id'=>2,
-                        'value'=>$payment['value'],
-                        'level_id'=>$payment['level'],
-                    ]);
-                    }elseif(AcademicAdvisingPaymentDetails::where('acadimic_year_id',$year->id)->where('case_constrain_id',2)->count() == 5){
-                        AcademicAdvisingPaymentDetails::create([
-                            'acadimic_year_id'=>$year->id,
-                            'term_id' => $term->id,
-                            'case_constrain_id'=>3,
-                            'value'=>$payment['value'],
-                            'level_id'=>$payment['level'],
-                        ]);    
-                    }
-                    else
-                    {
-                        AcademicAdvisingPaymentDetails::create([
-                            'acadimic_year_id'=>$year->id,
-                            'term_id' => $term->id,
-                            'case_constrain_id'=>3,
-                            'value'=>$payment['value'],
-                            'level_id'=>$payment['level'],
-                        ]);
-                    }     
-            }
+        foreach($request->paymentSettings as $payment){
+            $id = $payment['id'];
+            $val = $payment['value'];
+            $row = AcademicAdvisingPaymentDetails::where('id' , $id)->first();
+            $row->update(['value' => $val , 'acadimic_year_id' => $year->id , 'term_id' => $term->id]);
         }
-        return responseJson(1, __('done'));
+        // try{
+        //      // get current year and term //
+        
+        // foreach($request->paymentSettings as $payment)
+        // {
+        //     if(AcademicAdvisingPaymentDetails::where('id',$payment['id'])->exists())
+        //     {
+        //         // update //
+        //        $data =  AcademicAdvisingPaymentDetails::find($payment['id']);
+        //        $data->update([
+        //         'value'=>$payment['value']
+        //        ]);
+        //     }
+        //     else{
+        //            // insert //
+        //            if(AcademicAdvisingPaymentDetails::where('acadimic_year_id',$year->id)->where('case_constrain_id',3)->count() == 5){
+        //             AcademicAdvisingPaymentDetails::create([
+        //                 'acadimic_year_id'=>$year->id,
+        //                 'term_id' => $term->id,
+        //                 'case_constrain_id'=>2,
+        //                 'value'=>$payment['value'],
+        //                 'level_id'=>$payment['level'],
+        //             ]);
+        //             }elseif(AcademicAdvisingPaymentDetails::where('acadimic_year_id',$year->id)->where('case_constrain_id',2)->count() == 5){
+        //                 AcademicAdvisingPaymentDetails::create([
+        //                     'acadimic_year_id'=>$year->id,
+        //                     'term_id' => $term->id,
+        //                     'case_constrain_id'=>3,
+        //                     'value'=>$payment['value'],
+        //                     'level_id'=>$payment['level'],
+        //                 ]);    
+        //             }
+        //             else
+        //             {
+        //                 AcademicAdvisingPaymentDetails::create([
+        //                     'acadimic_year_id'=>$year->id,
+        //                     'term_id' => $term->id,
+        //                     'case_constrain_id'=>3,
+        //                     'value'=>$payment['value'],
+        //                     'level_id'=>$payment['level'],
+        //                 ]);
+        //             }     
+        //     }
+        // }
+        // return responseJson(1, __('done'));
     
-        }catch(Exception $e)
-        {
-            return $e;
-        }
+        // }catch(Exception $e)
+        // {
+        //     return $e;
+        // }
        
     }
  

@@ -12,6 +12,8 @@ use Modules\Settings\Entities\Level;
 class AcademicAdvisingPaymentDetails extends Model {
     protected $table = 'acadmic_advising_payment_detiails';
     protected $fillable = [
+        // id must be fillable
+        'id',
         'acadimic_year_id',
         'term_id',
         'value',

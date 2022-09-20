@@ -18,6 +18,9 @@ Route::group(['middleware' => 'api_auth'], function () {
     Route::prefix('academic')->group(function () {
         // courses routes
         Route::get('courses', 'CourseController@get');
+        Route::get('courses_history', 'CourseController@getCoursesHistory');
+
+        
         Route::post('courses/store', 'CourseController@store');
         Route::post('courses/update/{resource}', 'CourseController@update');
         Route::post('courses/delete/{resource}', 'CourseController@destroy');

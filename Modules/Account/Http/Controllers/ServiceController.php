@@ -117,7 +117,7 @@ class ServiceController extends Controller
             // join('students' , 'students.id' , 'account_payments.student_id')
             whereHas('student', function ($query) use ($request) {
                 $query->where('level_id', $request->level_id);
-                if($request->student_id)
+                if($request->student_id > 0)
                     $query->where('student_id' , $request->student_id);
             })
             ->where([
@@ -135,6 +135,7 @@ class ServiceController extends Controller
                     ($request->service_id ? $payment->model_object->id == $request->service_id : true);
             }
         });
+ 
         // return $payments_data;
         return view('account::student_services_payments.index', compact('payments_data'));
     }

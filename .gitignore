@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /node_modules
 /public/hot
 /public/storage
@@ -31,3 +32,21 @@ yarn-error.log
 *.zip
 /**/*.zip
 >>>>>>> d13232d6dedae66f0a0bbfb0363fb556da4f3a86
+=======
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key 
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/public/uploads
+*.zip
+/**/*.zip
+/public
+/bootstrap/cache
+>>>>>>> 3791e53a868157b7410544bf3c513e87eee57e90

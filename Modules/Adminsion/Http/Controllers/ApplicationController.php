@@ -72,6 +72,8 @@ class ApplicationController extends Controller {
         // $data['division_id'] = 1;
         $data['department_id'] = 1;
         $data['level_id'] = 1;
+        $data['academic_years_id'] = 9;
+
 
         // application validator
         $applicationValidator = new ApplicationValidation();

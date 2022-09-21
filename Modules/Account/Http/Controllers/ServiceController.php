@@ -136,7 +136,7 @@ class ServiceController extends Controller
                     ($request->service_id ? $payment->model_object->id == $request->service_id : true);
             }
         });
-        return $payments_data;
-        // return view('account::student_services_payments.index', compact('payments_data'));
+        // return $payments_data;
+        return view('account::student_services_payments.index', compact('payments_data'));
     }
 }

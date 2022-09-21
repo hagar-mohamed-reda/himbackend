@@ -114,10 +114,10 @@ class SettingController extends Controller
              // get current year and term //
         $year = AccountSetting::getCurrentAcademicYear();
         $term = AccountSetting::getCurrentTerm();
-        
+        // return "123";
         foreach($request->paymentSettings as $payment)
         {
-            if(AcademicAdvisingPaymentDetails::where('id',$payment['id'])->exists())
+            if(AcademicAdvisingPaymentDetails::where('id',$payment['id'])->where('acadimic_year_id',$year->id)->exists())
             {
                 // update //
                $data =  AcademicAdvisingPaymentDetails::find($payment['id']);

@@ -120,9 +120,12 @@ class ServiceController extends Controller
             })
             ->where([
                 ['model_type', 'service']
-            ])
-            ->get();
-        $payments = array($payments);
+            ]);
+            if(isset(request()->date_from) && isset(request()->date_to))
+            {
+                $payments->whereBetween('date',[request()->date_from,request()->date_to]);
+            }
+        $payments = array($payments->get());
 
         $payments_data =  array_filter($payments, function ($p) use ($request) {
             if (!isset($p[0])) return false;
@@ -133,7 +136,7 @@ class ServiceController extends Controller
                     ($request->service_id ? $payment->model_object->id == $request->service_id : true);
             }
         });
-        // return $payments_data;
-        return view('account::student_services_payments.index', compact('payments_data'));
+        return $payments_data;
+        // return view('account::student_services_payments.index', compact('payments_data'));
     }
 }

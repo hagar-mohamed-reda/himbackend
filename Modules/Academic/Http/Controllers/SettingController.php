@@ -116,8 +116,19 @@ class SettingController extends Controller
             $id = $payment['id'];
             $val = $payment['value'];
             $row = AcademicAdvisingPaymentDetails::where('id' , $id)->first();
-            $row->update(['value' => $val , 'acadimic_year_id' => $year->id , 'term_id' => $term->id]);
+            $row->update(
+                [   
+                    'value' => $val ,
+                    'acadimic_year_id' => $year->id ,
+                    'term_id' => $term->id
+                ]
+            );
         }
+        // 5
+        // 5
+        // 10
+        
+        
         // try{
         //      // get current year and term //
         

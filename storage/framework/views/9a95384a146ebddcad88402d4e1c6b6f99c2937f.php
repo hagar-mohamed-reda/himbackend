@@ -3,9 +3,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
 
     <!-- Fonts -->
@@ -18,7 +18,7 @@
 			.bold{
 				font-weight: bold;
 			}
-			@media print {
+			@media  print {
 			    
 			    
 			    html,body{
@@ -123,39 +123,39 @@
 				<!--</center>-->
 				
 	<div class="all">	
-	            <div style="display:none">{{ $variable = 1 }}</div>
-           @foreach($students as $student)
-             @if ($variable % 4 == 0)
+	            <div style="display:none"><?php echo e($variable = 1); ?></div>
+           <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+             <?php if($variable % 4 == 0): ?>
                    <div class="w3-row" style="background-color: white;padding-bottom:3px; height:250px; margin-bottom:100px;">
-            @else 
+            <?php else: ?> 
             <div class="w3-row" style="background-color: white; padding-bottom:3px; height:250px; margin-bottom:7px;"> 
-           @endif
-            <div style="display:none">{{ $variable++ }}</div>
+           <?php endif; ?>
+            <div style="display:none"><?php echo e($variable++); ?></div>
 
-            <div style="display:none">{{ $courses = $student['current_register_courses']->sortBy('exam_date') }}</div>
-            <div style="display:none">{{ $commission = Modules\Student\Entities\Commission::find($student->commission_id) }}</div>
-            <div style="display:none">{{ $theater = Modules\Student\Entities\Theater::find($commission->theater_id) }}</div>
+            <div style="display:none"><?php echo e($courses = $student['current_register_courses']->sortBy('exam_date')); ?></div>
+            <div style="display:none"><?php echo e($commission = Modules\Student\Entities\Commission::find($student->commission_id)); ?></div>
+            <div style="display:none"><?php echo e($theater = Modules\Student\Entities\Theater::find($commission->theater_id)); ?></div>
            
             <div class="w3-col s6" style="padding-top: 1px;border-bottom: 1px solid black;padding-bottom: 5px;">
-                @foreach($student->courses as $course)
+                <?php $__currentLoopData = $student->courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div id="place">
                         <div id="place-style">
                                <div class="w3-col s6">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;">{{ $course["name"] }}</h6>
+                font-size: 8.7px !important;"><?php echo e($course["name"]); ?></h6>
                             </div>
                             <div class="w3-col s4 border">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;">{{ $course["exam_date"] }}  |  {{$course["time"]}}</h6>
+                font-size: 8.7px !important;"><?php echo e($course["exam_date"]); ?>  |  <?php echo e($course["time"]); ?></h6>
                             </div>
                               <div class="w3-col s2">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;">{{ $course["exam_day"] }}</h6>
+                font-size: 8.7px !important;"><?php echo e($course["exam_day"]); ?></h6>
                             </div>
                         </div>
                     </div>
                     
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 
             </div>
             
@@ -170,41 +170,41 @@
                 </div>
                 <div class="w3-row">
                     <div id="img" class="w3-col s3">
-                        <img src="{{ $student->image }}" alt="">
+                        <img src="<?php echo e($student->image); ?>" alt="">
                     </div>
                     <div id="seating_number" class="w3-col s9">
                         <div style='display: inline-block !important;'>
                             <h6 style="font-weight: bolder;
                 font-size: 9.4px !important;">رقم الجلوس</h6>
                         <h6 style="font-weight: bolder;
-                font-size: 9.4px !important;margin-bottom: 0px !important;">{{ $student->set_number }}</h6>
+                font-size: 9.4px !important;margin-bottom: 0px !important;"><?php echo e($student->set_number); ?></h6>
                         </div>
                         <div style='display: inline-block !important;margin-right: 20px !important;'>
                             <h6 style="font-weight: bolder;
                 font-size: 9.4px !important;">كود الطالب</h6>
                         <h6 style="font-weight: bolder;
-                font-size: 9.4px !important;margin-bottom: 0px !important;">{{ $student->code }}</h6>
+                font-size: 9.4px !important;margin-bottom: 0px !important;"><?php echo e($student->code); ?></h6>
                         </div>
                         <hr style="border: 1px solid #8080809e;margin: 10px 0 !important;">
                         <h6 style="font-weight: bolder;
                 font-size: 9.4px !important;">حالة القيد : مستجد</h6>
                         <h6 style="font-weight: bolder;
-                font-size: 9.4px !important;">المستوي : {{ $student->level->name }}  -         تخصص  : {{ $student->division->name }}  </h6>
+                font-size: 9.4px !important;">المستوي : <?php echo e($student->level->name); ?>  -         تخصص  : <?php echo e($student->division->name); ?>  </h6>
                     </div>
         
                     <div id="name" class="w3-col s12" style="margin-top: 5px;">
         
-                        <h6 style='margin-right: 30px;font-size: 12px !important;'>{{ $student->name }}</h6>
+                        <h6 style='margin-right: 30px;font-size: 12px !important;'><?php echo e($student->name); ?></h6>
                     </div>
                     <div id="place" class="w3-col s12" style="margin-top: 5px;">
                         <div id="place-style">
                             <div class="w3-col s6">
                                 <h6 style="font-weight: bolder;
-                font-size: 11px !important;"> {{ $theater->name ?? ''}}</h6>
+                font-size: 11px !important;"> <?php echo e($theater->name ?? ''); ?></h6>
                             </div>
                             <div class="w3-col s6">
                                 <h6 style="font-weight: bolder;
-                font-size: 11px !important;">{{ $commission->name ?? ''}}</h6>
+                font-size: 11px !important;"><?php echo e($commission->name ?? ''); ?></h6>
                             </div>
                         
                         </div>
@@ -214,7 +214,7 @@
             </div>
 
         </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
      </div>  
      
@@ -248,7 +248,7 @@
         </script>
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js"></script>
-     <script src="{{ asset('js/print.js') }}"></script>
+     <script src="<?php echo e(asset('js/print.js')); ?>"></script>
 
     </body>
-</html>
+</html><?php /**PATH F:\company\himback\himbackend\resources\views/report/report8.blade.php ENDPATH**/ ?>

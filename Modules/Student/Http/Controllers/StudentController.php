@@ -235,11 +235,12 @@ class StudentController extends Controller {
                 
                  foreach($divisions as $division){
                      $registers = DB::table('academic_student_register_courses');
+                     $registers->where('academic_year_id', $year->id);
                      $registers->where('term_id', $term->id);
                      $registers->where('level_id',$level->id);
                      $registers->where('division_id', $division->id);
                      $registerIds = $registers->pluck('student_id')->toArray();
-                    
+                     
                      $commissions = Commission::where('level_id',$level->id)->where('division_id',$division->id)->where('commission_type_id','=', 1)->get();
                      $commission_start_num = Commission::where('level_id',$level->id)->where('division_id',$division->id)->first()->start_num ?? '';
                      
@@ -247,17 +248,15 @@ class StudentController extends Controller {
                           
                          foreach($commissions as $commission){
                              
-                                if($commission->distribution == 1)
-                                    return 2;
+                                // if($commission->distribution == 1)
+                                //     return 2;
                          
-                                $students = Student::where('level_id', $commission->level_id)
-                                ->where('division_id', $commission->division_id)
-                                ->whereIn('id', $registerIds)
+                                $students = Student::whereIn('id', $registerIds)
                                 ->where('commission_id', null)
                                 ->orderBy('name')->get();
-                               
-                                    // dd($students);
-
+                                
+                             
+                                
                               for ($i = 0; $i < $commission->max_num; $i++) {
                                   
                                                     if($students[$i] ?? ''){
@@ -306,16 +305,16 @@ class StudentController extends Controller {
              $commission_start_num = $commission->start_num;
              
              $registers = DB::table('academic_student_register_courses');
+             $registers->where('academic_year_id', $year->id);
              $registers->where('term_id', $term->id);
-             $registers->where('level_id', $commission->level_id);
-             $registers->where('division_id', $commission->division_id);
+             $registers->where('level_id',$level->id);
+             $registers->where('division_id', $division->id);
              $registerIds = $registers->pluck('student_id')->toArray();
+                     
  
-            $students = Student::where('level_id', $commission->level_id)
-            ->where('division_id', $commission->division_id)
-            ->whereIn('id', $registerIds)
-            ->where('commission_id', null)
-            ->orderBy('name')->get();
+            $students = Student::whereIn('id', $registerIds)
+                                ->where('commission_id', null)
+                                ->orderBy('name')->get();
            
                 // dd($students);
 

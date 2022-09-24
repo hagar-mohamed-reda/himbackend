@@ -23,6 +23,7 @@ use DB;
 use Modules\Divisions\Entities\Division;
 use Modules\Divisions\Entities\Level;
 use App\Term;
+use Illuminate\Database\Eloquent\Builder;
 use Modules\Academic\Entities\CoursePrerequsite;
 use Modules\Academic\Entities\StudentRegisterCourse;
 use Modules\Academic\Entities\StudentGroup;
@@ -433,31 +434,32 @@ class ReportController extends Controller
             ->where('commission_id', '=', $request->commission_id)->orderBy('name')->get();
             
         // return $students;
-            // if( isset(request()->level_id))
-            // {
+            if( isset(request()->level_id))
+            {
 
-            //     $students->where('level_id',request()->level_id);
-            // }
+                $students->where('level_id',request()->level_id);
+            }
             
-            // if(isset(request()->division_id))
-            // {
-            //     $students->where('division_id',request()->division_id);
-            // }
+            if(isset(request()->division_id))
+            {
+                $students->where('division_id',request()->division_id);
+            }
 
-            // if(isset(request()->year_id))
-            // {
-            //     $students->where('academic_years_id',request()->year_id);
-            // }
+            if(isset(request()->year_id))
+            {
+                $students->where('academic_years_id',request()->year_id);
+            }
 
-            // if(isset(request()->term_id))
-            // {
-            //     $students->where('academic_document.id',request()->term_id);
-
-            // }
-            // if(isset($request->commission_id))
-            // {
-            //     $students->where('commission_id', '=', $request->commission_id)->orderBy('name');
-            // }
+            if(isset(request()->term_id))
+            {
+                $students->whereHas('academic_document',function(Builder $query){
+                    $query->where('term',request()->term_id);
+                });
+            }
+            if(isset($request->commission_id))
+            {
+                $students->where('commission_id', '=', $request->commission_id)->orderBy('name');
+            }
             // $students = $students->get();
         return view('report.report8', compact('students'));
     }

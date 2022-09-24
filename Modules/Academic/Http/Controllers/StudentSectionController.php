@@ -28,10 +28,34 @@ class StudentSectionController extends Controller
         $year = AccountSetting::getCurrentAcademicYear();
         $term = AccountSetting::getCurrentTerm();
         
-        $student_sections = StudentSection::with('division','course','group','level','term')->where('division_id',$request->division_id)
-                            ->where('level_id',$request->level_id)->where('course_id',$request->course_id)->where('term_id',$request->term_id)->where('year_id',$request->year_id)->get();
-       
-       return $student_sections;
+        $student_sections = StudentSection::with('division','course','group','level','term');
+        if(isset($request->division_id))
+        {
+            $student_sections->where('division_id',$request->division_id);
+        }
+
+        if(isset($request->level_id))
+        {
+            $student_sections->where('level_id',$request->level_id);
+        }
+
+        if(isset($request->course_id))
+        {
+            $student_sections->where('course_id',$request->course_id);
+        }
+
+        if(isset($request->term_id))
+        {
+            $student_sections->where('term_id',$request->term_id);
+        }
+        if(isset($request->year_id))
+        {
+            $student_sections->where('year_id',$request->year_id);
+        }
+        // ->where('division_id',$request->division_id)
+        //                     ->where('level_id',$request->level_id)->where('course_id',$request->course_id)->where('term_id',$request->term_id)->where('year_id',$request->year_id)->get();
+      
+        return $student_sections->get();
         
     }
     

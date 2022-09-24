@@ -800,30 +800,28 @@ class ReportController extends Controller
         if (request()->division_id) {
             $query->where('division_id', request()->division_id);
         }
+       
+        // if(isset(request()->commission_id))
+        // {
+        //     $query->where('commission_id', request()->commission_id);
+       
+        // }
 
-
-        if (request()->distributed == 1) {
-            $query->where('commission_id', '!=', null);
-            if (request()->commission_id) {
+        if(isset(request()->commission_id) && request()->distributed == 1)
+        {
                 $query->where('commission_id', request()->commission_id);
-            }
         }
-        if (request()->distributed == 0) {
-            $query->where('commission_id', null);
+        
+        if(request()->distributed == 0)
+        {
+            $query->whereNull('commission_id');
         }
-
-
-
-
-
-
-
-
+       
         $responses = $query->get();
 
         // 	dd($responses);
 
-
+            // return $responses;
         return view('report.report19', compact('responses'));
     }
 

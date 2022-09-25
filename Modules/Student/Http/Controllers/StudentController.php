@@ -56,15 +56,18 @@ class StudentController extends Controller {
         if (request()->qualification_types_id > 0)
             $query->where('qualification_types_id', request()->qualification_types_id);
 
+    
         if (request()->search_key) {
-            $query
-                ->where('name', 'like', '%'.$request->search_key.'%')
-                ->orWhere('code', 'like', '%'.$request->search_key.'%')
-                ->orWhere('id', '=',  $request->search_key)
-                ->orWhere('phone_1', 'like', '%'.$request->search_key.'%')
-                ->orWhere('national_id', 'like', '%'.$request->search_key.'%');
+            $query->where(function($q){
+            $q->where('name', 'like', '%'.request()->search_key.'%')
+                ->orWhere('code', 'like', '%'.request()->search_key.'%')
+                ->orWhere('id', '=',  request()->search_key)
+                ->orWhere('phone_1', 'like', '%'.request()->search_key.'%')
+                ->orWhere('national_id', 'like', '%'.request()->search_key.'%');
+        });
+            
         }
-
+        
         return $query->latest()->paginate(5);
     }
     

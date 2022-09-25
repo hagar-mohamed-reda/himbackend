@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,9 @@ Route::group(['middleware' => 'api_auth'], function () {
         Route::get('report/card_export', 'CardReportController@index');
 
 
+        // card exports settings
+        Route::get('card_exports_settings' , 'CardExportsSettingsController@getSettings');
+        Route::post('card_exports_settings' , 'CardExportsSettingsController@storeSettings');
+        
     });
 });

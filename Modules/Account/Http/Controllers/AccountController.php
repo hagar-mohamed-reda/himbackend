@@ -36,7 +36,7 @@ class AccountController extends Controller
         $student = null;
         if (request()->student_id) {
             $student = Student::query()
-                ->with(['level', 'division', 'case_constraint', 'constraint_status', 'installments', 'payments', 'registerationStatus', 'nationality', 'discount_requests', 'balanceResets'])
+                ->with(['level', 'division', 'case_constraint', 'constraint_status', 'installments', 'payments.academicYear', 'registerationStatus', 'nationality', 'discount_requests', 'balanceResets'])
                 ->find(request()->student_id);
         }
 
@@ -52,10 +52,7 @@ class AccountController extends Controller
             $template = ServiceTemplate::find($serviceTemplateId);
              $year_id = 8;
 
-            
-            
-            
-            
+       
             
             ////////////////////////////////////////////////////////
   

@@ -28,6 +28,11 @@ class CardReason
         if (!$student->personal_photo)
             $reasons[] = "الطالب ليس له صورة";
 
+
+        // check for first installment
+        // the student should pay the the first installment to recieve the card
+        
+
         return $reasons;
     }
 

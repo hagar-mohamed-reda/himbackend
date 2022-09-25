@@ -151,15 +151,15 @@ class AccountSetting extends Model
 
             $condition = ($count < $service->from_installment_id) || $percent < $service->installment_percent;
 
-            // if ($service->installment_percent > 0) {
-            //     if ($condition) {
-            //         $valid = false;
-            //         $reason = __("The student did not pay the required percentage of the installment number ") . $service->from_installment_id;
-            //     }
-            // }
+            if ($service->installment_percent > 0) {
+                if ($condition) {
+                    $valid = false;
+                    $reason = __("The student did not pay the required percentage of the installment number ") . $service->from_installment_id;
+                }
+            }
 
-            //$valid = false;
-            //$reason =$total;
+            $valid = false;
+            $reason =$total;
         }
         else {
         //   if ($student->current_balance > 0 && $valid) {

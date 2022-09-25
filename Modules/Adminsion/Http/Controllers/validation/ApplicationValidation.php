@@ -35,7 +35,7 @@ class ApplicationValidation   {
             // "grade.required" => __('grade is required'),
             // "qualification_date.required" => __('qualification_date is required'),
             // "qualification_types_id.required" => __('qualification_types is required'),
-            "national_id.required" => __('national_id is unique')
+            "national_id.unique" => __('national_id is unique')
         ]);
         
         if ($validator->fails()) {

@@ -17,7 +17,6 @@ class CardExportsSettings extends Model
     }
 
 
-
     public function storeSettings($settings)
     {
         foreach ($settings as $row) {

@@ -45,11 +45,11 @@ class ReportController extends Controller
                 DB::raw('(select large_degree from academic_courses where course_id = academic_courses.id) as large_degree'))->orderby('students.set_number');
                 
 
-        if (request()->levels > 0)
-            $query = $query->whereIn('students.level_id', request()->levels);
+        // if (request()->levels > 0)
+        //     $query = $query->whereIn('students.level_id', request()->levels);
 
-        if (request()->divisions > 0)
-            $query = $query->whereIn('division_id', request()->divisions);
+        // if (request()->divisions > 0)
+        //     $query = $query->whereIn('division_id', request()->divisions);
 
         if (request()->courses)
             $query = $query->whereIn('course_id', request()->courses);

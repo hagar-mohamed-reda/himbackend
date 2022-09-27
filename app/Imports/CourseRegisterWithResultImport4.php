@@ -55,7 +55,7 @@ class CourseRegisterWithResultImport4 implements ToModel {
     public function result(array $row) {
         
         $code = str_replace(" ", "", $row[2] ?? '');
-        // $mid_degree = str_replace(" ", "", $row[5] ?? '');
+        $mid_degree = str_replace(" ", "", $row[5] ?? '');
         $work_year_degree = str_replace(" ", "", $row[6] ?? '');
         $final_tahrery_degree = str_replace(" ", "", $row[7] ?? '');
         
@@ -73,7 +73,7 @@ class CourseRegisterWithResultImport4 implements ToModel {
                     $course = Course::where('id', $this->courseId ?? '')->first();
                     $student = Student::where('code', $code ?? '')->first();
                     $year = AccountSetting::getCurrentAcademicYear();
-                    $term = Term::find(2);
+                    $term = AccountSetting::getCurrentTerm();
                                                 
         
                     if(!$student || !$course)

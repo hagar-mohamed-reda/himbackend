@@ -131,53 +131,52 @@ class ReportController extends Controller
         } 
         
 
-        if (request()->nationality_id > 0)
-            $query->where('nationality_id', request()->nationality_id);
-
+      
         if (request()->academic_year_id)
             $query->where('academic_years_id', request()->academic_year_id);
 
-        if(request()->gender != null){
-            $identifier = request()->gender == 0 ? 'female' : 'male';
-            $query->where('gender', $identifier);
+        if(request()->gender == 1){
+            $query->where('gender', 'male');
+        }
+          if(request()->gender == 2){
+            $query->where('gender', 'female');
         }
         
-        if (request()->isVaccinated  == 1 || request()->isVaccinated == 0 && request()->isVaccinated != null)
-            $query->where('iscorona', request()->isVaccinated);
+        if (request()->isVaccinated){
+            if(request()->isVaccinated == 1)
+                $query->where('iscorona', 1);
+            else
+                $query->where('iscorona', 0);
+        }
+            
+        
 
-
-
-        if (request()->division_id > 0)
+        if (request()->division_id)
             $query->where('division_id', request()->division_id);
 
-        if (request()->qualification_id > 0)
+        if (request()->qualification_id)
             $query->where('qualification_id', request()->qualification_id);
 
-        // if (request()->created_at > 0) {
-        //     $myDate = \Carbon\Carbon::now();
-        //     $myDateParse = \Carbon\Carbon::parse($myDate)->format('Y-m-d');
-        //     $query->whereDate('created_at', $myDateParse);
-        // }
-
-        if (request()->level_id > 0)
+    
+        if (request()->level_id)
             $query->where('level_id', request()->level_id);
 
 
-        if (request()->qualification_types_id > 0)
+        if (request()->qualification_types_id)
             $query->where('qualification_types_id', request()->qualification_types_id);
 
-        if (request()->is_adult == 1) {
-            $newDateTime = \Carbon\Carbon::now()->subYears(18);
-            $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
-            $query->whereDate('birthdate', '<', $newDateTimeParse);
-        }
-        if (request()->is_adult == 2) {
-            $newDateTime = \Carbon\Carbon::now()->subYears(18);
-            $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
-            $query->whereDate('birthdate', '>', $newDateTimeParse);
-        }
+        // if (request()->is_adult == 1) {
+        //     $newDateTime = \Carbon\Carbon::now()->subYears(18);
+        //     $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
+        //     $query->whereDate('birthdate', '<', $newDateTimeParse);
+        // }
+        // if (request()->is_adult == 2) {
+        //     $newDateTime = \Carbon\Carbon::now()->subYears(18);
+        //     $newDateTimeParse = \Carbon\Carbon::parse($newDateTime)->format('Y-m-d');
+        //     $query->whereDate('birthdate', '>', $newDateTimeParse);
+        // }
 
-         if(isset(request()->case_constraint_id))
+         if(request()->case_constraint_id)
          {
             $query->where('case_constraint_id',request()->case_constraint_id);
          }

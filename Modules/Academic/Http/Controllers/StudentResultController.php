@@ -24,8 +24,8 @@ class StudentResultController extends Controller
     public function get(Request $request)
     {
         $year = AccountSetting::getCurrentAcademicYear();
-        // $term = AccountSetting::getCurrentTerm();
-        $term = DB::table('terms')->where('id',request()->term_id)->first();
+        $term = AccountSetting::getCurrentTerm();
+        // $term = DB::table('terms')->where('id',request()->term_id)->first();
         
         if(!$term)
           return null;
@@ -75,8 +75,8 @@ class StudentResultController extends Controller
 
         $query = $query->whereRaw('(select count(id) from academic_student_register_courses where student_id = students.id and term_id='.$term->id.' and academic_year_id='.$year->id.' and course_id='.request()->course_id.' ) > 0');
 
-        if (request()->level_id > 0)
-            $query = $query->where('level_id', request()->level_id);
+        // if (request()->level_id > 0)
+        //     $query = $query->where('level_id', request()->level_id);
 
 
 		$response = $query->paginate(300);
@@ -94,6 +94,66 @@ class StudentResultController extends Controller
         return $response;
     }
     
+     /**
+     * add the result of student if not exist
+     * or update on it if it exist
+     * @param Request $request
+     * @return type
+     */
+    public function update(Request $request) {
+        
+        $result = $request->result;
+        $year = AccountSetting::getCurrentAcademicYear();
+        $term = AccountSetting::getCurrentTerm();
+        
+        // $year = DB::table('academic_years')->where('id',$request->year_id)->first();
+        // $term = DB::table('terms')->where('id',$request->term_id)->first();
+
+        try {
+            foreach($result as $item) {
+                $student = Student::FindOrFail($item['student_id']);
+                $item['date'] = date('Y-m-d');
+                $row = StudentResult::query()
+                        ->where('student_id', $item['student_id'])
+                        ->where('course_id', $item['course_id'])
+                        ->where('academic_year_id', $year->id)
+                        ->where('term_id', $term->id)
+                        ->first();
+                if ($row) {
+                    $row->update($item);
+                } else {
+                    $row = StudentResult::create($item);
+                }
+                
+                // if(optional($row)->final_tahrery_degree == null || optional($row)->final_tahrery_degree == ''){
+                //  optional($row)->final_tahrery_degree = 0;
+                // }
+                // if(optional($row)->mid_degree == null || optional($row)->mid_degree == '' ){
+                //     optional($row)->mid_degree = 0;
+                // }
+                // if(optional($row)->work_year_degree == null || optional($row)->work_year_degree == ''){
+                //     optional($row)->work_year_degree = 0;
+                // }
+              
+                
+                $row->final_degree = optional($row)->final_tahrery_degree ?? 0 + optional($row)->mid_degree ?? 0 + optional($row)->work_year_degree ?? 0 ;
+                $row->update();
+                  
+            
+                $row->calculateCourseGpa();
+
+                if($row->final_tahrery_degree != null)
+                $student->startCalculateGpa($term->id);
+              
+            }
+
+            watch(__("assign result for the students "), "fa fa-calendar");
+            return responseJson(1, __('done'));
+        } catch (Exception $exc) {
+            return responseJson(0, $exc->getMessage());
+        }
+    }
+    
       /**
      * add the Sync result of student if not exist
      * @param Request $request
@@ -102,9 +162,10 @@ class StudentResultController extends Controller
     
     
     public function syncStudentResult(Request $request) {
+        
         $year = AccountSetting::getCurrentAcademicYear();
         $term = AccountSetting::getCurrentTerm();
-
+        
         $student_result = DB::table('academic_student_courses_result')
                                 ->where('academic_year_id',$year->id)
                                 ->where('term_id',$term->id)
@@ -153,62 +214,7 @@ class StudentResultController extends Controller
     }
 
 
-    /**
-     * add the result of student if not exist
-     * or update on it if it exist
-     * @param Request $request
-     * @return type
-     */
-    public function update(Request $request) {
-        
-        $result = $request->result;
-        $year = DB::table('academic_years')->where('id',$request->year_id)->first();
-        $term = DB::table('terms')->where('id',$request->term_id)->first();
-
-        try {
-            foreach($result as $item) {
-                $student = Student::FindOrFail($item['student_id']);
-                $item['date'] = date('Y-m-d');
-                $row = StudentResult::query()
-                        ->where('student_id', $item['student_id'])
-                        ->where('course_id', $item['course_id'])
-                        ->where('academic_year_id', $year->id)
-                        ->where('term_id', $term->id)
-                        ->first();
-                if ($row) {
-                    $row->update($item);
-                } else {
-                    $row = StudentResult::create($item);
-                }
-                
-                if(optional($row)->final_tahrery_degree == null || optional($row)->final_tahrery_degree == ''){
-                 optional($row)->final_tahrery_degree = 0;
-                }
-                if(optional($row)->mid_degree == null || optional($row)->mid_degree == '' ){
-                    optional($row)->mid_degree = 0;
-                }
-                if(optional($row)->work_year_degree == null || optional($row)->work_year_degree == ''){
-                    optional($row)->work_year_degree = 0;
-                }
-              
-                
-                $row->final_degree = optional($row)->final_tahrery_degree + optional($row)->mid_degree + optional($row)->work_year_degree ;
-                $row->update();
-                  
-            
-                $row->calculateCourseGpa();
-
-                if($row->final_tahrery_degree != null)
-                $student->startCalculateGpa($request->term_id);
-              
-            }
-
-            watch(__("assign result for the students "), "fa fa-calendar");
-            return responseJson(1, __('done'));
-        } catch (Exception $exc) {
-            return responseJson(0, $exc->getMessage());
-        }
-    }
+   
 
 
 

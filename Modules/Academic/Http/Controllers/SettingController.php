@@ -99,10 +99,11 @@ class SettingController extends Controller
         return responseJson(1, __('done'), $resource);
 	}
 
-    public function getPaymentSettings()
+    public function getPaymentSettings(Request $req)
     {
-        $restricted =  AcademicAdvisingPaymentDetails::where('case_constrain_id',2)->get();  // المقيد
-        $unrestricted = AcademicAdvisingPaymentDetails::where('case_constrain_id',3)->get(); // الساقط
+        $year = $req->year_id ?: AccountSetting::getCurrentAcademicYear()->id;
+        $restricted =  AcademicAdvisingPaymentDetails::where('case_constrain_id',2)->where('acadimic_year_id', $year)->get();  // المقيد
+        $unrestricted = AcademicAdvisingPaymentDetails::where('case_constrain_id',3)->where('acadimic_year_id',$year)->get(); // الساقط
         return Response()->json(['status' => 1, 'message' => 'success', 'restricted' => $restricted,'unrestricted'=>$unrestricted]);
     }
 
@@ -111,13 +112,53 @@ class SettingController extends Controller
 
         $year = AccountSetting::getCurrentAcademicYear();
         $term = AccountSetting::getCurrentTerm();
-        
-        foreach($request->paymentSettings as $payment){
-            $id = $payment['id'];
-            $val = $payment['value'];
-            $row = AcademicAdvisingPaymentDetails::where('id' , $id)->first();
-            $row->update(['value' => $val , 'acadimic_year_id' => $year->id , 'term_id' => $term->id]);
+        // return "123";
+        foreach($request->paymentSettings as $payment)
+        {
+            if(AcademicAdvisingPaymentDetails::where('id',$payment['id'])->where('acadimic_year_id',$year->id)->exists())
+            {
+                // update //
+               $data =  AcademicAdvisingPaymentDetails::find($payment['id']);
+               $data->update([
+                'value'=>$payment['value']
+               ]);
+            }
+            else{
+                   // insert //
+                   if(AcademicAdvisingPaymentDetails::where('acadimic_year_id',$year->id)->where('case_constrain_id',3)->count() == 5){
+                    AcademicAdvisingPaymentDetails::create([
+                        'acadimic_year_id'=>$year->id,
+                        'term_id' => $term->id,
+                        'case_constrain_id'=>2,
+                        'value'=>$payment['value'],
+                        'level_id'=>$payment['level'],
+                    ]);
+                    }elseif(AcademicAdvisingPaymentDetails::where('acadimic_year_id',$year->id)->where('case_constrain_id',2)->count() == 5){
+                        AcademicAdvisingPaymentDetails::create([
+                            'acadimic_year_id'=>$year->id,
+                            'term_id' => $term->id,
+                            'case_constrain_id'=>3,
+                            'value'=>$payment['value'],
+                            'level_id'=>$payment['level'],
+                        ]);    
+                    }
+                    else
+                    {
+                        AcademicAdvisingPaymentDetails::create([
+                            'acadimic_year_id'=>$year->id,
+                            'term_id' => $term->id,
+                            'case_constrain_id'=>3,
+                            'value'=>$payment['value'],
+                            'level_id'=>$payment['level'],
+                        ]);
+                    }     
+            }
         }
+        // 5
+        // 5
+        // 10
+        
+        
         // try{
         //      // get current year and term //
         

@@ -120,15 +120,48 @@ class StudentAvailableCourse {
         $this->courses = $newCourses;
 	}
 
+    public function checkIfPayHisInstallment()
+    {
+        $sumVal =0;
+        // find Account Payment of student //
+        $student = Student::find($this->student->id);
+        $accounts = Payment::where('student_id',$student->id)
+        ->where('model_type','1')
+        ->where('academic_year_id',$this->year->id)->get();
+        foreach($accounts as $account )
+        {
+            $sumVal+=$account->value;
+        }
+
+        // find value of specfic level 
+        $accadmicAdvising =  AcademicAdvisingPaymentDetails::where('acadimic_year_id',$this->year->id)->where('level_id',$student->level_id)->first();
+        if($sumVal >= $accadmicAdvising->value)
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
     public function getCourses() {
-        $this->levelFilter();
-        $this->openCourseFilter();
-        $this->prequsitesFilter();
-		$this->filterPaidService();
-		$this->passedCourseFilter();
-
-
-        return $this->courses;
+        // $this->checkIfPayHisInstallment();
+        if($this->checkIfPayHisInstallment() == false)
+        {
+            return response()->json( [
+                'status' => 0,
+                'msg' => 'لم يتم سداد المصاريف كامله',
+            ],403);
+            
+        }
+        else{
+            $this->levelFilter();
+            $this->openCourseFilter();
+            $this->prequsitesFilter();
+		    $this->filterPaidService();
+		    $this->passedCourseFilter();
+            return $this->courses;
+        }
+        
     }
 
 }

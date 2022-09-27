@@ -137,20 +137,20 @@
             <div style="display:none"><?php echo e($theater = Modules\Student\Entities\Theater::find($commission->theater_id)); ?></div>
            
             <div class="w3-col s6" style="padding-top: 1px;border-bottom: 1px solid black;padding-bottom: 5px;">
-                <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $student->courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div id="place">
                         <div id="place-style">
                                <div class="w3-col s6">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;"><?php echo e($course->name); ?></h6>
+                font-size: 8.7px !important;"><?php echo e($course["name"]); ?></h6>
                             </div>
                             <div class="w3-col s4 border">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;"><?php echo e($course->exam_date); ?>  |  <?php echo e($course->time); ?></h6>
+                font-size: 8.7px !important;"><?php echo e($course["exam_date"]); ?>  |  <?php echo e($course["time"]); ?></h6>
                             </div>
                               <div class="w3-col s2">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;"><?php echo e($course->exam_day); ?></h6>
+                font-size: 8.7px !important;"><?php echo e($course["exam_day"]); ?></h6>
                             </div>
                         </div>
                     </div>
@@ -251,4 +251,4 @@
      <script src="<?php echo e(asset('js/print.js')); ?>"></script>
 
     </body>
-</html><?php /**PATH /home/pnpskkmy/public_html/him/resources/views/report/report8.blade.php ENDPATH**/ ?>
+</html><?php /**PATH F:\company\himback\himbackend\resources\views/report/report8.blade.php ENDPATH**/ ?>

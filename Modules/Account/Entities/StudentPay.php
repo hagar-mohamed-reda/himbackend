@@ -114,8 +114,8 @@ class StudentPay
                     }else{
                         if(!$inServiceMax)
                             $inServiceMax = 0;
-                        $service->serial = $inServiceMax + 1 ;
-                        $service->service_type = "in" ;
+                            $service->serial = $inServiceMax + 1 ;
+                            $service->service_type = "in" ;
                     }
                     
                     $total = $item['number'] * ($service->value + $service->additional_value);

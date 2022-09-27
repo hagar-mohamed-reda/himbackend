@@ -33,7 +33,7 @@ class ReportController extends Controller
 
         $query = DB::table('students')
                 ->join('academic_student_courses_result', 'academic_student_courses_result.student_id', '=', 'students.id')
-                ->where('term_id', 1)
+                ->where('term_id', 3)
                 ->where('academic_year_id', $year->id)
                 ->select(
                 'code', 'set_number', 'name', 'division_id', 'final_degree','mid_degree','work_year_degree','amly_degree','final_tahrery_degree','final_degree','gpa','gpa_word',
@@ -45,11 +45,11 @@ class ReportController extends Controller
                 DB::raw('(select large_degree from academic_courses where course_id = academic_courses.id) as large_degree'))->orderby('students.set_number');
                 
 
-        if (request()->levels > 0)
-            $query = $query->whereIn('students.level_id', request()->levels);
+        // if (request()->levels > 0)
+        //     $query = $query->whereIn('students.level_id', request()->levels);
 
-        if (request()->divisions > 0)
-            $query = $query->whereIn('division_id', request()->divisions);
+        // if (request()->divisions > 0)
+        //     $query = $query->whereIn('division_id', request()->divisions);
 
         if (request()->courses)
             $query = $query->whereIn('course_id', request()->courses);

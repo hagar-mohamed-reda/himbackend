@@ -92,9 +92,13 @@ class StudentResult extends Model
             "gpa_word" => optional($degreeMap)->key,
         ]);
         
-
+        $year = AccountSetting::getCurrentAcademicYear();
+        $term = AccountSetting::getCurrentTerm();
+        
         $studentRegisterCourse = StudentRegisterCourse::where('student_id', $this->student_id)
                 ->where('course_id', $this->course_id)
+                ->where('academic_year_id', $year->id)
+                ->where('term_id', $term->id)
                 ->latest()
                 ->first();
 

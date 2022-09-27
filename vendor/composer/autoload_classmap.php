@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\CardExportsSettings' => $baseDir . '/app/CardExportsSettings.php',
     'App\\CaseConstraintConverter' => $baseDir . '/app/CaseConstraintConverter.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Direction' => $baseDir . '/app/Direction.php',
@@ -2745,6 +2746,7 @@ return array(
     'Mockery\\VerificationDirector' => $vendorDir . '/mockery/mockery/library/Mockery/VerificationDirector.php',
     'Mockery\\VerificationExpectation' => $vendorDir . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
     'Modules\\Academic\\Database\\Seeders\\AcademicDatabaseSeeder' => $baseDir . '/Modules/Academic/Database/Seeders/AcademicDatabaseSeeder.php',
+    'Modules\\Academic\\Entities\\AcademicAdvisingPaymentDetails' => $baseDir . '/Modules/Academic/Entities/AcademicAdvisingPaymentDetails.php',
     'Modules\\Academic\\Entities\\AcademicSetting' => $baseDir . '/Modules/Academic/Entities/AcademicSetting.php',
     'Modules\\Academic\\Entities\\Course' => $baseDir . '/Modules/Academic/Entities/Course.php',
     'Modules\\Academic\\Entities\\CourseCategory' => $baseDir . '/Modules/Academic/Entities/CourseCategory.php',

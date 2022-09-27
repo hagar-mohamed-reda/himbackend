@@ -22,8 +22,10 @@ class ApplicationController extends Controller {
      */
     public function index(Request $request) {
         $query = Application::with(['academicYear', 'qualification', 'level', 'studentRequiredDocument'])
-        ->where('is_application', 1);
-
+        ->where(function($q){
+            $q->where('is_application', 1);
+        });
+        
         if (request()->nationality_id > 0)
             $query->where('nationality_id', request()->nationality_id);
 
@@ -36,13 +38,16 @@ class ApplicationController extends Controller {
         if (request()->qualification_types_id > 0)
             $query->where('qualification_types_id', request()->qualification_types_id);
 
+    
         if (request()->search_key) {
-            $query
-                ->where('name', 'like', '%'.$request->search_key.'%')
-                ->orWhere('code', 'like', '%'.$request->search_key.'%')
-                ->orWhere('id', '=',  $request->search_key)
-                ->orWhere('phone_1', 'like', '%'.$request->search_key.'%')
-                ->orWhere('national_id', 'like', '%'.$request->search_key.'%');
+            $query->where(function($q){
+            $q->where('name', 'like', '%'.request()->search_key.'%')
+                ->orWhere('code', 'like', '%'.request()->search_key.'%')
+                ->orWhere('id', '=',  request()->search_key)
+                ->orWhere('phone_1', 'like', '%'.request()->search_key.'%')
+                ->orWhere('national_id', 'like', '%'.request()->search_key.'%');
+        });
+            
         }
 
         $resources = $query->latest()->paginate(5);
@@ -71,6 +76,8 @@ class ApplicationController extends Controller {
         // set the defualt devision
         // $data['division_id'] = 1;
         $data['department_id'] = 1;
+        $data['level_id'] = 1;
+        $data['academic_years_id'] = 9;
 
         // application validator
         $applicationValidator = new ApplicationValidation();

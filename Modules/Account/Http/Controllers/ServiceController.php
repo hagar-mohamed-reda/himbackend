@@ -122,9 +122,12 @@ class ServiceController extends Controller
             })
             ->where([
                 ['model_type', 'service']
-            ])
-            ->get();
-        $payments = array($payments);
+            ]);
+            if(isset(request()->date_from) && isset(request()->date_to))
+            {
+                $payments->whereBetween('date',[request()->date_from,request()->date_to]);
+            }
+        $payments = array($payments->get());
 
         $payments_data =  array_filter($payments, function ($p) use ($request) {
             if (!isset($p[0])) return false;

@@ -70,4 +70,4 @@
         
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         
-<?php /**PATH /home/pnpskkmy/public_html/him/resources/views/report/report1.blade.php ENDPATH**/ ?>
+<?php /**PATH F:\company\himback\himbackend\resources\views/report/report1.blade.php ENDPATH**/ ?>

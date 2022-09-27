@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+
 if (!function_exists('uploadImg')) {
     function uploadImg($file, $folder = '/', $action, $oldPath=null) {
 
@@ -234,6 +236,7 @@ if (!function_exists('responseJson')) {
             "message" => $message,
             "data" => $data
         ];
+    
     }
 
 }

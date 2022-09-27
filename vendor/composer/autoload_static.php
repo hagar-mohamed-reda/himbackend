@@ -268,8 +268,8 @@ class ComposerStaticInit0fb3e9819d04d49d15263c518c958dbb
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'ZipStream\\' => 
         array (
@@ -437,8 +437,8 @@ class ComposerStaticInit0fb3e9819d04d49d15263c518c958dbb
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -648,6 +648,7 @@ class ComposerStaticInit0fb3e9819d04d49d15263c518c958dbb
     );
 
     public static $classMap = array (
+        'App\\CardExportsSettings' => __DIR__ . '/../..' . '/app/CardExportsSettings.php',
         'App\\CaseConstraintConverter' => __DIR__ . '/../..' . '/app/CaseConstraintConverter.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Direction' => __DIR__ . '/../..' . '/app/Direction.php',
@@ -3387,6 +3388,7 @@ class ComposerStaticInit0fb3e9819d04d49d15263c518c958dbb
         'Mockery\\VerificationDirector' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationDirector.php',
         'Mockery\\VerificationExpectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
         'Modules\\Academic\\Database\\Seeders\\AcademicDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Academic/Database/Seeders/AcademicDatabaseSeeder.php',
+        'Modules\\Academic\\Entities\\AcademicAdvisingPaymentDetails' => __DIR__ . '/../..' . '/Modules/Academic/Entities/AcademicAdvisingPaymentDetails.php',
         'Modules\\Academic\\Entities\\AcademicSetting' => __DIR__ . '/../..' . '/Modules/Academic/Entities/AcademicSetting.php',
         'Modules\\Academic\\Entities\\Course' => __DIR__ . '/../..' . '/Modules/Academic/Entities/Course.php',
         'Modules\\Academic\\Entities\\CourseCategory' => __DIR__ . '/../..' . '/Modules/Academic/Entities/CourseCategory.php',

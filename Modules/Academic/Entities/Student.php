@@ -299,10 +299,10 @@ class Student extends StudentOrigin
     {
         $gpSum = 0;
 
-
         $student_courses = StudentRegisterCourse::query()
             ->join('academic_courses', 'academic_courses.id', '=', 'course_id')
             ->where('student_id', $this->id)
+            ->where('gpa', '!=', null)
             ->select('*', 'academic_student_register_courses.id as id');
 
         $courses = $student_courses->get();

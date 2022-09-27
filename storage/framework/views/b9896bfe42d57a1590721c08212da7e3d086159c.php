@@ -175,4 +175,4 @@
         </div> 
         <script type="text/javascript" src="<?php echo e(url('/js/jquery-3.2.1.min.js')); ?>" ></script>
     </body>
-</html><?php /**PATH /home/pnpskkmy/public_html/him/Modules/Academic/Resources/views/register_course_student_print.blade.php ENDPATH**/ ?>
+</html><?php /**PATH F:\company\himback\himbackend\Modules/Academic\Resources/views/register_course_student_print.blade.php ENDPATH**/ ?>

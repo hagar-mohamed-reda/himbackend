@@ -137,20 +137,20 @@
             <div style="display:none">{{ $theater = Modules\Student\Entities\Theater::find($commission->theater_id) }}</div>
            
             <div class="w3-col s6" style="padding-top: 1px;border-bottom: 1px solid black;padding-bottom: 5px;">
-                @foreach($courses as $course)
+                @foreach($student->courses as $course)
                     <div id="place">
                         <div id="place-style">
                                <div class="w3-col s6">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;">{{ $course->name }}</h6>
+                font-size: 8.7px !important;">{{ $course["name"] }}</h6>
                             </div>
                             <div class="w3-col s4 border">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;">{{ $course->exam_date }}  |  {{$course->time}}</h6>
+                font-size: 8.7px !important;">{{ $course["exam_date"] }}  |  {{$course["time"]}}</h6>
                             </div>
                               <div class="w3-col s2">
                                 <h6 style="font-weight: bolder;
-                font-size: 8.7px !important;">{{ $course->exam_day }}</h6>
+                font-size: 8.7px !important;">{{ $course["exam_day"] }}</h6>
                             </div>
                         </div>
                     </div>

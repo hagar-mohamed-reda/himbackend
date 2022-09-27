@@ -3,6 +3,7 @@
 namespace Modules\Account\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Modules\Settings\Entities\AcademicYear;
 
 class Payment extends Model
 {
@@ -44,6 +45,9 @@ class Payment extends Model
         return $this->student()->first()->division()->first();
     }
 
+    public function academicYear(){
+        return $this->belongsTo(AcademicYear::class , 'academic_year_id');
+    }
     public function getModelObjectAttribute() {
         $object = null;
         if ($this->model_type == "academic_year_expense") {

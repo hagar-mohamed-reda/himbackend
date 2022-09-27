@@ -96,4 +96,4 @@ background-size: 100% 100%;;
     </script>
 </body>
 
-</html><?php /**PATH /home/pnpskkmy/public_html/him/Modules/Card/Resources/views/card/1.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /home/mohamed/Documents/work-drhamdi/himbackend/Modules/Card/Resources/views/card/1.blade.php ENDPATH**/ ?>

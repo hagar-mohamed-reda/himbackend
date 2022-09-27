@@ -38,6 +38,7 @@ class ApplicationController extends Controller {
         if (request()->qualification_types_id > 0)
             $query->where('qualification_types_id', request()->qualification_types_id);
 
+    
         if (request()->search_key) {
             $query->where(function($q){
             $q->where('name', 'like', '%'.request()->search_key.'%')

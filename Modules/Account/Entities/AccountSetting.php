@@ -3,8 +3,9 @@
 namespace Modules\Account\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Modules\Settings\Entities\AcademicYear;
-use DB;
+use Modules\Card\Entities\CardExportsSettings;
 
 class AccountSetting extends Model
 {
@@ -93,7 +94,9 @@ class AccountSetting extends Model
         }
 
         // check on student installments
+        
         if ($service->from_installment_id && $valid && ($student->is_current_installed || $student->is_old_installed)) {
+        // if ($valid) {
             $count = Payment::where('student_id', $student->id)
                             ->whereIn('model_type', ['installment', 'academic_year_expense'])
                             ->count();
@@ -141,7 +144,12 @@ class AccountSetting extends Model
                             ->sum('value');
             }
 
-            $percent = 0;
+
+            $sum += Payment::where('student_id', $student->id)
+                            ->where(function($q)  use ($ids) {
+                                $q->where('model_type', 'academic_year_expense');
+                            })
+                            ->sum('value');
 
             if ($total > 0)
                 $percent = ($sum / $total) * 100; 
@@ -158,8 +166,8 @@ class AccountSetting extends Model
             //     }
             // }
 
-            //$valid = false;
-            //$reason =$total;
+            // $valid = false;
+            // $reason =$total;
         }
         else {
         //   if ($student->current_balance > 0 && $valid) {
@@ -167,6 +175,28 @@ class AccountSetting extends Model
         //         $reason = __("The student was given a current fees");
         //     } 
         }
+
+
+
+        if($valid){
+
+        // check on card export settings
+        $paid_this_year = Payment::where([
+            ['student_id' , $student->id] ,
+            ['paper_id' , null] ,
+            ['academic_year_id' ,  AccountSetting::getCurrentAcademicYear()->id]
+        ])->sum('value');
+
+        $value_should_be_Paid = CardExportsSettings::where('academic_year_id' ,  AccountSetting::getCurrentAcademicYear()->id)->where('term_id',AccountSetting::getCurrentTerm()->id)->where('level_id' , $student->level_id)->first();
+        
+            if($paid_this_year < $value_should_be_Paid)
+            {
+                $valid = false;
+                $reason = __("هذا الطالب لم يسدد المصروف الدراسي المطلوب");
+            }
+
+        }
+
 
         // check on student level
         if ($service->except_level_id && $valid) {

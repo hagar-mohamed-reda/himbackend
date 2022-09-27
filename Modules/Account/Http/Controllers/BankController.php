@@ -37,9 +37,11 @@ class BankController extends Controller
             $validator = validator($request->json()->all(), [
                 "name" =>  "required|unique:account_banks",  
                 "init_balance" =>  "required", 
+                "type_user_id" =>  "required", 
             ], [
                 "name.unique" => __('name already exist'), 
                 "init_balance.required" => __('fill all required data'), 
+                "type_user_id.required" => __('fill all required data'), 
             ]);
             
             if ($validator->fails()) {
@@ -48,6 +50,7 @@ class BankController extends Controller
             $data = $request->all();
             $data['user_id'] = $request->user->id;
             $data['balance'] = $request->init_balance;
+            $data['type_user_id'] = $request->type_user_id;
              
             $resource = Bank::create($data); 
             watch(__('add Bank ') . $resource->name, "fa fa-bank");

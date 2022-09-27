@@ -27,7 +27,8 @@ class StudentResultTransfer extends Student
         $term = AccountSetting::getCurrentTerm();
         $registerCourses = $this->getActualRegisterCourses()->count();
         $registerHours = $this->getActualRegisterCourses()->sum('credit_hour');
-        
+        $registerCoursesInSummer = $this->getActualRegisterCourses()->count();
+
         $valid = true;
         if ($this->level_id < $lastLevel && $this->case_constraint_id != 1) {
             $nextLevel = $this->level_id + 1;
@@ -62,6 +63,10 @@ class StudentResultTransfer extends Student
             //         "case_constraint_id" => 3
             //     ]);
             // } 
+
+            if ($term->id == 3 && $registerCoursesInSummer == true) {
+                $valid == false;
+            } 
             
             if ($valid == true) {
                 $this->update([

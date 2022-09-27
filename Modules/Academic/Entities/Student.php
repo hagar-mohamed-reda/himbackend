@@ -178,6 +178,19 @@ class Student extends StudentOrigin
                         ->select('*', 'academic_courses.id as id', 'academic_student_register_courses.created_at as register_date')
                         ->join('academic_courses', 'academic_courses.id', '=', 'course_id');
     }
+    public function getCoursesInCurrentSummer() {
+        $year = AccountSetting::getCurrentAcademicYear();
+        $term = AccountSetting::getCurrentTerm();
+        $StudentRegisterCourse = StudentRegisterCourse::with('section')
+                        ->where('student_id', $this->id)
+                        ->where('academic_year_id', $year->id)
+                        ->where('term_id', $term->id)->count();
+        if($StudentRegisterCourse > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public function getCurrentRegisterCoursesAttribute()
     {

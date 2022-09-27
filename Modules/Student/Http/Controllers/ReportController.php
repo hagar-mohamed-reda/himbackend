@@ -24,6 +24,7 @@ use Modules\Divisions\Entities\Division;
 use Modules\Divisions\Entities\Level;
 use App\Term;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Database\Eloquent\Builder;
 use Modules\Academic\Entities\CoursePrerequsite;
 use Modules\Academic\Entities\StudentRegisterCourse;
 use Modules\Academic\Entities\StudentGroup;
@@ -431,9 +432,37 @@ class ReportController extends Controller
                 'payments', 'registerationStatus',
                 'nationality', 'discount_requests', 'balanceResets',
                 'courses'
-            ])->where('commission_id', '=', $request->commission_id)->orderBy('name')->get();
+            ])
+            ->where('commission_id', '=', $request->commission_id)->orderBy('name')->get();
+            
         // return $students;
+            if( isset(request()->level_id))
+            {
 
+                $students->where('level_id',request()->level_id);
+            }
+            
+            if(isset(request()->division_id))
+            {
+                $students->where('division_id',request()->division_id);
+            }
+
+            if(isset(request()->year_id))
+            {
+                $students->where('academic_years_id',request()->year_id);
+            }
+
+            if(isset(request()->term_id))
+            {
+                $students->whereHas('academic_document',function(Builder $query){
+                    $query->where('term',request()->term_id);
+                });
+            }
+            if(isset($request->commission_id))
+            {
+                $students->where('commission_id', '=', $request->commission_id)->orderBy('name');
+            }
+            // $students = $students->get();
         return view('report.report8', compact('students'));
     }
     public function fetchDataReport8(Request $request)
@@ -802,30 +831,28 @@ class ReportController extends Controller
         if (request()->division_id) {
             $query->where('division_id', request()->division_id);
         }
+       
+        // if(isset(request()->commission_id))
+        // {
+        //     $query->where('commission_id', request()->commission_id);
+       
+        // }
 
-
-        if (request()->distributed == 1) {
-            $query->where('commission_id', '!=', null);
-            if (request()->commission_id) {
+        if(isset(request()->commission_id) && request()->distributed == 1)
+        {
                 $query->where('commission_id', request()->commission_id);
-            }
         }
-        if (request()->distributed == 0) {
-            $query->where('commission_id', null);
+        
+        if(request()->distributed == 0)
+        {
+            $query->whereNull('commission_id');
         }
-
-
-
-
-
-
-
-
+       
         $responses = $query->get();
 
         // 	dd($responses);
 
-
+            // return $responses;
         return view('report.report19', compact('responses'));
     }
 

@@ -524,7 +524,7 @@ class ReportController extends Controller
 
         if (request()->division_id) {
             $courses = Course::where('division_id', request()->division_id)
-                ->where('level_id', 1)->where('term', request()->term_id)->orderby('id')->get();
+                ->where('level_id', request()->level_id)->where('term', request()->term_id)->orderby('id')->get();
             $query->where('division_id', request()->division_id);
         }
 
